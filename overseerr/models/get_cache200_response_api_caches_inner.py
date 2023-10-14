@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
+from typing import Any, Dict, Optional
 from pydantic import BaseModel
 from overseerr.models.get_cache200_response_api_caches_inner_stats import GetCache200ResponseApiCachesInnerStats
 

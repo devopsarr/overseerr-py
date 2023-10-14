@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel
 from overseerr.models.sonarr_series_add_options_inner import SonarrSeriesAddOptionsInner
 from overseerr.models.sonarr_series_images_inner import SonarrSeriesImagesInner

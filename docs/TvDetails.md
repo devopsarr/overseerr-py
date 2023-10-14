@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **external_ids** | [**ExternalIds**](ExternalIds.md) |  | [optional] 
 **keywords** | [**List[Keyword]**](Keyword.md) |  | [optional] 
 **media_info** | [**MediaInfo**](MediaInfo.md) |  | [optional] 
-**watch_providers** | **List[List]** |  | [optional] 
+**watch_providers** | **List[List[WatchProvidersInner]]** |  | [optional] 
 
 ## Example
 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Union
+from typing import Any, Dict, Union
 from pydantic import BaseModel
 
 class CreateUserSettingsPermissionsRequest(BaseModel):
