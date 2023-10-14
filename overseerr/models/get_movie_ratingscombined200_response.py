@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
+from typing import Any, Dict, Optional
 from pydantic import BaseModel
 from overseerr.models.get_movie_ratings200_response import GetMovieRatings200Response
 from overseerr.models.get_movie_ratingscombined200_response_imdb import GetMovieRatingscombined200ResponseImdb

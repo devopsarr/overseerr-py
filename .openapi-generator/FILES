@@ -354,6 +354,7 @@ overseerr/models/watch_providers_inner.py
 overseerr/models/web_push_settings.py
 overseerr/models/webhook_settings.py
 overseerr/models/webhook_settings_options.py
+overseerr/py.typed
 overseerr/rest.py
 pyproject.toml
 setup.cfg

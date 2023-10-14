@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional, Union
+from typing import Any, Dict, Optional, Union
 from pydantic import BaseModel
 from overseerr.models.luna_sea_settings_options import LunaSeaSettingsOptions
 

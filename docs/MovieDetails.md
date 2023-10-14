@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **collection** | [**MovieDetailsCollection**](MovieDetailsCollection.md) |  | [optional] 
 **external_ids** | [**ExternalIds**](ExternalIds.md) |  | [optional] 
 **media_info** | [**MediaInfo**](MediaInfo.md) |  | [optional] 
-**watch_providers** | **List[List]** |  | [optional] 
+**watch_providers** | **List[List[WatchProvidersInner]]** |  | [optional] 
 
 ## Example
 

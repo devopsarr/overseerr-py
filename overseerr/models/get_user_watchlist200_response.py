@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel
 from overseerr.models.get_user_watchlist200_response_results_inner import GetUserWatchlist200ResponseResultsInner
 
