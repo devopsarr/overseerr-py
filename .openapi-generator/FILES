@@ -90,6 +90,7 @@ docs/ListGenresMovie200ResponseInner.md
 docs/ListGenresTv200ResponseInner.md
 docs/ListLanguages200ResponseInner.md
 docs/ListLogs200ResponseInner.md
+docs/ListNotificationsPushoverSounds200ResponseInner.md
 docs/ListPlexUsers200ResponseInner.md
 docs/ListRegions200ResponseInner.md
 docs/LunaSeaSettings.md
@@ -282,6 +283,7 @@ overseerr/models/list_genres_movie200_response_inner.py
 overseerr/models/list_genres_tv200_response_inner.py
 overseerr/models/list_languages200_response_inner.py
 overseerr/models/list_logs200_response_inner.py
+overseerr/models/list_notifications_pushover_sounds200_response_inner.py
 overseerr/models/list_plex_users200_response_inner.py
 overseerr/models/list_regions200_response_inner.py
 overseerr/models/luna_sea_settings.py
