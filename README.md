@@ -247,7 +247,6 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**create_user_settings_password**](docs/UsersApi.md#create_user_settings_password) | **POST** /user/{userId}/settings/password | Update password for a user
 *UsersApi* | [**create_user_settings_permissions**](docs/UsersApi.md#create_user_settings_permissions) | **POST** /user/{userId}/settings/permissions | Update permission settings for a user
 *UsersApi* | [**delete_user**](docs/UsersApi.md#delete_user) | **DELETE** /user/{userId} | Delete user by ID
-*UsersApi* | [**get_auth_me**](docs/UsersApi.md#get_auth_me) | **GET** /auth/me | Get logged-in user
 *UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /user | Get all users
 *UsersApi* | [**get_user_by_user_id**](docs/UsersApi.md#get_user_by_user_id) | **GET** /user/{userId} | Get user by ID
 *UsersApi* | [**get_user_quota**](docs/UsersApi.md#get_user_quota) | **GET** /user/{userId}/quota | Get quotas for a specific user
@@ -258,7 +257,6 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**get_user_settings_permissions**](docs/UsersApi.md#get_user_settings_permissions) | **GET** /user/{userId}/settings/permissions | Get permission settings for a user
 *UsersApi* | [**get_user_watch_data**](docs/UsersApi.md#get_user_watch_data) | **GET** /user/{userId}/watch_data | Get watch data
 *UsersApi* | [**get_user_watchlist**](docs/UsersApi.md#get_user_watchlist) | **GET** /user/{userId}/watchlist | Get the Plex watchlist for a specific user
-*UsersApi* | [**list_plex_users**](docs/UsersApi.md#list_plex_users) | **GET** /settings/plex/users | Get Plex users
 *UsersApi* | [**put_user**](docs/UsersApi.md#put_user) | **PUT** /user | Update batch of users
 *UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PUT** /user/{userId} | Update a user by user ID
 
