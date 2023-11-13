@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict, Optional
+from typing import Any, ClassVar, Dict, List, Optional
 from pydantic import BaseModel
 from overseerr.models.get_cache200_response_image_cache_tmdb import GetCache200ResponseImageCacheTmdb
 

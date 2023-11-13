@@ -17,8 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
+from pydantic import Field
 from typing_extensions import Annotated
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, conlist
+from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
 
 from typing import List, Optional, Union
 
@@ -214,7 +215,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_discover(self, discover_slider : conlist(DiscoverSlider), **kwargs) -> List[DiscoverSlider]:  # noqa: E501
+    def create_discover(self, discover_slider : List[DiscoverSlider], **kwargs) -> List[DiscoverSlider]:  # noqa: E501
         """Batch update all sliders.  # noqa: E501
 
         Batch update all sliders at once. Should also be used for creation. Will only update sliders provided and will not delete any sliders not present in the request. If a slider is missing a required field, it will be ignored. Requires the `ADMIN` permission.   # noqa: E501
@@ -245,7 +246,7 @@ class SettingsApi(object):
         return self.create_discover_with_http_info(discover_slider, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_discover_with_http_info(self, discover_slider : conlist(DiscoverSlider), **kwargs):  # noqa: E501
+    def create_discover_with_http_info(self, discover_slider : List[DiscoverSlider], **kwargs):  # noqa: E501
         """Batch update all sliders.  # noqa: E501
 
         Batch update all sliders at once. Should also be used for creation. Will only update sliders provided and will not delete any sliders not present in the request. If a slider is missing a required field, it will be ignored. Requires the `ADMIN` permission.   # noqa: E501
@@ -3772,7 +3773,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_radarr(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], **kwargs) -> RadarrSettings:  # noqa: E501
+    def delete_radarr(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], **kwargs) -> RadarrSettings:  # noqa: E501
         """Delete Radarr instance  # noqa: E501
 
         Deletes an existing Radarr instance based on the radarrId parameter.  # noqa: E501
@@ -3803,7 +3804,7 @@ class SettingsApi(object):
         return self.delete_radarr_with_http_info(radarr_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_radarr_with_http_info(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], **kwargs):  # noqa: E501
+    def delete_radarr_with_http_info(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], **kwargs):  # noqa: E501
         """Delete Radarr instance  # noqa: E501
 
         Deletes an existing Radarr instance based on the radarrId parameter.  # noqa: E501
@@ -3915,7 +3916,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_sonarr(self, sonarr_id : Annotated[StrictInt, Field(..., description="Sonarr instance ID")], **kwargs) -> SonarrSettings:  # noqa: E501
+    def delete_sonarr(self, sonarr_id : Annotated[StrictInt, Field(description="Sonarr instance ID")], **kwargs) -> SonarrSettings:  # noqa: E501
         """Delete Sonarr instance  # noqa: E501
 
         Deletes an existing Sonarr instance based on the sonarrId parameter.  # noqa: E501
@@ -3946,7 +3947,7 @@ class SettingsApi(object):
         return self.delete_sonarr_with_http_info(sonarr_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_sonarr_with_http_info(self, sonarr_id : Annotated[StrictInt, Field(..., description="Sonarr instance ID")], **kwargs):  # noqa: E501
+    def delete_sonarr_with_http_info(self, sonarr_id : Annotated[StrictInt, Field(description="Sonarr instance ID")], **kwargs):  # noqa: E501
         """Delete Sonarr instance  # noqa: E501
 
         Deletes an existing Sonarr instance based on the sonarrId parameter.  # noqa: E501
@@ -7637,7 +7638,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def list_radarr_profiles(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], **kwargs) -> List[ServiceProfile]:  # noqa: E501
+    def list_radarr_profiles(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], **kwargs) -> List[ServiceProfile]:  # noqa: E501
         """Get available Radarr profiles  # noqa: E501
 
         Returns a list of profiles available on the Radarr server instance in a JSON array.  # noqa: E501
@@ -7668,7 +7669,7 @@ class SettingsApi(object):
         return self.list_radarr_profiles_with_http_info(radarr_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def list_radarr_profiles_with_http_info(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], **kwargs):  # noqa: E501
+    def list_radarr_profiles_with_http_info(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], **kwargs):  # noqa: E501
         """Get available Radarr profiles  # noqa: E501
 
         Returns a list of profiles available on the Radarr server instance in a JSON array.  # noqa: E501
@@ -9813,7 +9814,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_radarr(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], radarr_settings : RadarrSettings, **kwargs) -> RadarrSettings:  # noqa: E501
+    def update_radarr(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], radarr_settings : RadarrSettings, **kwargs) -> RadarrSettings:  # noqa: E501
         """Update Radarr instance  # noqa: E501
 
         Updates an existing Radarr instance with the provided values.  # noqa: E501
@@ -9846,7 +9847,7 @@ class SettingsApi(object):
         return self.update_radarr_with_http_info(radarr_id, radarr_settings, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_radarr_with_http_info(self, radarr_id : Annotated[StrictInt, Field(..., description="Radarr instance ID")], radarr_settings : RadarrSettings, **kwargs):  # noqa: E501
+    def update_radarr_with_http_info(self, radarr_id : Annotated[StrictInt, Field(description="Radarr instance ID")], radarr_settings : RadarrSettings, **kwargs):  # noqa: E501
         """Update Radarr instance  # noqa: E501
 
         Updates an existing Radarr instance with the provided values.  # noqa: E501
@@ -9970,7 +9971,7 @@ class SettingsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_sonarr(self, sonarr_id : Annotated[StrictInt, Field(..., description="Sonarr instance ID")], sonarr_settings : SonarrSettings, **kwargs) -> SonarrSettings:  # noqa: E501
+    def update_sonarr(self, sonarr_id : Annotated[StrictInt, Field(description="Sonarr instance ID")], sonarr_settings : SonarrSettings, **kwargs) -> SonarrSettings:  # noqa: E501
         """Update Sonarr instance  # noqa: E501
 
         Updates an existing Sonarr instance with the provided values.  # noqa: E501
@@ -10003,7 +10004,7 @@ class SettingsApi(object):
         return self.update_sonarr_with_http_info(sonarr_id, sonarr_settings, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_sonarr_with_http_info(self, sonarr_id : Annotated[StrictInt, Field(..., description="Sonarr instance ID")], sonarr_settings : SonarrSettings, **kwargs):  # noqa: E501
+    def update_sonarr_with_http_info(self, sonarr_id : Annotated[StrictInt, Field(description="Sonarr instance ID")], sonarr_settings : SonarrSettings, **kwargs):  # noqa: E501
         """Update Sonarr instance  # noqa: E501
 
         Updates an existing Sonarr instance with the provided values.  # noqa: E501

@@ -17,8 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
+from pydantic import Field
 from typing_extensions import Annotated
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
 
 from typing import Optional, Union
 
@@ -200,7 +201,7 @@ class IssueApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_issue_by_status(self, issue_id : Annotated[StrictStr, Field(..., description="Issue ID")], status : Annotated[StrictStr, Field(..., description="New status")], **kwargs) -> Issue:  # noqa: E501
+    def create_issue_by_status(self, issue_id : Annotated[StrictStr, Field(description="Issue ID")], status : Annotated[StrictStr, Field(description="New status")], **kwargs) -> Issue:  # noqa: E501
         """Update an issue's status  # noqa: E501
 
         Updates an issue's status to approved or declined. Also returns the issue in a JSON object.  Requires the `MANAGE_ISSUES` permission or `ADMIN`.   # noqa: E501
@@ -233,7 +234,7 @@ class IssueApi(object):
         return self.create_issue_by_status_with_http_info(issue_id, status, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_issue_by_status_with_http_info(self, issue_id : Annotated[StrictStr, Field(..., description="Issue ID")], status : Annotated[StrictStr, Field(..., description="New status")], **kwargs):  # noqa: E501
+    def create_issue_by_status_with_http_info(self, issue_id : Annotated[StrictStr, Field(description="Issue ID")], status : Annotated[StrictStr, Field(description="New status")], **kwargs):  # noqa: E501
         """Update an issue's status  # noqa: E501
 
         Updates an issue's status to approved or declined. Also returns the issue in a JSON object.  Requires the `MANAGE_ISSUES` permission or `ADMIN`.   # noqa: E501
@@ -507,7 +508,7 @@ class IssueApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_issue(self, issue_id : Annotated[StrictStr, Field(..., description="Issue ID")], **kwargs) -> None:  # noqa: E501
+    def delete_issue(self, issue_id : Annotated[StrictStr, Field(description="Issue ID")], **kwargs) -> None:  # noqa: E501
         """Delete issue  # noqa: E501
 
         Removes an issue. If the user has the `MANAGE_ISSUES` permission, any issue can be removed. Otherwise, only a users own issues can be removed.  # noqa: E501
@@ -538,7 +539,7 @@ class IssueApi(object):
         return self.delete_issue_with_http_info(issue_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_issue_with_http_info(self, issue_id : Annotated[StrictStr, Field(..., description="Issue ID")], **kwargs):  # noqa: E501
+    def delete_issue_with_http_info(self, issue_id : Annotated[StrictStr, Field(description="Issue ID")], **kwargs):  # noqa: E501
         """Delete issue  # noqa: E501
 
         Removes an issue. If the user has the `MANAGE_ISSUES` permission, any issue can be removed. Otherwise, only a users own issues can be removed.  # noqa: E501
@@ -644,7 +645,7 @@ class IssueApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_issue_comment(self, comment_id : Annotated[StrictStr, Field(..., description="Issue Comment ID")], **kwargs) -> None:  # noqa: E501
+    def delete_issue_comment(self, comment_id : Annotated[StrictStr, Field(description="Issue Comment ID")], **kwargs) -> None:  # noqa: E501
         """Delete issue comment  # noqa: E501
 
         Deletes an issue comment. Only users with `MANAGE_ISSUES` or the user who created the comment can perform this action.   # noqa: E501
@@ -675,7 +676,7 @@ class IssueApi(object):
         return self.delete_issue_comment_with_http_info(comment_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_issue_comment_with_http_info(self, comment_id : Annotated[StrictStr, Field(..., description="Issue Comment ID")], **kwargs):  # noqa: E501
+    def delete_issue_comment_with_http_info(self, comment_id : Annotated[StrictStr, Field(description="Issue Comment ID")], **kwargs):  # noqa: E501
         """Delete issue comment  # noqa: E501
 
         Deletes an issue comment. Only users with `MANAGE_ISSUES` or the user who created the comment can perform this action.   # noqa: E501

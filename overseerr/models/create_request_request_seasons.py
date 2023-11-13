@@ -17,7 +17,7 @@ import json
 import re  # noqa: F401
 
 from typing import Any, List, Optional, Union
-from pydantic import BaseModel, Field, StrictStr, ValidationError, confloat, conint, conlist, validator
+from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List
 from pydantic import StrictStr, Field
 
@@ -30,7 +30,7 @@ class CreateRequestRequestSeasons(BaseModel):
     Do not edit the class manually.
     """
     # data type: List[float]
-    oneof_schema_1_validator: Optional[conlist(Union[confloat(ge=1, strict=True), conint(ge=1, strict=True)])] = None
+    oneof_schema_1_validator: Optional[List[Union[Annotated[float, Field(strict=True, ge=1)], Annotated[int, Field(strict=True, ge=1)]]]] = None
     # data type: str
     oneof_schema_2_validator: Optional[StrictStr] = None
     actual_instance: Any
