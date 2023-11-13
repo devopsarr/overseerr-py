@@ -17,8 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
+from pydantic import Field
 from typing_extensions import Annotated
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
 
 from typing import Optional, Union
 
@@ -198,7 +199,7 @@ class RequestApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_request_by_status(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], status : Annotated[StrictStr, Field(..., description="New status")], **kwargs) -> MediaRequest:  # noqa: E501
+    def create_request_by_status(self, request_id : Annotated[StrictStr, Field(description="Request ID")], status : Annotated[StrictStr, Field(description="New status")], **kwargs) -> MediaRequest:  # noqa: E501
         """Update a request's status  # noqa: E501
 
         Updates a request's status to approved or declined. Also returns the request in a JSON object.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`.   # noqa: E501
@@ -231,7 +232,7 @@ class RequestApi(object):
         return self.create_request_by_status_with_http_info(request_id, status, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_request_by_status_with_http_info(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], status : Annotated[StrictStr, Field(..., description="New status")], **kwargs):  # noqa: E501
+    def create_request_by_status_with_http_info(self, request_id : Annotated[StrictStr, Field(description="Request ID")], status : Annotated[StrictStr, Field(description="New status")], **kwargs):  # noqa: E501
         """Update a request's status  # noqa: E501
 
         Updates a request's status to approved or declined. Also returns the request in a JSON object.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`.   # noqa: E501
@@ -348,7 +349,7 @@ class RequestApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def create_request_retry(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs) -> MediaRequest:  # noqa: E501
+    def create_request_retry(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs) -> MediaRequest:  # noqa: E501
         """Retry failed request  # noqa: E501
 
         Retries a request by resending requests to Sonarr or Radarr.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`.   # noqa: E501
@@ -379,7 +380,7 @@ class RequestApi(object):
         return self.create_request_retry_with_http_info(request_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_request_retry_with_http_info(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs):  # noqa: E501
+    def create_request_retry_with_http_info(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs):  # noqa: E501
         """Retry failed request  # noqa: E501
 
         Retries a request by resending requests to Sonarr or Radarr.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`.   # noqa: E501
@@ -491,7 +492,7 @@ class RequestApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_request(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs) -> None:  # noqa: E501
+    def delete_request(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs) -> None:  # noqa: E501
         """Delete request  # noqa: E501
 
         Removes a request. If the user has the `MANAGE_REQUESTS` permission, any request can be removed. Otherwise, only pending requests can be removed.  # noqa: E501
@@ -522,7 +523,7 @@ class RequestApi(object):
         return self.delete_request_with_http_info(request_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_request_with_http_info(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs):  # noqa: E501
+    def delete_request_with_http_info(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs):  # noqa: E501
         """Delete request  # noqa: E501
 
         Removes a request. If the user has the `MANAGE_REQUESTS` permission, any request can be removed. Otherwise, only pending requests can be removed.  # noqa: E501
@@ -799,7 +800,7 @@ class RequestApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_request_by_request_id(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs) -> MediaRequest:  # noqa: E501
+    def get_request_by_request_id(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs) -> MediaRequest:  # noqa: E501
         """Get MediaRequest  # noqa: E501
 
         Returns a specific MediaRequest in a JSON object.  # noqa: E501
@@ -830,7 +831,7 @@ class RequestApi(object):
         return self.get_request_by_request_id_with_http_info(request_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_request_by_request_id_with_http_info(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], **kwargs):  # noqa: E501
+    def get_request_by_request_id_with_http_info(self, request_id : Annotated[StrictStr, Field(description="Request ID")], **kwargs):  # noqa: E501
         """Get MediaRequest  # noqa: E501
 
         Returns a specific MediaRequest in a JSON object.  # noqa: E501
@@ -1078,7 +1079,7 @@ class RequestApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def update_request(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], update_request_request : UpdateRequestRequest, **kwargs) -> MediaRequest:  # noqa: E501
+    def update_request(self, request_id : Annotated[StrictStr, Field(description="Request ID")], update_request_request : UpdateRequestRequest, **kwargs) -> MediaRequest:  # noqa: E501
         """Update MediaRequest  # noqa: E501
 
         Updates a specific media request and returns the request in a JSON object. Requires the `MANAGE_REQUESTS` permission.  # noqa: E501
@@ -1111,7 +1112,7 @@ class RequestApi(object):
         return self.update_request_with_http_info(request_id, update_request_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def update_request_with_http_info(self, request_id : Annotated[StrictStr, Field(..., description="Request ID")], update_request_request : UpdateRequestRequest, **kwargs):  # noqa: E501
+    def update_request_with_http_info(self, request_id : Annotated[StrictStr, Field(description="Request ID")], update_request_request : UpdateRequestRequest, **kwargs):  # noqa: E501
         """Update MediaRequest  # noqa: E501
 
         Updates a specific media request and returns the request in a JSON object. Requires the `MANAGE_REQUESTS` permission.  # noqa: E501

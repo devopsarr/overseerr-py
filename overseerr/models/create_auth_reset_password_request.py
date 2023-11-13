@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict
+from typing import Any, ClassVar, Dict, List
 from pydantic import BaseModel
 
 class CreateAuthResetPasswordRequest(BaseModel):

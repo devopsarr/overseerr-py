@@ -17,8 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
+from pydantic import Field
 from typing_extensions import Annotated
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
 
 from typing import Optional, Union
 
@@ -47,7 +48,7 @@ class MediaApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def create_media_by_status(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], status : Annotated[StrictStr, Field(..., description="New status")], create_media_by_status_request : Optional[CreateMediaByStatusRequest] = None, **kwargs) -> MediaInfo:  # noqa: E501
+    def create_media_by_status(self, media_id : Annotated[StrictStr, Field(description="Media ID")], status : Annotated[StrictStr, Field(description="New status")], create_media_by_status_request : Optional[CreateMediaByStatusRequest] = None, **kwargs) -> MediaInfo:  # noqa: E501
         """Update media status  # noqa: E501
 
         Updates a media item's status and returns the media in JSON format  # noqa: E501
@@ -82,7 +83,7 @@ class MediaApi(object):
         return self.create_media_by_status_with_http_info(media_id, status, create_media_by_status_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def create_media_by_status_with_http_info(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], status : Annotated[StrictStr, Field(..., description="New status")], create_media_by_status_request : Optional[CreateMediaByStatusRequest] = None, **kwargs):  # noqa: E501
+    def create_media_by_status_with_http_info(self, media_id : Annotated[StrictStr, Field(description="Media ID")], status : Annotated[StrictStr, Field(description="New status")], create_media_by_status_request : Optional[CreateMediaByStatusRequest] = None, **kwargs):  # noqa: E501
         """Update media status  # noqa: E501
 
         Updates a media item's status and returns the media in JSON format  # noqa: E501
@@ -211,7 +212,7 @@ class MediaApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def delete_media(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], **kwargs) -> None:  # noqa: E501
+    def delete_media(self, media_id : Annotated[StrictStr, Field(description="Media ID")], **kwargs) -> None:  # noqa: E501
         """Delete media item  # noqa: E501
 
         Removes a media item. The `MANAGE_REQUESTS` permission is required to perform this action.  # noqa: E501
@@ -242,7 +243,7 @@ class MediaApi(object):
         return self.delete_media_with_http_info(media_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def delete_media_with_http_info(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], **kwargs):  # noqa: E501
+    def delete_media_with_http_info(self, media_id : Annotated[StrictStr, Field(description="Media ID")], **kwargs):  # noqa: E501
         """Delete media item  # noqa: E501
 
         Removes a media item. The `MANAGE_REQUESTS` permission is required to perform this action.  # noqa: E501
@@ -512,7 +513,7 @@ class MediaApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_media_watch_data(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], **kwargs) -> GetMediaWatchData200Response:  # noqa: E501
+    def get_media_watch_data(self, media_id : Annotated[StrictStr, Field(description="Media ID")], **kwargs) -> GetMediaWatchData200Response:  # noqa: E501
         """Get watch data  # noqa: E501
 
         Returns play count, play duration, and users who have watched the media.  Requires the `ADMIN` permission.   # noqa: E501
@@ -543,7 +544,7 @@ class MediaApi(object):
         return self.get_media_watch_data_with_http_info(media_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_media_watch_data_with_http_info(self, media_id : Annotated[StrictStr, Field(..., description="Media ID")], **kwargs):  # noqa: E501
+    def get_media_watch_data_with_http_info(self, media_id : Annotated[StrictStr, Field(description="Media ID")], **kwargs):  # noqa: E501
         """Get watch data  # noqa: E501
 
         Returns play count, play duration, and users who have watched the media.  Requires the `ADMIN` permission.   # noqa: E501
