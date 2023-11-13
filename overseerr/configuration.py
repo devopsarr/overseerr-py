@@ -430,7 +430,7 @@ conf = overseerr.Configuration(
         :return: The report for debugging.
         """
         # x-release-please-start-version
-        sdkversion = '0.0.0'
+        sdkversion = '0.1.0'
         # x-release-please-end
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
