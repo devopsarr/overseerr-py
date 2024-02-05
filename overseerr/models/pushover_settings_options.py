@@ -28,9 +28,8 @@ class PushoverSettingsOptions(BaseModel):
     """
     access_token: Optional[str]
     user_token: Optional[str]
-    sound: Optional[str]
     additional_properties: Dict[str, Any] = {}
-    __properties = ["accessToken", "userToken", "sound"]
+    __properties = ["accessToken", "userToken"]
 
     class Config:
         allow_population_by_field_name = True
@@ -78,8 +77,7 @@ class PushoverSettingsOptions(BaseModel):
 
         _obj = PushoverSettingsOptions.parse_obj({
             "access_token": obj.get("accessToken"),
-            "user_token": obj.get("userToken"),
-            "sound": obj.get("sound")
+            "user_token": obj.get("userToken")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

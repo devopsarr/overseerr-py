@@ -113,7 +113,6 @@ Class | Method | HTTP request | Description
 *MediaApi* | [**get_media_watch_data**](docs/MediaApi.md#get_media_watch_data) | **GET** /media/{mediaId}/watch_data | Get watch data
 *MoviesApi* | [**get_movie_by_movie_id**](docs/MoviesApi.md#get_movie_by_movie_id) | **GET** /movie/{movieId} | Get movie details
 *MoviesApi* | [**get_movie_ratings**](docs/MoviesApi.md#get_movie_ratings) | **GET** /movie/{movieId}/ratings | Get movie ratings
-*MoviesApi* | [**get_movie_ratingscombined**](docs/MoviesApi.md#get_movie_ratingscombined) | **GET** /movie/{movieId}/ratingscombined | Get RT and IMDB movie ratings combined
 *MoviesApi* | [**get_movie_recommendations**](docs/MoviesApi.md#get_movie_recommendations) | **GET** /movie/{movieId}/recommendations | Get recommended movies
 *MoviesApi* | [**get_movie_similar**](docs/MoviesApi.md#get_movie_similar) | **GET** /movie/{movieId}/similar | Get similar movies
 *OtherApi* | [**get_keyword_by_keyword_id**](docs/OtherApi.md#get_keyword_by_keyword_id) | **GET** /keyword/{keywordId} | Get keyword
@@ -203,7 +202,6 @@ Class | Method | HTTP request | Description
 *SettingsApi* | [**list_discover**](docs/SettingsApi.md#list_discover) | **GET** /settings/discover | Get all discover sliders
 *SettingsApi* | [**list_jobs**](docs/SettingsApi.md#list_jobs) | **GET** /settings/jobs | Get scheduled jobs
 *SettingsApi* | [**list_logs**](docs/SettingsApi.md#list_logs) | **GET** /settings/logs | Returns logs
-*SettingsApi* | [**list_notifications_pushover_sounds**](docs/SettingsApi.md#list_notifications_pushover_sounds) | **GET** /settings/notifications/pushover/sounds | Get Pushover sounds
 *SettingsApi* | [**list_plex_devices_servers**](docs/SettingsApi.md#list_plex_devices_servers) | **GET** /settings/plex/devices/servers | Gets the user&#39;s available Plex servers
 *SettingsApi* | [**list_plex_library**](docs/SettingsApi.md#list_plex_library) | **GET** /settings/plex/library | Get Plex libraries
 *SettingsApi* | [**list_plex_users**](docs/SettingsApi.md#list_plex_users) | **GET** /settings/plex/users | Get Plex users
@@ -314,8 +312,6 @@ Class | Method | HTTP request | Description
  - [GetMediaWatchData200Response](docs/GetMediaWatchData200Response.md)
  - [GetMediaWatchData200ResponseData](docs/GetMediaWatchData200ResponseData.md)
  - [GetMovieRatings200Response](docs/GetMovieRatings200Response.md)
- - [GetMovieRatingscombined200Response](docs/GetMovieRatingscombined200Response.md)
- - [GetMovieRatingscombined200ResponseImdb](docs/GetMovieRatingscombined200ResponseImdb.md)
  - [GetPersonCombinedCredits200Response](docs/GetPersonCombinedCredits200Response.md)
  - [GetPlexSync200Response](docs/GetPlexSync200Response.md)
  - [GetRequestCount200Response](docs/GetRequestCount200Response.md)
@@ -349,7 +345,6 @@ Class | Method | HTTP request | Description
  - [ListGenresTv200ResponseInner](docs/ListGenresTv200ResponseInner.md)
  - [ListLanguages200ResponseInner](docs/ListLanguages200ResponseInner.md)
  - [ListLogs200ResponseInner](docs/ListLogs200ResponseInner.md)
- - [ListNotificationsPushoverSounds200ResponseInner](docs/ListNotificationsPushoverSounds200ResponseInner.md)
  - [ListPlexUsers200ResponseInner](docs/ListPlexUsers200ResponseInner.md)
  - [ListRegions200ResponseInner](docs/ListRegions200ResponseInner.md)
  - [LunaSeaSettings](docs/LunaSeaSettings.md)

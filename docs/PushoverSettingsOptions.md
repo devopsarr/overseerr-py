@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_token** | **str** |  | [optional] 
 **user_token** | **str** |  | [optional] 
-**sound** | **str** |  | [optional] 
 
 ## Example
 

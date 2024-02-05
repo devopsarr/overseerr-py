@@ -36,13 +36,12 @@ class UserSettingsNotifications(BaseModel):
     pushbullet_access_token: Optional[str]
     pushover_application_token: Optional[str]
     pushover_user_key: Optional[str]
-    pushover_sound: Optional[str]
     telegram_enabled: Optional[bool]
     telegram_bot_username: Optional[str]
     telegram_chat_id: Optional[str]
     telegram_send_silently: Optional[bool]
     additional_properties: Dict[str, Any] = {}
-    __properties = ["notificationTypes", "emailEnabled", "pgpKey", "discordEnabled", "discordEnabledTypes", "discordId", "pushbulletAccessToken", "pushoverApplicationToken", "pushoverUserKey", "pushoverSound", "telegramEnabled", "telegramBotUsername", "telegramChatId", "telegramSendSilently"]
+    __properties = ["notificationTypes", "emailEnabled", "pgpKey", "discordEnabled", "discordEnabledTypes", "discordId", "pushbulletAccessToken", "pushoverApplicationToken", "pushoverUserKey", "telegramEnabled", "telegramBotUsername", "telegramChatId", "telegramSendSilently"]
 
     class Config:
         allow_population_by_field_name = True
@@ -104,10 +103,6 @@ class UserSettingsNotifications(BaseModel):
         if self.pushover_user_key is None:
             _dict['pushoverUserKey'] = None
 
-        # set to None if pushover_sound (nullable) is None
-        if self.pushover_sound is None:
-            _dict['pushoverSound'] = None
-
         # set to None if telegram_bot_username (nullable) is None
         if self.telegram_bot_username is None:
             _dict['telegramBotUsername'] = None
@@ -141,7 +136,6 @@ class UserSettingsNotifications(BaseModel):
             "pushbullet_access_token": obj.get("pushbulletAccessToken"),
             "pushover_application_token": obj.get("pushoverApplicationToken"),
             "pushover_user_key": obj.get("pushoverUserKey"),
-            "pushover_sound": obj.get("pushoverSound"),
             "telegram_enabled": obj.get("telegramEnabled"),
             "telegram_bot_username": obj.get("telegramBotUsername"),
             "telegram_chat_id": obj.get("telegramChatId"),
