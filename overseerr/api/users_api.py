@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
-
-from typing import List, Optional, Union
-
+from typing import Optional, Union
 from overseerr.models.create_auth_logout200_response import CreateAuthLogout200Response
 from overseerr.models.create_auth_reset_password_by_guid_request import CreateAuthResetPasswordByGuidRequest
 from overseerr.models.create_auth_reset_password_request import CreateAuthResetPasswordRequest

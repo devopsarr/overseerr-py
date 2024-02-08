@@ -15,8 +15,8 @@ from inspect import getfullargspec
 import pprint
 import re  # noqa: F401
 
-from typing import Optional
-from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
+
+
 from overseerr.models.movie_result import MovieResult
 from overseerr.models.person_result import PersonResult
 from overseerr.models.tv_result import TvResult

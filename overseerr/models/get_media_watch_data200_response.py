@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
 from overseerr.models.get_media_watch_data200_response_data import GetMediaWatchData200ResponseData
 

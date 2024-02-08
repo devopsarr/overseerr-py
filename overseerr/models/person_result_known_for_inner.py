@@ -16,8 +16,8 @@ import pprint
 import json
 import re  # noqa: F401
 
-from typing import Any, List, Optional
-from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
+
+
 from overseerr.models.movie_result import MovieResult
 from overseerr.models.tv_result import TvResult
 from typing import Any, List

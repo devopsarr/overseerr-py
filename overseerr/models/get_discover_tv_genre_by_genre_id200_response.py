@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
 from pydantic import BaseModel
 from overseerr.models.genre import Genre
 from overseerr.models.tv_result import TvResult

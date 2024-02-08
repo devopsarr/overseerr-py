@@ -17,12 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import Field
-from typing_extensions import Annotated
-from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
-
+from pydantic import Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Optional, Union
-
+from typing_extensions import Annotated
 from overseerr.models.create_media_by_status_request import CreateMediaByStatusRequest
 from overseerr.models.get_media200_response import GetMedia200Response
 from overseerr.models.get_media_watch_data200_response import GetMediaWatchData200Response

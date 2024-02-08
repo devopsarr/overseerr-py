@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr
-
-from typing import List, Optional, Union
-
+from typing import Optional, Union
 from overseerr.models.list_genres_movie200_response_inner import ListGenresMovie200ResponseInner
 from overseerr.models.list_genres_tv200_response_inner import ListGenresTv200ResponseInner
 from overseerr.models.list_languages200_response_inner import ListLanguages200ResponseInner

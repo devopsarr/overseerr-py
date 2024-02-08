@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt
-
-from typing import List, Union
-
+from typing import Union
 from overseerr.models.get_service_radarr_by_radarr_id200_response import GetServiceRadarrByRadarrId200Response
 from overseerr.models.get_service_sonarr_by_sonarr_id200_response import GetServiceSonarrBySonarrId200Response
 from overseerr.models.radarr_settings import RadarrSettings
