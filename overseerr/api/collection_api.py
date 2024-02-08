@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr
-
 from typing import Optional, Union
-
 from overseerr.models.collection import Collection
 
 from overseerr.api_client import ApiClient

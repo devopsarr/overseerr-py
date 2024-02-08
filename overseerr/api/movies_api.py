@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr
-
 from typing import Optional, Union
-
 from overseerr.models.get_discover_movies200_response import GetDiscoverMovies200Response
 from overseerr.models.get_movie_ratings200_response import GetMovieRatings200Response
 from overseerr.models.movie_details import MovieDetails

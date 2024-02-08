@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr
-
-from typing import List, Union
-
+from typing import Union
 from overseerr.models.keyword import Keyword
 from overseerr.models.watch_provider_details import WatchProviderDetails
 from overseerr.models.watch_provider_region import WatchProviderRegion

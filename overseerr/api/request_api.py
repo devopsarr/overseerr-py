@@ -17,12 +17,9 @@ import re  # noqa: F401
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import Field
-from typing_extensions import Annotated
-from pydantic import StrictFloat, StrictInt, StrictStr, field_validator
-
+from pydantic import Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Optional, Union
-
+from typing_extensions import Annotated
 from overseerr.models.create_request_request import CreateRequestRequest
 from overseerr.models.get_request_count200_response import GetRequestCount200Response
 from overseerr.models.get_user_requests200_response import GetUserRequests200Response

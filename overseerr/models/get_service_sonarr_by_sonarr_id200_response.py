@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
 from overseerr.models.service_profile import ServiceProfile
 from overseerr.models.sonarr_settings import SonarrSettings

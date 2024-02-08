@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
 from overseerr.models.page_info import PageInfo
 from overseerr.models.user import User

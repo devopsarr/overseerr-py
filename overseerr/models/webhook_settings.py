@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
 from pydantic import BaseModel
 from overseerr.models.webhook_settings_options import WebhookSettingsOptions
 

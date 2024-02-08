@@ -18,9 +18,7 @@ from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
 from pydantic import StrictFloat, StrictInt, StrictStr
-
 from typing import Optional, Union
-
 from overseerr.models.get_person_combined_credits200_response import GetPersonCombinedCredits200Response
 from overseerr.models.person_details import PersonDetails
 
