@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_status**
-> GetStatus200Response get_status()
+> GetStatus2XXResponse get_status()
 
 Get Overseerr status
 
@@ -17,13 +17,13 @@ Returns the current Overseerr status in a JSON object.
 
 ### Example
 
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_status2_xx_response import GetStatus2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -32,7 +32,7 @@ configuration = overseerr.Configuration(
 
 
 # Enter a context with an instance of the API client
-with overseerr.ApiClient() as api_client:
+with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.PublicApi(api_client)
 
@@ -45,12 +45,15 @@ with overseerr.ApiClient() as api_client:
         print("Exception when calling PublicApi->get_status: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetStatus200Response**](GetStatus200Response.md)
+[**GetStatus2XXResponse**](GetStatus2XXResponse.md)
 
 ### Authorization
 
@@ -62,14 +65,15 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned status |  -  |
+**2XX** | Returned status |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_status_appdata**
-> GetStatusAppdata200Response get_status_appdata()
+> GetStatusAppdata2XXResponse get_status_appdata()
 
 Get application data volume status
 
@@ -77,13 +81,13 @@ For Docker installs, returns whether or not the volume mount was configured prop
 
 ### Example
 
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_status_appdata2_xx_response import GetStatusAppdata2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -92,7 +96,7 @@ configuration = overseerr.Configuration(
 
 
 # Enter a context with an instance of the API client
-with overseerr.ApiClient() as api_client:
+with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.PublicApi(api_client)
 
@@ -105,12 +109,15 @@ with overseerr.ApiClient() as api_client:
         print("Exception when calling PublicApi->get_status_appdata: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetStatusAppdata200Response**](GetStatusAppdata200Response.md)
+[**GetStatusAppdata2XXResponse**](GetStatusAppdata2XXResponse.md)
 
 ### Authorization
 
@@ -122,9 +129,10 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Application data volume status and path |  -  |
+**2XX** | Application data volume status and path |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

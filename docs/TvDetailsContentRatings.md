@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **results** | [**List[TvDetailsContentRatingsResultsInner]**](TvDetailsContentRatingsResultsInner.md) |  | [optional] 

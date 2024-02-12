@@ -20,61 +20,15 @@ Updates a media item's status and returns the media in JSON format
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.MediaApi(api_client)
-    media_id = '1' # str | Media ID
-    status = 'available' # str | New status
-    create_media_by_status_request = overseerr.CreateMediaByStatusRequest() # CreateMediaByStatusRequest |  (optional)
-
-    try:
-        # Update media status
-        api_response = api_instance.create_media_by_status(media_id, status, create_media_by_status_request=create_media_by_status_request)
-        print("The response of MediaApi->create_media_by_status:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MediaApi->create_media_by_status: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_media_by_status_request import CreateMediaByStatusRequest
+from overseerr.models.media_info import MediaInfo
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -114,8 +68,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MediaApi->create_media_by_status: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -137,9 +94,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned media |  -  |
+**2XX** | Returned media |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -153,57 +111,13 @@ Removes a media item. The `MANAGE_REQUESTS` permission is required to perform th
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.MediaApi(api_client)
-    media_id = '1' # str | Media ID
-
-    try:
-        # Delete media item
-        api_instance.delete_media(media_id)
-    except Exception as e:
-        print("Exception when calling MediaApi->delete_media: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -239,8 +153,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MediaApi->delete_media: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -260,6 +177,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Succesfully removed media item |  -  |
@@ -267,7 +185,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_media**
-> GetMedia200Response get_media(take=take, skip=skip, filter=filter, sort=sort)
+> GetMedia2XXResponse get_media(take=take, skip=skip, filter=filter, sort=sort)
 
 Get media
 
@@ -276,62 +194,14 @@ Returns all media (can be filtered and limited) in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.MediaApi(api_client)
-    take = 20 # float |  (optional)
-    skip = 0 # float |  (optional)
-    filter = 'filter_example' # str |  (optional)
-    sort = 'added' # str |  (optional) (default to 'added')
-
-    try:
-        # Get media
-        api_response = api_instance.get_media(take=take, skip=skip, filter=filter, sort=sort)
-        print("The response of MediaApi->get_media:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MediaApi->get_media: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_media2_xx_response import GetMedia2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -372,8 +242,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MediaApi->get_media: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -384,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetMedia200Response**](GetMedia200Response.md)
+[**GetMedia2XXResponse**](GetMedia2XXResponse.md)
 
 ### Authorization
 
@@ -396,14 +269,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned media |  -  |
+**2XX** | Returned media |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_media_watch_data**
-> GetMediaWatchData200Response get_media_watch_data(media_id)
+> GetMediaWatchData2XXResponse get_media_watch_data(media_id)
 
 Get watch data
 
@@ -412,59 +286,14 @@ Returns play count, play duration, and users who have watched the media.  Requir
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.MediaApi(api_client)
-    media_id = '1' # str | Media ID
-
-    try:
-        # Get watch data
-        api_response = api_instance.get_media_watch_data(media_id)
-        print("The response of MediaApi->get_media_watch_data:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MediaApi->get_media_watch_data: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_media_watch_data2_xx_response import GetMediaWatchData2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -502,8 +331,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MediaApi->get_media_watch_data: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -511,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetMediaWatchData200Response**](GetMediaWatchData200Response.md)
+[**GetMediaWatchData2XXResponse**](GetMediaWatchData2XXResponse.md)
 
 ### Authorization
 
@@ -523,9 +355,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Users |  -  |
+**2XX** | Users |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
