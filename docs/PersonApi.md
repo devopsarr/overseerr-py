@@ -18,60 +18,14 @@ Returns person details based on provided personId in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.PersonApi(api_client)
-    person_id = 287 # float | 
-    language = 'en' # str |  (optional)
-
-    try:
-        # Get person details
-        api_response = api_instance.get_person_by_person_id(person_id, language=language)
-        print("The response of PersonApi->get_person_by_person_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PersonApi->get_person_by_person_id: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.person_details import PersonDetails
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -110,8 +64,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PersonApi->get_person_by_person_id: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -132,14 +89,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned person |  -  |
+**2XX** | Returned person |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_person_combined_credits**
-> GetPersonCombinedCredits200Response get_person_combined_credits(person_id, language=language)
+> GetPersonCombinedCredits2XXResponse get_person_combined_credits(person_id, language=language)
 
 Get combined credits
 
@@ -148,60 +106,14 @@ Returns the person's combined credits based on the provided personId in a JSON o
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.PersonApi(api_client)
-    person_id = 287 # float | 
-    language = 'en' # str |  (optional)
-
-    try:
-        # Get combined credits
-        api_response = api_instance.get_person_combined_credits(person_id, language=language)
-        print("The response of PersonApi->get_person_combined_credits:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PersonApi->get_person_combined_credits: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_person_combined_credits2_xx_response import GetPersonCombinedCredits2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -240,8 +152,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PersonApi->get_person_combined_credits: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -250,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetPersonCombinedCredits200Response**](GetPersonCombinedCredits200Response.md)
+[**GetPersonCombinedCredits2XXResponse**](GetPersonCombinedCredits2XXResponse.md)
 
 ### Authorization
 
@@ -262,9 +177,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned combined credits |  -  |
+**2XX** | Returned combined credits |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

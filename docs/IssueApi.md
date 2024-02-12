@@ -26,59 +26,15 @@ Creates a new issue
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    create_issue_request = overseerr.CreateIssueRequest() # CreateIssueRequest | 
-
-    try:
-        # Create new issue
-        api_response = api_instance.create_issue(create_issue_request)
-        print("The response of IssueApi->create_issue:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->create_issue: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_issue_request import CreateIssueRequest
+from overseerr.models.issue import Issue
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -116,8 +72,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->create_issue: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -137,6 +96,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Succesfully created the issue |  -  |
@@ -153,60 +113,14 @@ Updates an issue's status to approved or declined. Also returns the issue in a J
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    issue_id = '1' # str | Issue ID
-    status = 'status_example' # str | New status
-
-    try:
-        # Update an issue's status
-        api_response = api_instance.create_issue_by_status(issue_id, status)
-        print("The response of IssueApi->create_issue_by_status:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->create_issue_by_status: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.issue import Issue
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -245,8 +159,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->create_issue_by_status: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -267,9 +184,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Issue status changed |  -  |
+**2XX** | Issue status changed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -283,60 +201,15 @@ Creates a comment and returns associated issue in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    issue_id = 1 # float | 
-    create_issue_comment_request = overseerr.CreateIssueCommentRequest() # CreateIssueCommentRequest | 
-
-    try:
-        # Create a comment
-        api_response = api_instance.create_issue_comment(issue_id, create_issue_comment_request)
-        print("The response of IssueApi->create_issue_comment:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->create_issue_comment: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_issue_comment_request import CreateIssueCommentRequest
+from overseerr.models.issue import Issue
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -375,8 +248,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->create_issue_comment: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -397,9 +273,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Issue returned with new comment |  -  |
+**2XX** | Issue returned with new comment |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -413,57 +290,13 @@ Removes an issue. If the user has the `MANAGE_ISSUES` permission, any issue can 
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    issue_id = '1' # str | Issue ID
-
-    try:
-        # Delete issue
-        api_instance.delete_issue(issue_id)
-    except Exception as e:
-        print("Exception when calling IssueApi->delete_issue: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -499,8 +332,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->delete_issue: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -520,6 +356,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Succesfully removed issue |  -  |
@@ -536,57 +373,13 @@ Deletes an issue comment. Only users with `MANAGE_ISSUES` or the user who create
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    comment_id = '1' # str | Issue Comment ID
-
-    try:
-        # Delete issue comment
-        api_instance.delete_issue_comment(comment_id)
-    except Exception as e:
-        print("Exception when calling IssueApi->delete_issue_comment: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -622,8 +415,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->delete_issue_comment: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -643,6 +439,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Succesfully removed issue comment |  -  |
@@ -650,7 +447,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_issue**
-> GetIssue200Response get_issue(take=take, skip=skip, sort=sort, filter=filter, requested_by=requested_by)
+> GetIssue2XXResponse get_issue(take=take, skip=skip, sort=sort, filter=filter, requested_by=requested_by)
 
 Get all issues
 
@@ -659,63 +456,14 @@ Returns a list of issues in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    take = 20 # float |  (optional)
-    skip = 0 # float |  (optional)
-    sort = 'added' # str |  (optional) (default to 'added')
-    filter = 'open' # str |  (optional) (default to 'open')
-    requested_by = 1 # float |  (optional)
-
-    try:
-        # Get all issues
-        api_response = api_instance.get_issue(take=take, skip=skip, sort=sort, filter=filter, requested_by=requested_by)
-        print("The response of IssueApi->get_issue:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->get_issue: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_issue2_xx_response import GetIssue2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -757,8 +505,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->get_issue: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -770,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetIssue200Response**](GetIssue200Response.md)
+[**GetIssue2XXResponse**](GetIssue2XXResponse.md)
 
 ### Authorization
 
@@ -782,9 +533,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Issues returned |  -  |
+**2XX** | Issues returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -798,59 +550,14 @@ Returns a single issue in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    issue_id = 1 # float | 
-
-    try:
-        # Get issue
-        api_response = api_instance.get_issue_by_issue_id(issue_id)
-        print("The response of IssueApi->get_issue_by_issue_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->get_issue_by_issue_id: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.issue import Issue
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -888,8 +595,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->get_issue_by_issue_id: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -909,9 +619,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Issues returned |  -  |
+**2XX** | Issues returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -925,59 +636,14 @@ Returns a single issue comment in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    comment_id = '1' # str | 
-
-    try:
-        # Get issue comment
-        api_response = api_instance.get_issue_comment_by_comment_id(comment_id)
-        print("The response of IssueApi->get_issue_comment_by_comment_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->get_issue_comment_by_comment_id: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.issue_comment import IssueComment
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1015,8 +681,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->get_issue_comment_by_comment_id: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1036,14 +705,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comment returned |  -  |
+**2XX** | Comment returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_issue_count**
-> GetIssueCount200Response get_issue_count()
+> GetIssueCount2XXResponse get_issue_count()
 
 Gets issue counts
 
@@ -1052,58 +722,14 @@ Returns the number of open and closed issues, as well as the number of issues of
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-
-    try:
-        # Gets issue counts
-        api_response = api_instance.get_issue_count()
-        print("The response of IssueApi->get_issue_count:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->get_issue_count: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_issue_count2_xx_response import GetIssueCount2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1140,13 +766,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->get_issue_count: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetIssueCount200Response**](GetIssueCount200Response.md)
+[**GetIssueCount2XXResponse**](GetIssueCount2XXResponse.md)
 
 ### Authorization
 
@@ -1158,9 +787,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Issue counts returned |  -  |
+**2XX** | Issue counts returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1174,60 +804,15 @@ Updates and returns a single issue comment in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.IssueApi(api_client)
-    comment_id = '1' # str | 
-    update_issue_comment_request = overseerr.UpdateIssueCommentRequest() # UpdateIssueCommentRequest | 
-
-    try:
-        # Update issue comment
-        api_response = api_instance.update_issue_comment(comment_id, update_issue_comment_request)
-        print("The response of IssueApi->update_issue_comment:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IssueApi->update_issue_comment: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.issue_comment import IssueComment
+from overseerr.models.update_issue_comment_request import UpdateIssueCommentRequest
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1266,8 +851,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IssueApi->update_issue_comment: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1288,9 +876,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Comment updated |  -  |
+**2XX** | Comment updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

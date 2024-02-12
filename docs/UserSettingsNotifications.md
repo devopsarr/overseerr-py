@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **notification_types** | [**NotificationAgentTypes**](NotificationAgentTypes.md) |  | [optional] 

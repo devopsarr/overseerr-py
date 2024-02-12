@@ -85,57 +85,13 @@ Flushes all data from the cache ID provided
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    cache_id = 'cache_id_example' # str | 
-
-    try:
-        # Flush a specific cache
-        api_instance.create_cache_flush(cache_id)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_cache_flush: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -171,8 +127,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_cache_flush: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,6 +151,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Flushed cache |  -  |
@@ -208,59 +168,14 @@ Batch update all sliders at once. Should also be used for creation. Will only up
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    discover_slider = [overseerr.DiscoverSlider()] # List[DiscoverSlider] | 
-
-    try:
-        # Batch update all sliders.
-        api_response = api_instance.create_discover(discover_slider)
-        print("The response of SettingsApi->create_discover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_discover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discover_slider import DiscoverSlider
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -298,8 +213,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_discover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -319,9 +237,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned all newly updated discovery sliders |  -  |
+**2XX** | Returned all newly updated discovery sliders |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -335,59 +254,15 @@ Add a single slider and return the newly created slider. Requires the `ADMIN` pe
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    create_discover_add_request = overseerr.CreateDiscoverAddRequest() # CreateDiscoverAddRequest | 
-
-    try:
-        # Add a new slider
-        api_response = api_instance.create_discover_add(create_discover_add_request)
-        print("The response of SettingsApi->create_discover_add:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_discover_add: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest
+from overseerr.models.discover_slider import DiscoverSlider
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -425,8 +300,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_discover_add: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -446,9 +324,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns newly added discovery slider |  -  |
+**2XX** | Returns newly added discovery slider |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -462,58 +341,14 @@ Sets the app as initialized, allowing the user to navigate to pages other than t
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Initialize application
-        api_response = api_instance.create_initialize()
-        print("The response of SettingsApi->create_initialize:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_initialize: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.public_settings import PublicSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -550,8 +385,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_initialize: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -568,9 +406,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Public settings returned |  -  |
+**2XX** | Public settings returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -584,59 +423,14 @@ Cancels a specific job. Will return the new job status in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    job_id = 'job_id_example' # str | 
-
-    try:
-        # Cancel a specific job
-        api_response = api_instance.create_jobs_cancel(job_id)
-        print("The response of SettingsApi->create_jobs_cancel:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_jobs_cancel: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.job import Job
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -674,8 +468,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_jobs_cancel: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -695,9 +492,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Canceled job returned |  -  |
+**2XX** | Canceled job returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -711,59 +509,14 @@ Invokes a specific job to run. Will return the new job status in JSON format.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    job_id = 'job_id_example' # str | 
-
-    try:
-        # Invoke a specific job
-        api_response = api_instance.create_jobs_run(job_id)
-        print("The response of SettingsApi->create_jobs_run:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_jobs_run: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.job import Job
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -801,8 +554,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_jobs_run: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -822,9 +578,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Invoked job returned |  -  |
+**2XX** | Invoked job returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -838,60 +595,15 @@ Re-registers the job with the schedule specified. Will return the job in JSON fo
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    job_id = 'job_id_example' # str | 
-    create_jobs_schedule_request = overseerr.CreateJobsScheduleRequest() # CreateJobsScheduleRequest | 
-
-    try:
-        # Modify job schedule
-        api_response = api_instance.create_jobs_schedule(job_id, create_jobs_schedule_request)
-        print("The response of SettingsApi->create_jobs_schedule:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_jobs_schedule: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_jobs_schedule_request import CreateJobsScheduleRequest
+from overseerr.models.job import Job
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -930,8 +642,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_jobs_schedule: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -952,9 +667,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Rescheduled job |  -  |
+**2XX** | Rescheduled job |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -968,59 +684,14 @@ Updates main settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    main_settings = overseerr.MainSettings() # MainSettings | 
-
-    try:
-        # Update main settings
-        api_response = api_instance.create_main(main_settings)
-        print("The response of SettingsApi->create_main:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_main: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.main_settings import MainSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1058,8 +729,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_main: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1079,9 +753,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1095,58 +770,14 @@ Returns main settings in a JSON object, using the new API key.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get main settings with newly-generated API key
-        api_response = api_instance.create_main_regenerate()
-        print("The response of SettingsApi->create_main_regenerate:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_main_regenerate: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.main_settings import MainSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1183,8 +814,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_main_regenerate: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1201,9 +835,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1217,59 +852,14 @@ Updates Discord notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    discord_settings = overseerr.DiscordSettings() # DiscordSettings | 
-
-    try:
-        # Update Discord notification settings
-        api_response = api_instance.create_notifications_discord(discord_settings)
-        print("The response of SettingsApi->create_notifications_discord:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_discord: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discord_settings import DiscordSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1307,8 +897,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_discord: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1328,9 +921,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1344,59 +938,14 @@ Updates email notification settings with provided values
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    notification_email_settings = overseerr.NotificationEmailSettings() # NotificationEmailSettings | 
-
-    try:
-        # Update email notification settings
-        api_response = api_instance.create_notifications_email(notification_email_settings)
-        print("The response of SettingsApi->create_notifications_email:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_email: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.notification_email_settings import NotificationEmailSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1434,8 +983,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_email: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1455,9 +1007,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1471,59 +1024,14 @@ Update Gotify notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    gotify_settings = overseerr.GotifySettings() # GotifySettings | 
-
-    try:
-        # Update Gotify notification settings
-        api_response = api_instance.create_notifications_gotify(gotify_settings)
-        print("The response of SettingsApi->create_notifications_gotify:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_gotify: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.gotify_settings import GotifySettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1561,8 +1069,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_gotify: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1582,9 +1093,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1598,59 +1110,14 @@ Updates LunaSea notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    luna_sea_settings = overseerr.LunaSeaSettings() # LunaSeaSettings | 
-
-    try:
-        # Update LunaSea notification settings
-        api_response = api_instance.create_notifications_lunasea(luna_sea_settings)
-        print("The response of SettingsApi->create_notifications_lunasea:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_lunasea: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.luna_sea_settings import LunaSeaSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1688,8 +1155,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_lunasea: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1709,9 +1179,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1725,59 +1196,14 @@ Update Pushbullet notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    pushbullet_settings = overseerr.PushbulletSettings() # PushbulletSettings | 
-
-    try:
-        # Update Pushbullet notification settings
-        api_response = api_instance.create_notifications_pushbullet(pushbullet_settings)
-        print("The response of SettingsApi->create_notifications_pushbullet:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_pushbullet: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushbullet_settings import PushbulletSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1815,8 +1241,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_pushbullet: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1836,9 +1265,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1852,59 +1282,14 @@ Update Pushover notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    pushover_settings = overseerr.PushoverSettings() # PushoverSettings | 
-
-    try:
-        # Update Pushover notification settings
-        api_response = api_instance.create_notifications_pushover(pushover_settings)
-        print("The response of SettingsApi->create_notifications_pushover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_pushover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushover_settings import PushoverSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -1942,8 +1327,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_pushover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1963,9 +1351,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1979,59 +1368,14 @@ Updates Slack notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    slack_settings = overseerr.SlackSettings() # SlackSettings | 
-
-    try:
-        # Update Slack notification settings
-        api_response = api_instance.create_notifications_slack(slack_settings)
-        print("The response of SettingsApi->create_notifications_slack:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_slack: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.slack_settings import SlackSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2069,8 +1413,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_slack: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2090,9 +1437,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2106,59 +1454,14 @@ Update Telegram notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    telegram_settings = overseerr.TelegramSettings() # TelegramSettings | 
-
-    try:
-        # Update Telegram notification settings
-        api_response = api_instance.create_notifications_telegram(telegram_settings)
-        print("The response of SettingsApi->create_notifications_telegram:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_telegram: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.telegram_settings import TelegramSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2196,8 +1499,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_telegram: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2217,9 +1523,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2233,59 +1540,14 @@ Updates webhook notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    webhook_settings = overseerr.WebhookSettings() # WebhookSettings | 
-
-    try:
-        # Update webhook notification settings
-        api_response = api_instance.create_notifications_webhook(webhook_settings)
-        print("The response of SettingsApi->create_notifications_webhook:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_webhook: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.webhook_settings import WebhookSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2323,8 +1585,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_webhook: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2344,9 +1609,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2360,59 +1626,14 @@ Updates Web Push notification settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    web_push_settings = overseerr.WebPushSettings() # WebPushSettings | 
-
-    try:
-        # Update Web Push notification settings
-        api_response = api_instance.create_notifications_webpush(web_push_settings)
-        print("The response of SettingsApi->create_notifications_webpush:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_notifications_webpush: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.web_push_settings import WebPushSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2450,8 +1671,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_notifications_webpush: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2471,9 +1695,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were sucessfully updated |  -  |
+**2XX** | Values were sucessfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2487,59 +1712,14 @@ Updates Plex settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    plex_settings = overseerr.PlexSettings() # PlexSettings | 
-
-    try:
-        # Update Plex settings
-        api_response = api_instance.create_plex(plex_settings)
-        print("The response of SettingsApi->create_plex:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_plex: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.plex_settings import PlexSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2577,8 +1757,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_plex: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2598,14 +1781,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were successfully updated |  -  |
+**2XX** | Values were successfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_plex_sync**
-> GetPlexSync200Response create_plex_sync(create_plex_sync_request=create_plex_sync_request)
+> GetPlexSync2XXResponse create_plex_sync(create_plex_sync_request=create_plex_sync_request)
 
 Start full Plex library scan
 
@@ -2614,59 +1798,15 @@ Runs a full Plex library scan and returns the progress in a JSON array.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    create_plex_sync_request = overseerr.CreatePlexSyncRequest() # CreatePlexSyncRequest |  (optional)
-
-    try:
-        # Start full Plex library scan
-        api_response = api_instance.create_plex_sync(create_plex_sync_request=create_plex_sync_request)
-        print("The response of SettingsApi->create_plex_sync:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_plex_sync: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_plex_sync_request import CreatePlexSyncRequest
+from overseerr.models.get_plex_sync2_xx_response import GetPlexSync2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2704,8 +1844,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_plex_sync: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2713,7 +1856,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetPlexSync200Response**](GetPlexSync200Response.md)
+[**GetPlexSync2XXResponse**](GetPlexSync2XXResponse.md)
 
 ### Authorization
 
@@ -2725,9 +1868,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Status of Plex scan |  -  |
+**2XX** | Status of Plex scan |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2741,59 +1885,14 @@ Creates a new Radarr instance from the request body.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    radarr_settings = overseerr.RadarrSettings() # RadarrSettings | 
-
-    try:
-        # Create Radarr instance
-        api_response = api_instance.create_radarr(radarr_settings)
-        print("The response of SettingsApi->create_radarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_radarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.radarr_settings import RadarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2831,8 +1930,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_radarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2852,6 +1954,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | New Radarr instance created |  -  |
@@ -2868,59 +1971,14 @@ Creates a new Sonarr instance from the request body.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    sonarr_settings = overseerr.SonarrSettings() # SonarrSettings | 
-
-    try:
-        # Create Sonarr instance
-        api_response = api_instance.create_sonarr(sonarr_settings)
-        print("The response of SettingsApi->create_sonarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_sonarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.sonarr_settings import SonarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -2958,8 +2016,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_sonarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2979,6 +2040,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | New Sonarr instance created |  -  |
@@ -2995,59 +2057,14 @@ Updates Tautulli settings with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    tautulli_settings = overseerr.TautulliSettings() # TautulliSettings | 
-
-    try:
-        # Update Tautulli settings
-        api_response = api_instance.create_tautulli(tautulli_settings)
-        print("The response of SettingsApi->create_tautulli:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->create_tautulli: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.tautulli_settings import TautulliSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3085,8 +2102,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->create_tautulli: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3106,9 +2126,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were successfully updated |  -  |
+**2XX** | Values were successfully updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3122,59 +2143,14 @@ Deletes the slider with the provided sliderId. Requires the `ADMIN` permission.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    slider_id = 3.4 # float | 
-
-    try:
-        # Delete slider by ID
-        api_response = api_instance.delete_discover(slider_id)
-        print("The response of SettingsApi->delete_discover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->delete_discover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discover_slider import DiscoverSlider
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3212,8 +2188,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->delete_discover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3233,9 +2212,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Slider successfully deleted |  -  |
+**2XX** | Slider successfully deleted |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3249,59 +2229,14 @@ Deletes an existing Radarr instance based on the radarrId parameter.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    radarr_id = 56 # int | Radarr instance ID
-
-    try:
-        # Delete Radarr instance
-        api_response = api_instance.delete_radarr(radarr_id)
-        print("The response of SettingsApi->delete_radarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->delete_radarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.radarr_settings import RadarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3339,8 +2274,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->delete_radarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3360,9 +2298,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Radarr instance updated |  -  |
+**2XX** | Radarr instance updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3376,59 +2315,14 @@ Deletes an existing Sonarr instance based on the sonarrId parameter.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    sonarr_id = 56 # int | Sonarr instance ID
-
-    try:
-        # Delete Sonarr instance
-        api_response = api_instance.delete_sonarr(sonarr_id)
-        print("The response of SettingsApi->delete_sonarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->delete_sonarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.sonarr_settings import SonarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3466,8 +2360,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->delete_sonarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3487,14 +2384,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Sonarr instance updated |  -  |
+**2XX** | Sonarr instance updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_about**
-> GetAbout200Response get_about()
+> GetAbout2XXResponse get_about()
 
 Get server stats
 
@@ -3503,58 +2401,14 @@ Returns current server stats in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get server stats
-        api_response = api_instance.get_about()
-        print("The response of SettingsApi->get_about:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_about: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_about2_xx_response import GetAbout2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3591,13 +2445,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_about: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetAbout200Response**](GetAbout200Response.md)
+[**GetAbout2XXResponse**](GetAbout2XXResponse.md)
 
 ### Authorization
 
@@ -3609,14 +2466,15 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned about settings |  -  |
+**2XX** | Returned about settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cache**
-> GetCache200Response get_cache()
+> GetCache2XXResponse get_cache()
 
 Get a list of active caches
 
@@ -3625,58 +2483,14 @@ Retrieves a list of all active caches and their current stats.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get a list of active caches
-        api_response = api_instance.get_cache()
-        print("The response of SettingsApi->get_cache:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_cache: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_cache2_xx_response import GetCache2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3713,13 +2527,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_cache: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetCache200Response**](GetCache200Response.md)
+[**GetCache2XXResponse**](GetCache2XXResponse.md)
 
 ### Authorization
 
@@ -3731,9 +2548,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Caches returned |  -  |
+**2XX** | Caches returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3747,56 +2565,13 @@ Resets all discovery sliders to the default values. Requires the `ADMIN` permiss
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Reset all discover sliders
-        api_instance.get_discover_reset()
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_discover_reset: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3831,8 +2606,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_discover_reset: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -3849,6 +2627,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | All sliders reset to defaults |  -  |
@@ -3865,58 +2644,14 @@ Retrieves all main settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get main settings
-        api_response = api_instance.get_main()
-        print("The response of SettingsApi->get_main:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_main: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.main_settings import MainSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -3953,8 +2688,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_main: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -3971,9 +2709,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3987,58 +2726,14 @@ Returns current Discord notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Discord notification settings
-        api_response = api_instance.get_notifications_discord()
-        print("The response of SettingsApi->get_notifications_discord:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_discord: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discord_settings import DiscordSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4075,8 +2770,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_discord: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4093,9 +2791,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned Discord settings |  -  |
+**2XX** | Returned Discord settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4109,58 +2808,14 @@ Returns current email notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get email notification settings
-        api_response = api_instance.get_notifications_email()
-        print("The response of SettingsApi->get_notifications_email:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_email: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.notification_email_settings import NotificationEmailSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4197,8 +2852,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_email: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4215,9 +2873,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned email settings |  -  |
+**2XX** | Returned email settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4231,58 +2890,14 @@ Returns current Gotify notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Gotify notification settings
-        api_response = api_instance.get_notifications_gotify()
-        print("The response of SettingsApi->get_notifications_gotify:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_gotify: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.gotify_settings import GotifySettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4319,8 +2934,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_gotify: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4337,9 +2955,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned Gotify settings |  -  |
+**2XX** | Returned Gotify settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4353,58 +2972,14 @@ Returns current LunaSea notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get LunaSea notification settings
-        api_response = api_instance.get_notifications_lunasea()
-        print("The response of SettingsApi->get_notifications_lunasea:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_lunasea: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.luna_sea_settings import LunaSeaSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4441,8 +3016,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_lunasea: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4459,9 +3037,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned LunaSea settings |  -  |
+**2XX** | Returned LunaSea settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4475,58 +3054,14 @@ Returns current Pushbullet notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Pushbullet notification settings
-        api_response = api_instance.get_notifications_pushbullet()
-        print("The response of SettingsApi->get_notifications_pushbullet:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_pushbullet: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushbullet_settings import PushbulletSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4563,8 +3098,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_pushbullet: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4581,9 +3119,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned Pushbullet settings |  -  |
+**2XX** | Returned Pushbullet settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4597,58 +3136,14 @@ Returns current Pushover notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Pushover notification settings
-        api_response = api_instance.get_notifications_pushover()
-        print("The response of SettingsApi->get_notifications_pushover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_pushover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushover_settings import PushoverSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4685,8 +3180,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_pushover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4703,9 +3201,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned Pushover settings |  -  |
+**2XX** | Returned Pushover settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4719,58 +3218,14 @@ Returns current Slack notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Slack notification settings
-        api_response = api_instance.get_notifications_slack()
-        print("The response of SettingsApi->get_notifications_slack:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_slack: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.slack_settings import SlackSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4807,8 +3262,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_slack: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4825,9 +3283,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned slack settings |  -  |
+**2XX** | Returned slack settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4841,58 +3300,14 @@ Returns current Telegram notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Telegram notification settings
-        api_response = api_instance.get_notifications_telegram()
-        print("The response of SettingsApi->get_notifications_telegram:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_telegram: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.telegram_settings import TelegramSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -4929,8 +3344,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_telegram: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -4947,9 +3365,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned Telegram settings |  -  |
+**2XX** | Returned Telegram settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4963,58 +3382,14 @@ Returns current webhook notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get webhook notification settings
-        api_response = api_instance.get_notifications_webhook()
-        print("The response of SettingsApi->get_notifications_webhook:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_webhook: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.webhook_settings import WebhookSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5051,8 +3426,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_webhook: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5069,9 +3447,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned webhook settings |  -  |
+**2XX** | Returned webhook settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5085,58 +3464,14 @@ Returns current Web Push notification settings in a JSON object.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Web Push notification settings
-        api_response = api_instance.get_notifications_webpush()
-        print("The response of SettingsApi->get_notifications_webpush:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_notifications_webpush: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.web_push_settings import WebPushSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5173,8 +3508,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_notifications_webpush: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5191,9 +3529,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned web push settings |  -  |
+**2XX** | Returned web push settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5207,58 +3546,14 @@ Retrieves current Plex settings.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Plex settings
-        api_response = api_instance.get_plex()
-        print("The response of SettingsApi->get_plex:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_plex: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.plex_settings import PlexSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5295,8 +3590,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_plex: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5313,14 +3611,15 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plex_sync**
-> GetPlexSync200Response get_plex_sync()
+> GetPlexSync2XXResponse get_plex_sync()
 
 Get status of full Plex library scan
 
@@ -5329,58 +3628,14 @@ Returns scan progress in a JSON array.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get status of full Plex library scan
-        api_response = api_instance.get_plex_sync()
-        print("The response of SettingsApi->get_plex_sync:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_plex_sync: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.get_plex_sync2_xx_response import GetPlexSync2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5417,13 +3672,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_plex_sync: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetPlexSync200Response**](GetPlexSync200Response.md)
+[**GetPlexSync2XXResponse**](GetPlexSync2XXResponse.md)
 
 ### Authorization
 
@@ -5435,9 +3693,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Status of Plex scan |  -  |
+**2XX** | Status of Plex scan |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5450,13 +3709,13 @@ Returns settings that are not protected or sensitive. Mainly used to determine i
 
 ### Example
 
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.public_settings import PublicSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5465,7 +3724,7 @@ configuration = overseerr.Configuration(
 
 
 # Enter a context with an instance of the API client
-with overseerr.ApiClient() as api_client:
+with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.SettingsApi(api_client)
 
@@ -5478,7 +3737,10 @@ with overseerr.ApiClient() as api_client:
         print("Exception when calling SettingsApi->get_public: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5495,9 +3757,10 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Public settings returned |  -  |
+**2XX** | Public settings returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5511,58 +3774,14 @@ Retrieves current Tautulli settings.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Tautulli settings
-        api_response = api_instance.get_tautulli()
-        print("The response of SettingsApi->get_tautulli:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->get_tautulli: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.tautulli_settings import TautulliSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5599,8 +3818,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->get_tautulli: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5617,9 +3839,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5633,58 +3856,14 @@ Returns all discovery sliders. Built-in and custom made.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get all discover sliders
-        api_response = api_instance.list_discover()
-        print("The response of SettingsApi->list_discover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_discover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discover_slider import DiscoverSlider
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5721,8 +3900,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_discover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5739,9 +3921,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned all discovery sliders |  -  |
+**2XX** | Returned all discovery sliders |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5755,58 +3938,14 @@ Returns list of all scheduled jobs and details about their next execution time i
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get scheduled jobs
-        api_response = api_instance.list_jobs()
-        print("The response of SettingsApi->list_jobs:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_jobs: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.job import Job
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5843,8 +3982,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_jobs: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -5861,14 +4003,15 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Scheduled jobs returned |  -  |
+**2XX** | Scheduled jobs returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_logs**
-> List[ListLogs200ResponseInner] list_logs(take=take, skip=skip, filter=filter, search=search)
+> List[ListLogs2XXResponseInner] list_logs(take=take, skip=skip, filter=filter, search=search)
 
 Returns logs
 
@@ -5877,62 +4020,14 @@ Returns list of all log items and details
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    take = 25 # float |  (optional)
-    skip = 0 # float |  (optional)
-    filter = 'debug' # str |  (optional) (default to 'debug')
-    search = 'plex' # str |  (optional)
-
-    try:
-        # Returns logs
-        api_response = api_instance.list_logs(take=take, skip=skip, filter=filter, search=search)
-        print("The response of SettingsApi->list_logs:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_logs: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.list_logs2_xx_response_inner import ListLogs2XXResponseInner
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -5973,8 +4068,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_logs: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5985,7 +4083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[ListLogs200ResponseInner]**](ListLogs200ResponseInner.md)
+[**List[ListLogs2XXResponseInner]**](ListLogs2XXResponseInner.md)
 
 ### Authorization
 
@@ -5997,9 +4095,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Server log returned |  -  |
+**2XX** | Server log returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6013,58 +4112,14 @@ Returns a list of available Plex servers and their connectivity state
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Gets the user's available Plex servers
-        api_response = api_instance.list_plex_devices_servers()
-        print("The response of SettingsApi->list_plex_devices_servers:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_plex_devices_servers: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.plex_device import PlexDevice
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6101,8 +4156,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_plex_devices_servers: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -6119,9 +4177,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6135,60 +4194,14 @@ Returns a list of Plex libraries in a JSON array.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    sync = 'sync_example' # str | Syncs the current libraries with the current Plex server (optional)
-    enable = 'enable_example' # str | Comma separated list of libraries to enable. Any libraries not passed will be disabled! (optional)
-
-    try:
-        # Get Plex libraries
-        api_response = api_instance.list_plex_library(sync=sync, enable=enable)
-        print("The response of SettingsApi->list_plex_library:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_plex_library: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.plex_library import PlexLibrary
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6227,8 +4240,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_plex_library: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6249,14 +4265,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Plex libraries returned |  -  |
+**2XX** | Plex libraries returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_plex_users**
-> List[ListPlexUsers200ResponseInner] list_plex_users()
+> List[ListPlexUsers2XXResponseInner] list_plex_users()
 
 Get Plex users
 
@@ -6265,58 +4282,14 @@ Returns a list of Plex users in a JSON array.  Requires the `MANAGE_USERS` permi
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Plex users
-        api_response = api_instance.list_plex_users()
-        print("The response of SettingsApi->list_plex_users:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_plex_users: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.list_plex_users2_xx_response_inner import ListPlexUsers2XXResponseInner
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6353,13 +4326,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_plex_users: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[ListPlexUsers200ResponseInner]**](ListPlexUsers200ResponseInner.md)
+[**List[ListPlexUsers2XXResponseInner]**](ListPlexUsers2XXResponseInner.md)
 
 ### Authorization
 
@@ -6371,9 +4347,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Plex users |  -  |
+**2XX** | Plex users |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6387,58 +4364,14 @@ Returns all Radarr settings in a JSON array.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Radarr settings
-        api_response = api_instance.list_radarr()
-        print("The response of SettingsApi->list_radarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_radarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.radarr_settings import RadarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6475,8 +4408,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_radarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -6493,9 +4429,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were returned |  -  |
+**2XX** | Values were returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6509,59 +4446,14 @@ Returns a list of profiles available on the Radarr server instance in a JSON arr
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    radarr_id = 56 # int | Radarr instance ID
-
-    try:
-        # Get available Radarr profiles
-        api_response = api_instance.list_radarr_profiles(radarr_id)
-        print("The response of SettingsApi->list_radarr_profiles:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_radarr_profiles: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.service_profile import ServiceProfile
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6599,8 +4491,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_radarr_profiles: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6620,9 +4515,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returned list of profiles |  -  |
+**2XX** | Returned list of profiles |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6636,58 +4532,14 @@ Returns all Sonarr settings in a JSON array.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-
-    try:
-        # Get Sonarr settings
-        api_response = api_instance.list_sonarr()
-        print("The response of SettingsApi->list_sonarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->list_sonarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.sonarr_settings import SonarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6724,8 +4576,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->list_sonarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -6742,9 +4597,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Values were returned |  -  |
+**2XX** | Values were returned |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6758,57 +4614,14 @@ Sends a test notification to the Discord agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    discord_settings = overseerr.DiscordSettings() # DiscordSettings | 
-
-    try:
-        # Test Discord settings
-        api_instance.test_notifications_discord(discord_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_discord: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discord_settings import DiscordSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6844,8 +4657,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_discord: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6865,6 +4681,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -6881,57 +4698,14 @@ Sends a test notification to the email agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    notification_email_settings = overseerr.NotificationEmailSettings() # NotificationEmailSettings | 
-
-    try:
-        # Test email settings
-        api_instance.test_notifications_email(notification_email_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_email: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.notification_email_settings import NotificationEmailSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -6967,8 +4741,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_email: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6988,6 +4765,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7004,57 +4782,14 @@ Sends a test notification to the Gotify agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    gotify_settings = overseerr.GotifySettings() # GotifySettings | 
-
-    try:
-        # Test Gotify settings
-        api_instance.test_notifications_gotify(gotify_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_gotify: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.gotify_settings import GotifySettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7090,8 +4825,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_gotify: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7111,6 +4849,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7127,57 +4866,14 @@ Sends a test notification to the LunaSea agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    luna_sea_settings = overseerr.LunaSeaSettings() # LunaSeaSettings | 
-
-    try:
-        # Test LunaSea settings
-        api_instance.test_notifications_lunasea(luna_sea_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_lunasea: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.luna_sea_settings import LunaSeaSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7213,8 +4909,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_lunasea: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7234,6 +4933,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7250,57 +4950,14 @@ Sends a test notification to the Pushbullet agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    pushbullet_settings = overseerr.PushbulletSettings() # PushbulletSettings | 
-
-    try:
-        # Test Pushbullet settings
-        api_instance.test_notifications_pushbullet(pushbullet_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_pushbullet: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushbullet_settings import PushbulletSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7336,8 +4993,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_pushbullet: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7357,6 +5017,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7373,57 +5034,14 @@ Sends a test notification to the Pushover agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    pushover_settings = overseerr.PushoverSettings() # PushoverSettings | 
-
-    try:
-        # Test Pushover settings
-        api_instance.test_notifications_pushover(pushover_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_pushover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.pushover_settings import PushoverSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7459,8 +5077,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_pushover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7480,6 +5101,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7496,57 +5118,14 @@ Sends a test notification to the Slack agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    slack_settings = overseerr.SlackSettings() # SlackSettings | 
-
-    try:
-        # Test Slack settings
-        api_instance.test_notifications_slack(slack_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_slack: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.slack_settings import SlackSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7582,8 +5161,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_slack: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7603,6 +5185,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7619,57 +5202,14 @@ Sends a test notification to the Telegram agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    telegram_settings = overseerr.TelegramSettings() # TelegramSettings | 
-
-    try:
-        # Test Telegram settings
-        api_instance.test_notifications_telegram(telegram_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_telegram: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.telegram_settings import TelegramSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7705,8 +5245,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_telegram: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7726,6 +5269,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7742,57 +5286,14 @@ Sends a test notification to the webhook agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    webhook_settings = overseerr.WebhookSettings() # WebhookSettings | 
-
-    try:
-        # Test webhook settings
-        api_instance.test_notifications_webhook(webhook_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_webhook: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.webhook_settings import WebhookSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7828,8 +5329,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_webhook: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7849,6 +5353,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7865,57 +5370,14 @@ Sends a test notification to the Web Push agent.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    web_push_settings = overseerr.WebPushSettings() # WebPushSettings | 
-
-    try:
-        # Test Web Push settings
-        api_instance.test_notifications_webpush(web_push_settings)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_notifications_webpush: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.web_push_settings import WebPushSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -7951,8 +5413,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_notifications_webpush: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7972,6 +5437,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Test notification attempted |  -  |
@@ -7979,7 +5445,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_radarr**
-> TestRadarr200Response test_radarr(test_radarr_request)
+> TestRadarr2XXResponse test_radarr(test_radarr_request)
 
 Test Radarr configuration
 
@@ -7988,59 +5454,15 @@ Tests if the Radarr configuration is valid. Returns profiles and root folders on
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    test_radarr_request = overseerr.TestRadarrRequest() # TestRadarrRequest | 
-
-    try:
-        # Test Radarr configuration
-        api_response = api_instance.test_radarr(test_radarr_request)
-        print("The response of SettingsApi->test_radarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_radarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse
+from overseerr.models.test_radarr_request import TestRadarrRequest
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -8078,8 +5500,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_radarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8087,7 +5512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TestRadarr200Response**](TestRadarr200Response.md)
+[**TestRadarr2XXResponse**](TestRadarr2XXResponse.md)
 
 ### Authorization
 
@@ -8099,14 +5524,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Succesfully connected to Radarr instance |  -  |
+**2XX** | Succesfully connected to Radarr instance |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_sonarr**
-> TestRadarr200Response test_sonarr(test_sonarr_request)
+> TestRadarr2XXResponse test_sonarr(test_sonarr_request)
 
 Test Sonarr configuration
 
@@ -8115,59 +5541,15 @@ Tests if the Sonarr configuration is valid. Returns profiles and root folders on
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    test_sonarr_request = overseerr.TestSonarrRequest() # TestSonarrRequest | 
-
-    try:
-        # Test Sonarr configuration
-        api_response = api_instance.test_sonarr(test_sonarr_request)
-        print("The response of SettingsApi->test_sonarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->test_sonarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse
+from overseerr.models.test_sonarr_request import TestSonarrRequest
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -8205,8 +5587,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->test_sonarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8214,7 +5599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TestRadarr200Response**](TestRadarr200Response.md)
+[**TestRadarr2XXResponse**](TestRadarr2XXResponse.md)
 
 ### Authorization
 
@@ -8226,9 +5611,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Succesfully connected to Sonarr instance |  -  |
+**2XX** | Succesfully connected to Sonarr instance |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8242,60 +5628,15 @@ Updates a single slider and return the newly updated slider. Requires the `ADMIN
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    slider_id = 3.4 # float | 
-    update_discover_request = overseerr.UpdateDiscoverRequest() # UpdateDiscoverRequest | 
-
-    try:
-        # Update a single slider
-        api_response = api_instance.update_discover(slider_id, update_discover_request)
-        print("The response of SettingsApi->update_discover:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->update_discover: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.discover_slider import DiscoverSlider
+from overseerr.models.update_discover_request import UpdateDiscoverRequest
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -8334,8 +5675,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->update_discover: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8356,9 +5700,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Returns newly added discovery slider |  -  |
+**2XX** | Returns newly added discovery slider |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8372,60 +5717,14 @@ Updates an existing Radarr instance with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    radarr_id = 56 # int | Radarr instance ID
-    radarr_settings = overseerr.RadarrSettings() # RadarrSettings | 
-
-    try:
-        # Update Radarr instance
-        api_response = api_instance.update_radarr(radarr_id, radarr_settings)
-        print("The response of SettingsApi->update_radarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->update_radarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.radarr_settings import RadarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -8464,8 +5763,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->update_radarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8486,9 +5788,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Radarr instance updated |  -  |
+**2XX** | Radarr instance updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8502,60 +5805,14 @@ Updates an existing Sonarr instance with the provided values.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.SettingsApi(api_client)
-    sonarr_id = 56 # int | Sonarr instance ID
-    sonarr_settings = overseerr.SonarrSettings() # SonarrSettings | 
-
-    try:
-        # Update Sonarr instance
-        api_response = api_instance.update_sonarr(sonarr_id, sonarr_settings)
-        print("The response of SettingsApi->update_sonarr:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SettingsApi->update_sonarr: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.sonarr_settings import SonarrSettings
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -8594,8 +5851,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SettingsApi->update_sonarr: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8616,9 +5876,10 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Sonarr instance updated |  -  |
+**2XX** | Sonarr instance updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

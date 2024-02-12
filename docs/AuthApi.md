@@ -19,13 +19,14 @@ Takes an `email` and a `password` to log the user in. Generates a session cookie
 
 ### Example
 
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_auth_local_request import CreateAuthLocalRequest
+from overseerr.models.user import User
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -34,7 +35,7 @@ configuration = overseerr.Configuration(
 
 
 # Enter a context with an instance of the API client
-with overseerr.ApiClient() as api_client:
+with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.AuthApi(api_client)
     create_auth_local_request = overseerr.CreateAuthLocalRequest() # CreateAuthLocalRequest | 
@@ -48,7 +49,10 @@ with overseerr.ApiClient() as api_client:
         print("Exception when calling AuthApi->create_auth_local: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,14 +72,15 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_auth_logout**
-> CreateAuthLogout200Response create_auth_logout()
+> CreateAuthLogout2XXResponse create_auth_logout()
 
 Sign out and clear session cookie
 
@@ -84,58 +89,14 @@ Completely clear the session cookie and associated values, effectively signing t
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.AuthApi(api_client)
-
-    try:
-        # Sign out and clear session cookie
-        api_response = api_instance.create_auth_logout()
-        print("The response of AuthApi->create_auth_logout:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AuthApi->create_auth_logout: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_auth_logout2_xx_response import CreateAuthLogout2XXResponse
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -172,13 +133,16 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling AuthApi->create_auth_logout: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**CreateAuthLogout200Response**](CreateAuthLogout200Response.md)
+[**CreateAuthLogout2XXResponse**](CreateAuthLogout2XXResponse.md)
 
 ### Authorization
 
@@ -190,9 +154,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -205,13 +170,14 @@ Takes an `authToken` (Plex token) to log the user in. Generates a session cookie
 
 ### Example
 
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.create_auth_plex_request import CreateAuthPlexRequest
+from overseerr.models.user import User
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -220,7 +186,7 @@ configuration = overseerr.Configuration(
 
 
 # Enter a context with an instance of the API client
-with overseerr.ApiClient() as api_client:
+with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.AuthApi(api_client)
     create_auth_plex_request = overseerr.CreateAuthPlexRequest() # CreateAuthPlexRequest | 
@@ -234,7 +200,10 @@ with overseerr.ApiClient() as api_client:
         print("Exception when calling AuthApi->create_auth_plex: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -254,9 +223,10 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**2XX** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -270,58 +240,14 @@ Returns the currently logged-in user.
 ### Example
 
 * Api Key Authentication (apiKey):
-```python
-from __future__ import print_function
-import time
-import os
-import overseerr
-from overseerr.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5055/api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = overseerr.Configuration(
-    host = "http://localhost:5055/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: cookieAuth
-configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with overseerr.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = overseerr.AuthApi(api_client)
-
-    try:
-        # Get logged-in user
-        api_response = api_instance.get_auth_me()
-        print("The response of AuthApi->get_auth_me:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AuthApi->get_auth_me: %s\n" % e)
-```
-
 * Api Key Authentication (cookieAuth):
+
 ```python
-from __future__ import print_function
-import time
-import os
 import overseerr
+from overseerr.models.user import User
 from overseerr.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost:5055/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = overseerr.Configuration(
@@ -358,8 +284,11 @@ with overseerr.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling AuthApi->get_auth_me: %s\n" % e)
 ```
+
+
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -376,9 +305,10 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Object containing the logged-in user in JSON |  -  |
+**2XX** | Object containing the logged-in user in JSON |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
