@@ -53,7 +53,7 @@ json = "{}"
 # create an instance of TvDetails from a JSON string
 tv_details_instance = TvDetails.from_json(json)
 # print the JSON string representation of the object
-print TvDetails.to_json()
+print(TvDetails.to_json())
 
 # convert the object into a dict
 tv_details_dict = tv_details_instance.to_dict()

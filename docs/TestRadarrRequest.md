@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TestRadarrRequest from a JSON string
 test_radarr_request_instance = TestRadarrRequest.from_json(json)
 # print the JSON string representation of the object
-print TestRadarrRequest.to_json()
+print(TestRadarrRequest.to_json())
 
 # convert the object into a dict
 test_radarr_request_dict = test_radarr_request_instance.to_dict()

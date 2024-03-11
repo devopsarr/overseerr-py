@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ServiceProfile from a JSON string
 service_profile_instance = ServiceProfile.from_json(json)
 # print the JSON string representation of the object
-print ServiceProfile.to_json()
+print(ServiceProfile.to_json())
 
 # convert the object into a dict
 service_profile_dict = service_profile_instance.to_dict()

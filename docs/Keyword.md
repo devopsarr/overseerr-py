@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of Keyword from a JSON string
 keyword_instance = Keyword.from_json(json)
 # print the JSON string representation of the object
-print Keyword.to_json()
+print(Keyword.to_json())
 
 # convert the object into a dict
 keyword_dict = keyword_instance.to_dict()

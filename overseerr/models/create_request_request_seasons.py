@@ -15,7 +15,7 @@
 from __future__ import annotations
 import json
 import pprint
-from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional, Union
 from typing_extensions import Annotated
 from pydantic import StrictStr, Field
@@ -35,10 +35,10 @@ class CreateRequestRequestSeasons(BaseModel):
     actual_instance: Optional[Union[List[float], str]] = None
     one_of_schemas: List[str] = Field(default=Literal["List[float]", "str"])
 
-    model_config = {
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def __init__(self, *args, **kwargs) -> None:

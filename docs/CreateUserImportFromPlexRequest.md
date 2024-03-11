@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateUserImportFromPlexRequest from a JSON string
 create_user_import_from_plex_request_instance = CreateUserImportFromPlexRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateUserImportFromPlexRequest.to_json()
+print(CreateUserImportFromPlexRequest.to_json())
 
 # convert the object into a dict
 create_user_import_from_plex_request_dict = create_user_import_from_plex_request_instance.to_dict()

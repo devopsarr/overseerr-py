@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of Genre from a JSON string
 genre_instance = Genre.from_json(json)
 # print the JSON string representation of the object
-print Genre.to_json()
+print(Genre.to_json())
 
 # convert the object into a dict
 genre_dict = genre_instance.to_dict()

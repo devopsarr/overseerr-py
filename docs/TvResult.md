@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of TvResult from a JSON string
 tv_result_instance = TvResult.from_json(json)
 # print the JSON string representation of the object
-print TvResult.to_json()
+print(TvResult.to_json())
 
 # convert the object into a dict
 tv_result_dict = tv_result_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of WatchProviderRegion from a JSON string
 watch_provider_region_instance = WatchProviderRegion.from_json(json)
 # print the JSON string representation of the object
-print WatchProviderRegion.to_json()
+print(WatchProviderRegion.to_json())
 
 # convert the object into a dict
 watch_provider_region_dict = watch_provider_region_instance.to_dict()

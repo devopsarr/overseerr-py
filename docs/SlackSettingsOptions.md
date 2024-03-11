@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of SlackSettingsOptions from a JSON string
 slack_settings_options_instance = SlackSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print SlackSettingsOptions.to_json()
+print(SlackSettingsOptions.to_json())
 
 # convert the object into a dict
 slack_settings_options_dict = slack_settings_options_instance.to_dict()

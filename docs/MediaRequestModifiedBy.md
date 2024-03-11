@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of MediaRequestModifiedBy from a JSON string
 media_request_modified_by_instance = MediaRequestModifiedBy.from_json(json)
 # print the JSON string representation of the object
-print MediaRequestModifiedBy.to_json()
+print(MediaRequestModifiedBy.to_json())
 
 # convert the object into a dict
 media_request_modified_by_dict = media_request_modified_by_instance.to_dict()

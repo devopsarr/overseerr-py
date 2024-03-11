@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of CreateUserRegisterPushSubscriptionRequest from a JSON string
 create_user_register_push_subscription_request_instance = CreateUserRegisterPushSubscriptionRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateUserRegisterPushSubscriptionRequest.to_json()
+print(CreateUserRegisterPushSubscriptionRequest.to_json())
 
 # convert the object into a dict
 create_user_register_push_subscription_request_dict = create_user_register_push_subscription_request_instance.to_dict()

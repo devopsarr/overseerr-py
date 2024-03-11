@@ -52,7 +52,7 @@ json = "{}"
 # create an instance of SonarrSeries from a JSON string
 sonarr_series_instance = SonarrSeries.from_json(json)
 # print the JSON string representation of the object
-print SonarrSeries.to_json()
+print(SonarrSeries.to_json())
 
 # convert the object into a dict
 sonarr_series_dict = sonarr_series_instance.to_dict()

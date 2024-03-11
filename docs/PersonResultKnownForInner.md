@@ -36,7 +36,7 @@ json = "{}"
 # create an instance of PersonResultKnownForInner from a JSON string
 person_result_known_for_inner_instance = PersonResultKnownForInner.from_json(json)
 # print the JSON string representation of the object
-print PersonResultKnownForInner.to_json()
+print(PersonResultKnownForInner.to_json())
 
 # convert the object into a dict
 person_result_known_for_inner_dict = person_result_known_for_inner_instance.to_dict()

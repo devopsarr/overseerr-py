@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of UpdateDiscoverRequest from a JSON string
 update_discover_request_instance = UpdateDiscoverRequest.from_json(json)
 # print the JSON string representation of the object
-print UpdateDiscoverRequest.to_json()
+print(UpdateDiscoverRequest.to_json())
 
 # convert the object into a dict
 update_discover_request_dict = update_discover_request_instance.to_dict()

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of Crew from a JSON string
 crew_instance = Crew.from_json(json)
 # print the JSON string representation of the object
-print Crew.to_json()
+print(Crew.to_json())
 
 # convert the object into a dict
 crew_dict = crew_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GetCache2XXResponseImageCacheTmdb from a JSON string
 get_cache2_xx_response_image_cache_tmdb_instance = GetCache2XXResponseImageCacheTmdb.from_json(json)
 # print the JSON string representation of the object
-print GetCache2XXResponseImageCacheTmdb.to_json()
+print(GetCache2XXResponseImageCacheTmdb.to_json())
 
 # convert the object into a dict
 get_cache2_xx_response_image_cache_tmdb_dict = get_cache2_xx_response_image_cache_tmdb_instance.to_dict()

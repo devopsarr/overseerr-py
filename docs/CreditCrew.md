@@ -40,7 +40,7 @@ json = "{}"
 # create an instance of CreditCrew from a JSON string
 credit_crew_instance = CreditCrew.from_json(json)
 # print the JSON string representation of the object
-print CreditCrew.to_json()
+print(CreditCrew.to_json())
 
 # convert the object into a dict
 credit_crew_dict = credit_crew_instance.to_dict()

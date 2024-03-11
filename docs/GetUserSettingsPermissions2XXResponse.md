@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of GetUserSettingsPermissions2XXResponse from a JSON string
 get_user_settings_permissions2_xx_response_instance = GetUserSettingsPermissions2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetUserSettingsPermissions2XXResponse.to_json()
+print(GetUserSettingsPermissions2XXResponse.to_json())
 
 # convert the object into a dict
 get_user_settings_permissions2_xx_response_dict = get_user_settings_permissions2_xx_response_instance.to_dict()

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of GetMovieRatings2XXResponse from a JSON string
 get_movie_ratings2_xx_response_instance = GetMovieRatings2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetMovieRatings2XXResponse.to_json()
+print(GetMovieRatings2XXResponse.to_json())
 
 # convert the object into a dict
 get_movie_ratings2_xx_response_dict = get_movie_ratings2_xx_response_instance.to_dict()

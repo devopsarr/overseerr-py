@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of GetUserQuota2XXResponseMovie from a JSON string
 get_user_quota2_xx_response_movie_instance = GetUserQuota2XXResponseMovie.from_json(json)
 # print the JSON string representation of the object
-print GetUserQuota2XXResponseMovie.to_json()
+print(GetUserQuota2XXResponseMovie.to_json())
 
 # convert the object into a dict
 get_user_quota2_xx_response_movie_dict = get_user_quota2_xx_response_movie_instance.to_dict()

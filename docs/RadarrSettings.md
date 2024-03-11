@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of RadarrSettings from a JSON string
 radarr_settings_instance = RadarrSettings.from_json(json)
 # print the JSON string representation of the object
-print RadarrSettings.to_json()
+print(RadarrSettings.to_json())
 
 # convert the object into a dict
 radarr_settings_dict = radarr_settings_instance.to_dict()

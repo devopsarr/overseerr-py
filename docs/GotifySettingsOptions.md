@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GotifySettingsOptions from a JSON string
 gotify_settings_options_instance = GotifySettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print GotifySettingsOptions.to_json()
+print(GotifySettingsOptions.to_json())
 
 # convert the object into a dict
 gotify_settings_options_dict = gotify_settings_options_instance.to_dict()

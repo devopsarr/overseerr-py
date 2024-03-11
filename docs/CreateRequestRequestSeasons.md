@@ -16,7 +16,7 @@ json = "{}"
 # create an instance of CreateRequestRequestSeasons from a JSON string
 create_request_request_seasons_instance = CreateRequestRequestSeasons.from_json(json)
 # print the JSON string representation of the object
-print CreateRequestRequestSeasons.to_json()
+print(CreateRequestRequestSeasons.to_json())
 
 # convert the object into a dict
 create_request_request_seasons_dict = create_request_request_seasons_instance.to_dict()

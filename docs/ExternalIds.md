@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ExternalIds from a JSON string
 external_ids_instance = ExternalIds.from_json(json)
 # print the JSON string representation of the object
-print ExternalIds.to_json()
+print(ExternalIds.to_json())
 
 # convert the object into a dict
 external_ids_dict = external_ids_instance.to_dict()

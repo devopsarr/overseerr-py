@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of MovieDetailsReleases from a JSON string
 movie_details_releases_instance = MovieDetailsReleases.from_json(json)
 # print the JSON string representation of the object
-print MovieDetailsReleases.to_json()
+print(MovieDetailsReleases.to_json())
 
 # convert the object into a dict
 movie_details_releases_dict = movie_details_releases_instance.to_dict()

@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TautulliSettings from a JSON string
 tautulli_settings_instance = TautulliSettings.from_json(json)
 # print the JSON string representation of the object
-print TautulliSettings.to_json()
+print(TautulliSettings.to_json())
 
 # convert the object into a dict
 tautulli_settings_dict = tautulli_settings_instance.to_dict()

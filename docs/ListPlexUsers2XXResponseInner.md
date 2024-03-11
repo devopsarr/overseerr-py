@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of ListPlexUsers2XXResponseInner from a JSON string
 list_plex_users2_xx_response_inner_instance = ListPlexUsers2XXResponseInner.from_json(json)
 # print the JSON string representation of the object
-print ListPlexUsers2XXResponseInner.to_json()
+print(ListPlexUsers2XXResponseInner.to_json())
 
 # convert the object into a dict
 list_plex_users2_xx_response_inner_dict = list_plex_users2_xx_response_inner_instance.to_dict()

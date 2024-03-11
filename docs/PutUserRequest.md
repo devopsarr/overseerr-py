@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of PutUserRequest from a JSON string
 put_user_request_instance = PutUserRequest.from_json(json)
 # print the JSON string representation of the object
-print PutUserRequest.to_json()
+print(PutUserRequest.to_json())
 
 # convert the object into a dict
 put_user_request_dict = put_user_request_instance.to_dict()

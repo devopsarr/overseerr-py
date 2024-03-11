@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ServarrTag from a JSON string
 servarr_tag_instance = ServarrTag.from_json(json)
 # print the JSON string representation of the object
-print ServarrTag.to_json()
+print(ServarrTag.to_json())
 
 # convert the object into a dict
 servarr_tag_dict = servarr_tag_instance.to_dict()

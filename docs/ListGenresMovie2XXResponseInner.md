@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ListGenresMovie2XXResponseInner from a JSON string
 list_genres_movie2_xx_response_inner_instance = ListGenresMovie2XXResponseInner.from_json(json)
 # print the JSON string representation of the object
-print ListGenresMovie2XXResponseInner.to_json()
+print(ListGenresMovie2XXResponseInner.to_json())
 
 # convert the object into a dict
 list_genres_movie2_xx_response_inner_dict = list_genres_movie2_xx_response_inner_instance.to_dict()

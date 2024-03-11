@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of PersonResult from a JSON string
 person_result_instance = PersonResult.from_json(json)
 # print the JSON string representation of the object
-print PersonResult.to_json()
+print(PersonResult.to_json())
 
 # convert the object into a dict
 person_result_dict = person_result_instance.to_dict()

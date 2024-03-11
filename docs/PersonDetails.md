@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of PersonDetails from a JSON string
 person_details_instance = PersonDetails.from_json(json)
 # print the JSON string representation of the object
-print PersonDetails.to_json()
+print(PersonDetails.to_json())
 
 # convert the object into a dict
 person_details_dict = person_details_instance.to_dict()

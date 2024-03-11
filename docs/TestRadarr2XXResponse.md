@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of TestRadarr2XXResponse from a JSON string
 test_radarr2_xx_response_instance = TestRadarr2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print TestRadarr2XXResponse.to_json()
+print(TestRadarr2XXResponse.to_json())
 
 # convert the object into a dict
 test_radarr2_xx_response_dict = test_radarr2_xx_response_instance.to_dict()

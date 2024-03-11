@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of WebPushSettings from a JSON string
 web_push_settings_instance = WebPushSettings.from_json(json)
 # print the JSON string representation of the object
-print WebPushSettings.to_json()
+print(WebPushSettings.to_json())
 
 # convert the object into a dict
 web_push_settings_dict = web_push_settings_instance.to_dict()

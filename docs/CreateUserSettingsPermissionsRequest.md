@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateUserSettingsPermissionsRequest from a JSON string
 create_user_settings_permissions_request_instance = CreateUserSettingsPermissionsRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateUserSettingsPermissionsRequest.to_json()
+print(CreateUserSettingsPermissionsRequest.to_json())
 
 # convert the object into a dict
 create_user_settings_permissions_request_dict = create_user_settings_permissions_request_instance.to_dict()

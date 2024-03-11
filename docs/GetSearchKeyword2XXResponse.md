@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of GetSearchKeyword2XXResponse from a JSON string
 get_search_keyword2_xx_response_instance = GetSearchKeyword2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetSearchKeyword2XXResponse.to_json()
+print(GetSearchKeyword2XXResponse.to_json())
 
 # convert the object into a dict
 get_search_keyword2_xx_response_dict = get_search_keyword2_xx_response_instance.to_dict()

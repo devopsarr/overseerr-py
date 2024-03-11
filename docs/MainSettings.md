@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of MainSettings from a JSON string
 main_settings_instance = MainSettings.from_json(json)
 # print the JSON string representation of the object
-print MainSettings.to_json()
+print(MainSettings.to_json())
 
 # convert the object into a dict
 main_settings_dict = main_settings_instance.to_dict()

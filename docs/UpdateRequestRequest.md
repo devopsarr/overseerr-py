@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of UpdateRequestRequest from a JSON string
 update_request_request_instance = UpdateRequestRequest.from_json(json)
 # print the JSON string representation of the object
-print UpdateRequestRequest.to_json()
+print(UpdateRequestRequest.to_json())
 
 # convert the object into a dict
 update_request_request_dict = update_request_request_instance.to_dict()

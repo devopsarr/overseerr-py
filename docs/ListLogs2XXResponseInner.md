@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ListLogs2XXResponseInner from a JSON string
 list_logs2_xx_response_inner_instance = ListLogs2XXResponseInner.from_json(json)
 # print the JSON string representation of the object
-print ListLogs2XXResponseInner.to_json()
+print(ListLogs2XXResponseInner.to_json())
 
 # convert the object into a dict
 list_logs2_xx_response_inner_dict = list_logs2_xx_response_inner_instance.to_dict()

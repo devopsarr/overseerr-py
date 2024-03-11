@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of GetIssueCount2XXResponse from a JSON string
 get_issue_count2_xx_response_instance = GetIssueCount2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetIssueCount2XXResponse.to_json()
+print(GetIssueCount2XXResponse.to_json())
 
 # convert the object into a dict
 get_issue_count2_xx_response_dict = get_issue_count2_xx_response_instance.to_dict()

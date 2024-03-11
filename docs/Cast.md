@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of Cast from a JSON string
 cast_instance = Cast.from_json(json)
 # print the JSON string representation of the object
-print Cast.to_json()
+print(Cast.to_json())
 
 # convert the object into a dict
 cast_dict = cast_instance.to_dict()

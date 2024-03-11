@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of MovieDetailsProductionCountriesInner from a JSON string
 movie_details_production_countries_inner_instance = MovieDetailsProductionCountriesInner.from_json(json)
 # print the JSON string representation of the object
-print MovieDetailsProductionCountriesInner.to_json()
+print(MovieDetailsProductionCountriesInner.to_json())
 
 # convert the object into a dict
 movie_details_production_countries_inner_dict = movie_details_production_countries_inner_instance.to_dict()

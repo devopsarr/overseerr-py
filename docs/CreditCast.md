@@ -39,7 +39,7 @@ json = "{}"
 # create an instance of CreditCast from a JSON string
 credit_cast_instance = CreditCast.from_json(json)
 # print the JSON string representation of the object
-print CreditCast.to_json()
+print(CreditCast.to_json())
 
 # convert the object into a dict
 credit_cast_dict = credit_cast_instance.to_dict()
