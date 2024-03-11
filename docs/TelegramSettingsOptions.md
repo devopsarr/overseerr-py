@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of TelegramSettingsOptions from a JSON string
 telegram_settings_options_instance = TelegramSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print TelegramSettingsOptions.to_json()
+print(TelegramSettingsOptions.to_json())
 
 # convert the object into a dict
 telegram_settings_options_dict = telegram_settings_options_instance.to_dict()

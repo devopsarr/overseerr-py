@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of DiscordSettingsOptions from a JSON string
 discord_settings_options_instance = DiscordSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print DiscordSettingsOptions.to_json()
+print(DiscordSettingsOptions.to_json())
 
 # convert the object into a dict
 discord_settings_options_dict = discord_settings_options_instance.to_dict()

@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of MovieResult from a JSON string
 movie_result_instance = MovieResult.from_json(json)
 # print the JSON string representation of the object
-print MovieResult.to_json()
+print(MovieResult.to_json())
 
 # convert the object into a dict
 movie_result_dict = movie_result_instance.to_dict()

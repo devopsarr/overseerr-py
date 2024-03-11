@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of Company from a JSON string
 company_instance = Company.from_json(json)
 # print the JSON string representation of the object
-print Company.to_json()
+print(Company.to_json())
 
 # convert the object into a dict
 company_dict = company_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of CreatePlexSyncRequest from a JSON string
 create_plex_sync_request_instance = CreatePlexSyncRequest.from_json(json)
 # print the JSON string representation of the object
-print CreatePlexSyncRequest.to_json()
+print(CreatePlexSyncRequest.to_json())
 
 # convert the object into a dict
 create_plex_sync_request_dict = create_plex_sync_request_instance.to_dict()

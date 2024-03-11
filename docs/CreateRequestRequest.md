@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of CreateRequestRequest from a JSON string
 create_request_request_instance = CreateRequestRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateRequestRequest.to_json()
+print(CreateRequestRequest.to_json())
 
 # convert the object into a dict
 create_request_request_dict = create_request_request_instance.to_dict()

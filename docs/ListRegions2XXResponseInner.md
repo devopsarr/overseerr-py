@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ListRegions2XXResponseInner from a JSON string
 list_regions2_xx_response_inner_instance = ListRegions2XXResponseInner.from_json(json)
 # print the JSON string representation of the object
-print ListRegions2XXResponseInner.to_json()
+print(ListRegions2XXResponseInner.to_json())
 
 # convert the object into a dict
 list_regions2_xx_response_inner_dict = list_regions2_xx_response_inner_instance.to_dict()

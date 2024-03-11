@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GetServiceSonarrBySonarrId2XXResponse from a JSON string
 get_service_sonarr_by_sonarr_id2_xx_response_instance = GetServiceSonarrBySonarrId2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetServiceSonarrBySonarrId2XXResponse.to_json()
+print(GetServiceSonarrBySonarrId2XXResponse.to_json())
 
 # convert the object into a dict
 get_service_sonarr_by_sonarr_id2_xx_response_dict = get_service_sonarr_by_sonarr_id2_xx_response_instance.to_dict()

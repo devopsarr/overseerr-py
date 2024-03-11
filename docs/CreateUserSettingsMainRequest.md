@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateUserSettingsMainRequest from a JSON string
 create_user_settings_main_request_instance = CreateUserSettingsMainRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateUserSettingsMainRequest.to_json()
+print(CreateUserSettingsMainRequest.to_json())
 
 # convert the object into a dict
 create_user_settings_main_request_dict = create_user_settings_main_request_instance.to_dict()

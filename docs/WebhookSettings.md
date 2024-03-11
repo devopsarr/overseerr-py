@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of WebhookSettings from a JSON string
 webhook_settings_instance = WebhookSettings.from_json(json)
 # print the JSON string representation of the object
-print WebhookSettings.to_json()
+print(WebhookSettings.to_json())
 
 # convert the object into a dict
 webhook_settings_dict = webhook_settings_instance.to_dict()

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of PlexConnection from a JSON string
 plex_connection_instance = PlexConnection.from_json(json)
 # print the JSON string representation of the object
-print PlexConnection.to_json()
+print(PlexConnection.to_json())
 
 # convert the object into a dict
 plex_connection_dict = plex_connection_instance.to_dict()

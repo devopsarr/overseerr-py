@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ProductionCompany from a JSON string
 production_company_instance = ProductionCompany.from_json(json)
 # print the JSON string representation of the object
-print ProductionCompany.to_json()
+print(ProductionCompany.to_json())
 
 # convert the object into a dict
 production_company_dict = production_company_instance.to_dict()

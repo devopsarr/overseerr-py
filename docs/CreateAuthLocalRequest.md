@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of CreateAuthLocalRequest from a JSON string
 create_auth_local_request_instance = CreateAuthLocalRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateAuthLocalRequest.to_json()
+print(CreateAuthLocalRequest.to_json())
 
 # convert the object into a dict
 create_auth_local_request_dict = create_auth_local_request_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of NotificationAgentTypes from a JSON string
 notification_agent_types_instance = NotificationAgentTypes.from_json(json)
 # print the JSON string representation of the object
-print NotificationAgentTypes.to_json()
+print(NotificationAgentTypes.to_json())
 
 # convert the object into a dict
 notification_agent_types_dict = notification_agent_types_instance.to_dict()

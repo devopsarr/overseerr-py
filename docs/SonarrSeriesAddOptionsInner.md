@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of SonarrSeriesAddOptionsInner from a JSON string
 sonarr_series_add_options_inner_instance = SonarrSeriesAddOptionsInner.from_json(json)
 # print the JSON string representation of the object
-print SonarrSeriesAddOptionsInner.to_json()
+print(SonarrSeriesAddOptionsInner.to_json())
 
 # convert the object into a dict
 sonarr_series_add_options_inner_dict = sonarr_series_add_options_inner_instance.to_dict()

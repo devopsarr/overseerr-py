@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of CreateUserRequest from a JSON string
 create_user_request_instance = CreateUserRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateUserRequest.to_json()
+print(CreateUserRequest.to_json())
 
 # convert the object into a dict
 create_user_request_dict = create_user_request_instance.to_dict()

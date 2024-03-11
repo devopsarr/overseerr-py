@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of UserSettingsNotifications from a JSON string
 user_settings_notifications_instance = UserSettingsNotifications.from_json(json)
 # print the JSON string representation of the object
-print UserSettingsNotifications.to_json()
+print(UserSettingsNotifications.to_json())
 
 # convert the object into a dict
 user_settings_notifications_dict = user_settings_notifications_instance.to_dict()

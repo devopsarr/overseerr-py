@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateAuthPlexRequest from a JSON string
 create_auth_plex_request_instance = CreateAuthPlexRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateAuthPlexRequest.to_json()
+print(CreateAuthPlexRequest.to_json())
 
 # convert the object into a dict
 create_auth_plex_request_dict = create_auth_plex_request_instance.to_dict()

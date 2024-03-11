@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of CreateIssueRequest from a JSON string
 create_issue_request_instance = CreateIssueRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateIssueRequest.to_json()
+print(CreateIssueRequest.to_json())
 
 # convert the object into a dict
 create_issue_request_dict = create_issue_request_instance.to_dict()

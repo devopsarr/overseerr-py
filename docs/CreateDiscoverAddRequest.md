@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of CreateDiscoverAddRequest from a JSON string
 create_discover_add_request_instance = CreateDiscoverAddRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateDiscoverAddRequest.to_json()
+print(CreateDiscoverAddRequest.to_json())
 
 # convert the object into a dict
 create_discover_add_request_dict = create_discover_add_request_instance.to_dict()

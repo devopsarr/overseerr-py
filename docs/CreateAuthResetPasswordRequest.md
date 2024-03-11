@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateAuthResetPasswordRequest from a JSON string
 create_auth_reset_password_request_instance = CreateAuthResetPasswordRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateAuthResetPasswordRequest.to_json()
+print(CreateAuthResetPasswordRequest.to_json())
 
 # convert the object into a dict
 create_auth_reset_password_request_dict = create_auth_reset_password_request_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of Collection from a JSON string
 collection_instance = Collection.from_json(json)
 # print the JSON string representation of the object
-print Collection.to_json()
+print(Collection.to_json())
 
 # convert the object into a dict
 collection_dict = collection_instance.to_dict()

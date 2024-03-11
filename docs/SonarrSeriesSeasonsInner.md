@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SonarrSeriesSeasonsInner from a JSON string
 sonarr_series_seasons_inner_instance = SonarrSeriesSeasonsInner.from_json(json)
 # print the JSON string representation of the object
-print SonarrSeriesSeasonsInner.to_json()
+print(SonarrSeriesSeasonsInner.to_json())
 
 # convert the object into a dict
 sonarr_series_seasons_inner_dict = sonarr_series_seasons_inner_instance.to_dict()

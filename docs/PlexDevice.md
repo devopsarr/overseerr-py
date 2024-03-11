@@ -40,7 +40,7 @@ json = "{}"
 # create an instance of PlexDevice from a JSON string
 plex_device_instance = PlexDevice.from_json(json)
 # print the JSON string representation of the object
-print PlexDevice.to_json()
+print(PlexDevice.to_json())
 
 # convert the object into a dict
 plex_device_dict = plex_device_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from overseerr.models.episode import Episode
 from overseerr.models.external_ids import ExternalIds
@@ -79,11 +79,11 @@ class TvDetails(BaseModel):
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "backdropPath", "posterPath", "contentRatings", "createdBy", "episodeRunTime", "firstAirDate", "genres", "homepage", "inProduction", "languages", "lastAirDate", "lastEpisodeToAir", "name", "nextEpisodeToAir", "networks", "numberOfEpisodes", "numberOfSeason", "originCountry", "originalLanguage", "originalName", "overview", "popularity", "productionCompanies", "productionCountries", "spokenLanguages", "seasons", "status", "tagline", "type", "voteAverage", "voteCount", "credits", "externalIds", "keywords", "mediaInfo", "watchProviders"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of WatchProviderDetails from a JSON string
 watch_provider_details_instance = WatchProviderDetails.from_json(json)
 # print the JSON string representation of the object
-print WatchProviderDetails.to_json()
+print(WatchProviderDetails.to_json())
 
 # convert the object into a dict
 watch_provider_details_dict = watch_provider_details_instance.to_dict()

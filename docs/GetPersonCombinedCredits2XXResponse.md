@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of GetPersonCombinedCredits2XXResponse from a JSON string
 get_person_combined_credits2_xx_response_instance = GetPersonCombinedCredits2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetPersonCombinedCredits2XXResponse.to_json()
+print(GetPersonCombinedCredits2XXResponse.to_json())
 
 # convert the object into a dict
 get_person_combined_credits2_xx_response_dict = get_person_combined_credits2_xx_response_instance.to_dict()

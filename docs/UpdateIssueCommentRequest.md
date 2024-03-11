@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of UpdateIssueCommentRequest from a JSON string
 update_issue_comment_request_instance = UpdateIssueCommentRequest.from_json(json)
 # print the JSON string representation of the object
-print UpdateIssueCommentRequest.to_json()
+print(UpdateIssueCommentRequest.to_json())
 
 # convert the object into a dict
 update_issue_comment_request_dict = update_issue_comment_request_instance.to_dict()

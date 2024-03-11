@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateAuthLogout2XXResponse from a JSON string
 create_auth_logout2_xx_response_instance = CreateAuthLogout2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print CreateAuthLogout2XXResponse.to_json()
+print(CreateAuthLogout2XXResponse.to_json())
 
 # convert the object into a dict
 create_auth_logout2_xx_response_dict = create_auth_logout2_xx_response_instance.to_dict()

@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateMediaByStatusRequest from a JSON string
 create_media_by_status_request_instance = CreateMediaByStatusRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateMediaByStatusRequest.to_json()
+print(CreateMediaByStatusRequest.to_json())
 
 # convert the object into a dict
 create_media_by_status_request_dict = create_media_by_status_request_instance.to_dict()

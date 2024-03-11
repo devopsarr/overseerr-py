@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GetMedia2XXResponse from a JSON string
 get_media2_xx_response_instance = GetMedia2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetMedia2XXResponse.to_json()
+print(GetMedia2XXResponse.to_json())
 
 # convert the object into a dict
 get_media2_xx_response_dict = get_media2_xx_response_instance.to_dict()

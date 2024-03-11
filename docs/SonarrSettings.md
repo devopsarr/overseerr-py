@@ -37,7 +37,7 @@ json = "{}"
 # create an instance of SonarrSettings from a JSON string
 sonarr_settings_instance = SonarrSettings.from_json(json)
 # print the JSON string representation of the object
-print SonarrSettings.to_json()
+print(SonarrSettings.to_json())
 
 # convert the object into a dict
 sonarr_settings_dict = sonarr_settings_instance.to_dict()

@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of GetCache2XXResponseApiCachesInnerStats from a JSON string
 get_cache2_xx_response_api_caches_inner_stats_instance = GetCache2XXResponseApiCachesInnerStats.from_json(json)
 # print the JSON string representation of the object
-print GetCache2XXResponseApiCachesInnerStats.to_json()
+print(GetCache2XXResponseApiCachesInnerStats.to_json())
 
 # convert the object into a dict
 get_cache2_xx_response_api_caches_inner_stats_dict = get_cache2_xx_response_api_caches_inner_stats_instance.to_dict()

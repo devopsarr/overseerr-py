@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from overseerr.models.sonarr_series_add_options_inner import SonarrSeriesAddOptionsInner
 from overseerr.models.sonarr_series_images_inner import SonarrSeriesImagesInner
@@ -69,11 +69,11 @@ class SonarrSeries(BaseModel):
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["title", "sortTitle", "seasonCount", "status", "overview", "network", "airTime", "images", "remotePoster", "seasons", "year", "path", "profileId", "languageProfileId", "seasonFolder", "monitored", "useSceneNumbering", "runtime", "tvdbId", "tvRageId", "tvMazeId", "firstAired", "lastInfoSync", "seriesType", "cleanTitle", "imdbId", "titleSlug", "certification", "genres", "tags", "added", "ratings", "qualityProfileId", "id", "rootFolderPath", "addOptions"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

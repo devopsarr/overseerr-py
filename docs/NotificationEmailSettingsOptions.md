@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of NotificationEmailSettingsOptions from a JSON string
 notification_email_settings_options_instance = NotificationEmailSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print NotificationEmailSettingsOptions.to_json()
+print(NotificationEmailSettingsOptions.to_json())
 
 # convert the object into a dict
 notification_email_settings_options_dict = notification_email_settings_options_instance.to_dict()

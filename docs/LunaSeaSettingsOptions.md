@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of LunaSeaSettingsOptions from a JSON string
 luna_sea_settings_options_instance = LunaSeaSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print LunaSeaSettingsOptions.to_json()
+print(LunaSeaSettingsOptions.to_json())
 
 # convert the object into a dict
 luna_sea_settings_options_dict = luna_sea_settings_options_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of PlexLibrary from a JSON string
 plex_library_instance = PlexLibrary.from_json(json)
 # print the JSON string representation of the object
-print PlexLibrary.to_json()
+print(PlexLibrary.to_json())
 
 # convert the object into a dict
 plex_library_dict = plex_library_instance.to_dict()

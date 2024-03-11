@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of MediaRequest from a JSON string
 media_request_instance = MediaRequest.from_json(json)
 # print the JSON string representation of the object
-print MediaRequest.to_json()
+print(MediaRequest.to_json())
 
 # convert the object into a dict
 media_request_dict = media_request_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of GetRequestCount2XXResponse from a JSON string
 get_request_count2_xx_response_instance = GetRequestCount2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetRequestCount2XXResponse.to_json()
+print(GetRequestCount2XXResponse.to_json())
 
 # convert the object into a dict
 get_request_count2_xx_response_dict = get_request_count2_xx_response_instance.to_dict()

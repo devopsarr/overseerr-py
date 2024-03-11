@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DiscoverSlider from a JSON string
 discover_slider_instance = DiscoverSlider.from_json(json)
 # print the JSON string representation of the object
-print DiscoverSlider.to_json()
+print(DiscoverSlider.to_json())
 
 # convert the object into a dict
 discover_slider_dict = discover_slider_instance.to_dict()

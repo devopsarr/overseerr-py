@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of GetDiscoverTv2XXResponse from a JSON string
 get_discover_tv2_xx_response_instance = GetDiscoverTv2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetDiscoverTv2XXResponse.to_json()
+print(GetDiscoverTv2XXResponse.to_json())
 
 # convert the object into a dict
 get_discover_tv2_xx_response_dict = get_discover_tv2_xx_response_instance.to_dict()

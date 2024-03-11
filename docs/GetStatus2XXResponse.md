@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of GetStatus2XXResponse from a JSON string
 get_status2_xx_response_instance = GetStatus2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetStatus2XXResponse.to_json()
+print(GetStatus2XXResponse.to_json())
 
 # convert the object into a dict
 get_status2_xx_response_dict = get_status2_xx_response_instance.to_dict()

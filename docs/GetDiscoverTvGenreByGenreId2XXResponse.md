@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of GetDiscoverTvGenreByGenreId2XXResponse from a JSON string
 get_discover_tv_genre_by_genre_id2_xx_response_instance = GetDiscoverTvGenreByGenreId2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetDiscoverTvGenreByGenreId2XXResponse.to_json()
+print(GetDiscoverTvGenreByGenreId2XXResponse.to_json())
 
 # convert the object into a dict
 get_discover_tv_genre_by_genre_id2_xx_response_dict = get_discover_tv_genre_by_genre_id2_xx_response_instance.to_dict()

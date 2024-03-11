@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TestSonarrRequest from a JSON string
 test_sonarr_request_instance = TestSonarrRequest.from_json(json)
 # print the JSON string representation of the object
-print TestSonarrRequest.to_json()
+print(TestSonarrRequest.to_json())
 
 # convert the object into a dict
 test_sonarr_request_dict = test_sonarr_request_instance.to_dict()

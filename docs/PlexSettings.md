@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of PlexSettings from a JSON string
 plex_settings_instance = PlexSettings.from_json(json)
 # print the JSON string representation of the object
-print PlexSettings.to_json()
+print(PlexSettings.to_json())
 
 # convert the object into a dict
 plex_settings_dict = plex_settings_instance.to_dict()

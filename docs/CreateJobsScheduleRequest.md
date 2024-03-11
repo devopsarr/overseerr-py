@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of CreateJobsScheduleRequest from a JSON string
 create_jobs_schedule_request_instance = CreateJobsScheduleRequest.from_json(json)
 # print the JSON string representation of the object
-print CreateJobsScheduleRequest.to_json()
+print(CreateJobsScheduleRequest.to_json())
 
 # convert the object into a dict
 create_jobs_schedule_request_dict = create_jobs_schedule_request_instance.to_dict()

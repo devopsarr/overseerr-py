@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of RelatedVideo from a JSON string
 related_video_instance = RelatedVideo.from_json(json)
 # print the JSON string representation of the object
-print RelatedVideo.to_json()
+print(RelatedVideo.to_json())
 
 # convert the object into a dict
 related_video_dict = related_video_instance.to_dict()

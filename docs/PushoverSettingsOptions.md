@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of PushoverSettingsOptions from a JSON string
 pushover_settings_options_instance = PushoverSettingsOptions.from_json(json)
 # print the JSON string representation of the object
-print PushoverSettingsOptions.to_json()
+print(PushoverSettingsOptions.to_json())
 
 # convert the object into a dict
 pushover_settings_options_dict = pushover_settings_options_instance.to_dict()

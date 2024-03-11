@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GetServiceRadarrByRadarrId2XXResponse from a JSON string
 get_service_radarr_by_radarr_id2_xx_response_instance = GetServiceRadarrByRadarrId2XXResponse.from_json(json)
 # print the JSON string representation of the object
-print GetServiceRadarrByRadarrId2XXResponse.to_json()
+print(GetServiceRadarrByRadarrId2XXResponse.to_json())
 
 # convert the object into a dict
 get_service_radarr_by_radarr_id2_xx_response_dict = get_service_radarr_by_radarr_id2_xx_response_instance.to_dict()
