@@ -57,7 +57,7 @@ print(SonarrSeries.to_json())
 # convert the object into a dict
 sonarr_series_dict = sonarr_series_instance.to_dict()
 # create an instance of SonarrSeries from a dict
-sonarr_series_form_dict = sonarr_series.from_dict(sonarr_series_dict)
+sonarr_series_from_dict = SonarrSeries.from_dict(sonarr_series_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

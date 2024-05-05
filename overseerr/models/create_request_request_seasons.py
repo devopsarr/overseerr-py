@@ -19,7 +19,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Any, List, Optional, Union
 from typing_extensions import Annotated
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 CREATEREQUESTREQUESTSEASONS_ONE_OF_SCHEMAS = ["List[float]", "str"]
@@ -33,7 +33,7 @@ class CreateRequestRequestSeasons(BaseModel):
     # data type: str
     oneof_schema_2_validator: Optional[StrictStr] = None
     actual_instance: Optional[Union[List[float], str]] = None
-    one_of_schemas: List[str] = Field(default=Literal["List[float]", "str"])
+    one_of_schemas: Set[str] = { "List[float]", "str" }
 
     model_config = ConfigDict(
         validate_assignment=True,

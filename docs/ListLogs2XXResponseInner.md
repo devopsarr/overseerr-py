@@ -25,7 +25,7 @@ print(ListLogs2XXResponseInner.to_json())
 # convert the object into a dict
 list_logs2_xx_response_inner_dict = list_logs2_xx_response_inner_instance.to_dict()
 # create an instance of ListLogs2XXResponseInner from a dict
-list_logs2_xx_response_inner_form_dict = list_logs2_xx_response_inner.from_dict(list_logs2_xx_response_inner_dict)
+list_logs2_xx_response_inner_from_dict = ListLogs2XXResponseInner.from_dict(list_logs2_xx_response_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

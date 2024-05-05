@@ -24,7 +24,7 @@ print(GotifySettings.to_json())
 # convert the object into a dict
 gotify_settings_dict = gotify_settings_instance.to_dict()
 # create an instance of GotifySettings from a dict
-gotify_settings_form_dict = gotify_settings.from_dict(gotify_settings_dict)
+gotify_settings_from_dict = GotifySettings.from_dict(gotify_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

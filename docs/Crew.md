@@ -28,7 +28,7 @@ print(Crew.to_json())
 # convert the object into a dict
 crew_dict = crew_instance.to_dict()
 # create an instance of Crew from a dict
-crew_form_dict = crew.from_dict(crew_dict)
+crew_from_dict = Crew.from_dict(crew_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

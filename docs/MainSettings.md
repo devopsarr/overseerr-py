@@ -32,7 +32,7 @@ print(MainSettings.to_json())
 # convert the object into a dict
 main_settings_dict = main_settings_instance.to_dict()
 # create an instance of MainSettings from a dict
-main_settings_form_dict = main_settings.from_dict(main_settings_dict)
+main_settings_from_dict = MainSettings.from_dict(main_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

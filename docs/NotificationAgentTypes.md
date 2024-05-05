@@ -29,7 +29,7 @@ print(NotificationAgentTypes.to_json())
 # convert the object into a dict
 notification_agent_types_dict = notification_agent_types_instance.to_dict()
 # create an instance of NotificationAgentTypes from a dict
-notification_agent_types_form_dict = notification_agent_types.from_dict(notification_agent_types_dict)
+notification_agent_types_from_dict = NotificationAgentTypes.from_dict(notification_agent_types_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

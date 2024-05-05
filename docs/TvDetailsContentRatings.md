@@ -22,7 +22,7 @@ print(TvDetailsContentRatings.to_json())
 # convert the object into a dict
 tv_details_content_ratings_dict = tv_details_content_ratings_instance.to_dict()
 # create an instance of TvDetailsContentRatings from a dict
-tv_details_content_ratings_form_dict = tv_details_content_ratings.from_dict(tv_details_content_ratings_dict)
+tv_details_content_ratings_from_dict = TvDetailsContentRatings.from_dict(tv_details_content_ratings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

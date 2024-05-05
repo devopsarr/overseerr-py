@@ -27,7 +27,7 @@ print(RelatedVideo.to_json())
 # convert the object into a dict
 related_video_dict = related_video_instance.to_dict()
 # create an instance of RelatedVideo from a dict
-related_video_form_dict = related_video.from_dict(related_video_dict)
+related_video_from_dict = RelatedVideo.from_dict(related_video_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

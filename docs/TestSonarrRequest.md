@@ -26,7 +26,7 @@ print(TestSonarrRequest.to_json())
 # convert the object into a dict
 test_sonarr_request_dict = test_sonarr_request_instance.to_dict()
 # create an instance of TestSonarrRequest from a dict
-test_sonarr_request_form_dict = test_sonarr_request.from_dict(test_sonarr_request_dict)
+test_sonarr_request_from_dict = TestSonarrRequest.from_dict(test_sonarr_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

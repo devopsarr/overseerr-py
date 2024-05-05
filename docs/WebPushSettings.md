@@ -23,7 +23,7 @@ print(WebPushSettings.to_json())
 # convert the object into a dict
 web_push_settings_dict = web_push_settings_instance.to_dict()
 # create an instance of WebPushSettings from a dict
-web_push_settings_form_dict = web_push_settings.from_dict(web_push_settings_dict)
+web_push_settings_from_dict = WebPushSettings.from_dict(web_push_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

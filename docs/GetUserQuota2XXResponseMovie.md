@@ -26,7 +26,7 @@ print(GetUserQuota2XXResponseMovie.to_json())
 # convert the object into a dict
 get_user_quota2_xx_response_movie_dict = get_user_quota2_xx_response_movie_instance.to_dict()
 # create an instance of GetUserQuota2XXResponseMovie from a dict
-get_user_quota2_xx_response_movie_form_dict = get_user_quota2_xx_response_movie.from_dict(get_user_quota2_xx_response_movie_dict)
+get_user_quota2_xx_response_movie_from_dict = GetUserQuota2XXResponseMovie.from_dict(get_user_quota2_xx_response_movie_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

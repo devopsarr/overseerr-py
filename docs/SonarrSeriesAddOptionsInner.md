@@ -24,7 +24,7 @@ print(SonarrSeriesAddOptionsInner.to_json())
 # convert the object into a dict
 sonarr_series_add_options_inner_dict = sonarr_series_add_options_inner_instance.to_dict()
 # create an instance of SonarrSeriesAddOptionsInner from a dict
-sonarr_series_add_options_inner_form_dict = sonarr_series_add_options_inner.from_dict(sonarr_series_add_options_inner_dict)
+sonarr_series_add_options_inner_from_dict = SonarrSeriesAddOptionsInner.from_dict(sonarr_series_add_options_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

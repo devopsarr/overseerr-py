@@ -41,7 +41,7 @@ print(PersonResultKnownForInner.to_json())
 # convert the object into a dict
 person_result_known_for_inner_dict = person_result_known_for_inner_instance.to_dict()
 # create an instance of PersonResultKnownForInner from a dict
-person_result_known_for_inner_form_dict = person_result_known_for_inner.from_dict(person_result_known_for_inner_dict)
+person_result_known_for_inner_from_dict = PersonResultKnownForInner.from_dict(person_result_known_for_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

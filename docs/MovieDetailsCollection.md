@@ -25,7 +25,7 @@ print(MovieDetailsCollection.to_json())
 # convert the object into a dict
 movie_details_collection_dict = movie_details_collection_instance.to_dict()
 # create an instance of MovieDetailsCollection from a dict
-movie_details_collection_form_dict = movie_details_collection.from_dict(movie_details_collection_dict)
+movie_details_collection_from_dict = MovieDetailsCollection.from_dict(movie_details_collection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

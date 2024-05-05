@@ -24,7 +24,7 @@ print(WebhookSettings.to_json())
 # convert the object into a dict
 webhook_settings_dict = webhook_settings_instance.to_dict()
 # create an instance of WebhookSettings from a dict
-webhook_settings_form_dict = webhook_settings.from_dict(webhook_settings_dict)
+webhook_settings_from_dict = WebhookSettings.from_dict(webhook_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

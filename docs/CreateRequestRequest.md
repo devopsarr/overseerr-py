@@ -31,7 +31,7 @@ print(CreateRequestRequest.to_json())
 # convert the object into a dict
 create_request_request_dict = create_request_request_instance.to_dict()
 # create an instance of CreateRequestRequest from a dict
-create_request_request_form_dict = create_request_request.from_dict(create_request_request_dict)
+create_request_request_from_dict = CreateRequestRequest.from_dict(create_request_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

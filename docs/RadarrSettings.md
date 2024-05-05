@@ -37,7 +37,7 @@ print(RadarrSettings.to_json())
 # convert the object into a dict
 radarr_settings_dict = radarr_settings_instance.to_dict()
 # create an instance of RadarrSettings from a dict
-radarr_settings_form_dict = radarr_settings.from_dict(radarr_settings_dict)
+radarr_settings_from_dict = RadarrSettings.from_dict(radarr_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

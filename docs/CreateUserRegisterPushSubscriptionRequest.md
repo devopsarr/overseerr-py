@@ -24,7 +24,7 @@ print(CreateUserRegisterPushSubscriptionRequest.to_json())
 # convert the object into a dict
 create_user_register_push_subscription_request_dict = create_user_register_push_subscription_request_instance.to_dict()
 # create an instance of CreateUserRegisterPushSubscriptionRequest from a dict
-create_user_register_push_subscription_request_form_dict = create_user_register_push_subscription_request.from_dict(create_user_register_push_subscription_request_dict)
+create_user_register_push_subscription_request_from_dict = CreateUserRegisterPushSubscriptionRequest.from_dict(create_user_register_push_subscription_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

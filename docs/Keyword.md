@@ -23,7 +23,7 @@ print(Keyword.to_json())
 # convert the object into a dict
 keyword_dict = keyword_instance.to_dict()
 # create an instance of Keyword from a dict
-keyword_form_dict = keyword.from_dict(keyword_dict)
+keyword_from_dict = Keyword.from_dict(keyword_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

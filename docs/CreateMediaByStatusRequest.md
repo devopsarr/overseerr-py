@@ -22,7 +22,7 @@ print(CreateMediaByStatusRequest.to_json())
 # convert the object into a dict
 create_media_by_status_request_dict = create_media_by_status_request_instance.to_dict()
 # create an instance of CreateMediaByStatusRequest from a dict
-create_media_by_status_request_form_dict = create_media_by_status_request.from_dict(create_media_by_status_request_dict)
+create_media_by_status_request_from_dict = CreateMediaByStatusRequest.from_dict(create_media_by_status_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

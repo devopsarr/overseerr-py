@@ -23,7 +23,7 @@ print(MovieDetailsProductionCountriesInner.to_json())
 # convert the object into a dict
 movie_details_production_countries_inner_dict = movie_details_production_countries_inner_instance.to_dict()
 # create an instance of MovieDetailsProductionCountriesInner from a dict
-movie_details_production_countries_inner_form_dict = movie_details_production_countries_inner.from_dict(movie_details_production_countries_inner_dict)
+movie_details_production_countries_inner_from_dict = MovieDetailsProductionCountriesInner.from_dict(movie_details_production_countries_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

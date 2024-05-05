@@ -24,7 +24,7 @@ print(TelegramSettings.to_json())
 # convert the object into a dict
 telegram_settings_dict = telegram_settings_instance.to_dict()
 # create an instance of TelegramSettings from a dict
-telegram_settings_form_dict = telegram_settings.from_dict(telegram_settings_dict)
+telegram_settings_from_dict = TelegramSettings.from_dict(telegram_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
