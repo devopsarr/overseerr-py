@@ -24,7 +24,7 @@ print(PlexLibrary.to_json())
 # convert the object into a dict
 plex_library_dict = plex_library_instance.to_dict()
 # create an instance of PlexLibrary from a dict
-plex_library_form_dict = plex_library.from_dict(plex_library_dict)
+plex_library_from_dict = PlexLibrary.from_dict(plex_library_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

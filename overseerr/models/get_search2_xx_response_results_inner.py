@@ -22,7 +22,7 @@ from typing import Optional
 from overseerr.models.movie_result import MovieResult
 from overseerr.models.person_result import PersonResult
 from overseerr.models.tv_result import TvResult
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -43,7 +43,7 @@ class GetSearch2XXResponseResultsInner(BaseModel):
         actual_instance: Optional[Union[MovieResult, PersonResult, TvResult]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["MovieResult", "PersonResult", "TvResult"])
+    any_of_schemas: Set[str] = { "MovieResult", "PersonResult", "TvResult" }
 
     model_config = {
         "validate_assignment": True,

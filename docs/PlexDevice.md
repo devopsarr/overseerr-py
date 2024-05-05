@@ -45,7 +45,7 @@ print(PlexDevice.to_json())
 # convert the object into a dict
 plex_device_dict = plex_device_instance.to_dict()
 # create an instance of PlexDevice from a dict
-plex_device_form_dict = plex_device.from_dict(plex_device_dict)
+plex_device_from_dict = PlexDevice.from_dict(plex_device_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

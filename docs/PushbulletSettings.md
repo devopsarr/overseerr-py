@@ -24,7 +24,7 @@ print(PushbulletSettings.to_json())
 # convert the object into a dict
 pushbullet_settings_dict = pushbullet_settings_instance.to_dict()
 # create an instance of PushbulletSettings from a dict
-pushbullet_settings_form_dict = pushbullet_settings.from_dict(pushbullet_settings_dict)
+pushbullet_settings_from_dict = PushbulletSettings.from_dict(pushbullet_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

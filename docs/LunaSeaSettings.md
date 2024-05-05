@@ -24,7 +24,7 @@ print(LunaSeaSettings.to_json())
 # convert the object into a dict
 luna_sea_settings_dict = luna_sea_settings_instance.to_dict()
 # create an instance of LunaSeaSettings from a dict
-luna_sea_settings_form_dict = luna_sea_settings.from_dict(luna_sea_settings_dict)
+luna_sea_settings_from_dict = LunaSeaSettings.from_dict(luna_sea_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

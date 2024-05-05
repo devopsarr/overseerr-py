@@ -26,7 +26,7 @@ print(GetCache2XXResponseApiCachesInnerStats.to_json())
 # convert the object into a dict
 get_cache2_xx_response_api_caches_inner_stats_dict = get_cache2_xx_response_api_caches_inner_stats_instance.to_dict()
 # create an instance of GetCache2XXResponseApiCachesInnerStats from a dict
-get_cache2_xx_response_api_caches_inner_stats_form_dict = get_cache2_xx_response_api_caches_inner_stats.from_dict(get_cache2_xx_response_api_caches_inner_stats_dict)
+get_cache2_xx_response_api_caches_inner_stats_from_dict = GetCache2XXResponseApiCachesInnerStats.from_dict(get_cache2_xx_response_api_caches_inner_stats_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

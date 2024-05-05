@@ -29,7 +29,7 @@ print(ExternalIds.to_json())
 # convert the object into a dict
 external_ids_dict = external_ids_instance.to_dict()
 # create an instance of ExternalIds from a dict
-external_ids_form_dict = external_ids.from_dict(external_ids_dict)
+external_ids_from_dict = ExternalIds.from_dict(external_ids_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

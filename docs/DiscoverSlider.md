@@ -27,7 +27,7 @@ print(DiscoverSlider.to_json())
 # convert the object into a dict
 discover_slider_dict = discover_slider_instance.to_dict()
 # create an instance of DiscoverSlider from a dict
-discover_slider_form_dict = discover_slider.from_dict(discover_slider_dict)
+discover_slider_from_dict = DiscoverSlider.from_dict(discover_slider_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

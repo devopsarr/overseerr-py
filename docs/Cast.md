@@ -29,7 +29,7 @@ print(Cast.to_json())
 # convert the object into a dict
 cast_dict = cast_instance.to_dict()
 # create an instance of Cast from a dict
-cast_form_dict = cast.from_dict(cast_dict)
+cast_from_dict = Cast.from_dict(cast_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

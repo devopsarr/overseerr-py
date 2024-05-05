@@ -29,7 +29,7 @@ print(UpdateRequestRequest.to_json())
 # convert the object into a dict
 update_request_request_dict = update_request_request_instance.to_dict()
 # create an instance of UpdateRequestRequest from a dict
-update_request_request_form_dict = update_request_request.from_dict(update_request_request_dict)
+update_request_request_from_dict = UpdateRequestRequest.from_dict(update_request_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

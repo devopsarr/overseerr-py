@@ -23,7 +23,7 @@ print(SonarrSeriesImagesInner.to_json())
 # convert the object into a dict
 sonarr_series_images_inner_dict = sonarr_series_images_inner_instance.to_dict()
 # create an instance of SonarrSeriesImagesInner from a dict
-sonarr_series_images_inner_form_dict = sonarr_series_images_inner.from_dict(sonarr_series_images_inner_dict)
+sonarr_series_images_inner_from_dict = SonarrSeriesImagesInner.from_dict(sonarr_series_images_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

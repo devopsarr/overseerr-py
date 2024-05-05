@@ -24,7 +24,7 @@ print(NotificationEmailSettings.to_json())
 # convert the object into a dict
 notification_email_settings_dict = notification_email_settings_instance.to_dict()
 # create an instance of NotificationEmailSettings from a dict
-notification_email_settings_form_dict = notification_email_settings.from_dict(notification_email_settings_dict)
+notification_email_settings_from_dict = NotificationEmailSettings.from_dict(notification_email_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

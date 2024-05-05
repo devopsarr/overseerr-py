@@ -25,7 +25,7 @@ print(WatchProvidersInner.to_json())
 # convert the object into a dict
 watch_providers_inner_dict = watch_providers_inner_instance.to_dict()
 # create an instance of WatchProvidersInner from a dict
-watch_providers_inner_form_dict = watch_providers_inner.from_dict(watch_providers_inner_dict)
+watch_providers_inner_from_dict = WatchProvidersInner.from_dict(watch_providers_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

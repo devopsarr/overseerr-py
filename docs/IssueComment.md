@@ -24,7 +24,7 @@ print(IssueComment.to_json())
 # convert the object into a dict
 issue_comment_dict = issue_comment_instance.to_dict()
 # create an instance of IssueComment from a dict
-issue_comment_form_dict = issue_comment.from_dict(issue_comment_dict)
+issue_comment_from_dict = IssueComment.from_dict(issue_comment_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

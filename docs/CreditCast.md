@@ -44,7 +44,7 @@ print(CreditCast.to_json())
 # convert the object into a dict
 credit_cast_dict = credit_cast_instance.to_dict()
 # create an instance of CreditCast from a dict
-credit_cast_form_dict = credit_cast.from_dict(credit_cast_dict)
+credit_cast_from_dict = CreditCast.from_dict(credit_cast_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

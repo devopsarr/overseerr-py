@@ -24,7 +24,7 @@ print(UpdateDiscoverRequest.to_json())
 # convert the object into a dict
 update_discover_request_dict = update_discover_request_instance.to_dict()
 # create an instance of UpdateDiscoverRequest from a dict
-update_discover_request_form_dict = update_discover_request.from_dict(update_discover_request_dict)
+update_discover_request_from_dict = UpdateDiscoverRequest.from_dict(update_discover_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

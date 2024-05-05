@@ -31,7 +31,7 @@ print(NotificationEmailSettingsOptions.to_json())
 # convert the object into a dict
 notification_email_settings_options_dict = notification_email_settings_options_instance.to_dict()
 # create an instance of NotificationEmailSettingsOptions from a dict
-notification_email_settings_options_form_dict = notification_email_settings_options.from_dict(notification_email_settings_options_dict)
+notification_email_settings_options_from_dict = NotificationEmailSettingsOptions.from_dict(notification_email_settings_options_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

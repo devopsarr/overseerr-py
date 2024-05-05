@@ -23,7 +23,7 @@ print(PutUserRequest.to_json())
 # convert the object into a dict
 put_user_request_dict = put_user_request_instance.to_dict()
 # create an instance of PutUserRequest from a dict
-put_user_request_form_dict = put_user_request.from_dict(put_user_request_dict)
+put_user_request_from_dict = PutUserRequest.from_dict(put_user_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

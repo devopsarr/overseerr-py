@@ -25,7 +25,7 @@ print(ProductionCompany.to_json())
 # convert the object into a dict
 production_company_dict = production_company_instance.to_dict()
 # create an instance of ProductionCompany from a dict
-production_company_form_dict = production_company.from_dict(production_company_dict)
+production_company_from_dict = ProductionCompany.from_dict(production_company_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

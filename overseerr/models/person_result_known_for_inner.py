@@ -20,7 +20,7 @@ from typing import Any, List, Optional
 from overseerr.models.movie_result import MovieResult
 from overseerr.models.tv_result import TvResult
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 PERSONRESULTKNOWNFORINNER_ONE_OF_SCHEMAS = ["MovieResult", "TvResult"]
@@ -34,7 +34,7 @@ class PersonResultKnownForInner(BaseModel):
     # data type: TvResult
     oneof_schema_2_validator: Optional[TvResult] = None
     actual_instance: Optional[Union[MovieResult, TvResult]] = None
-    one_of_schemas: List[str] = Field(default=Literal["MovieResult", "TvResult"])
+    one_of_schemas: Set[str] = { "MovieResult", "TvResult" }
 
     model_config = ConfigDict(
         validate_assignment=True,

@@ -58,7 +58,7 @@ print(TvDetails.to_json())
 # convert the object into a dict
 tv_details_dict = tv_details_instance.to_dict()
 # create an instance of TvDetails from a dict
-tv_details_form_dict = tv_details.from_dict(tv_details_dict)
+tv_details_from_dict = TvDetails.from_dict(tv_details_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

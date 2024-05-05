@@ -45,7 +45,7 @@ print(CreditCrew.to_json())
 # convert the object into a dict
 credit_crew_dict = credit_crew_instance.to_dict()
 # create an instance of CreditCrew from a dict
-credit_crew_form_dict = credit_crew.from_dict(credit_crew_dict)
+credit_crew_from_dict = CreditCrew.from_dict(credit_crew_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

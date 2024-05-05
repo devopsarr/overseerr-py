@@ -21,7 +21,7 @@ print(CreateRequestRequestSeasons.to_json())
 # convert the object into a dict
 create_request_request_seasons_dict = create_request_request_seasons_instance.to_dict()
 # create an instance of CreateRequestRequestSeasons from a dict
-create_request_request_seasons_form_dict = create_request_request_seasons.from_dict(create_request_request_seasons_dict)
+create_request_request_seasons_from_dict = CreateRequestRequestSeasons.from_dict(create_request_request_seasons_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(SpokenLanguage.to_json())
 # convert the object into a dict
 spoken_language_dict = spoken_language_instance.to_dict()
 # create an instance of SpokenLanguage from a dict
-spoken_language_form_dict = spoken_language.from_dict(spoken_language_dict)
+spoken_language_from_dict = SpokenLanguage.from_dict(spoken_language_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

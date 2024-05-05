@@ -27,7 +27,7 @@ print(Collection.to_json())
 # convert the object into a dict
 collection_dict = collection_instance.to_dict()
 # create an instance of Collection from a dict
-collection_form_dict = collection.from_dict(collection_dict)
+collection_from_dict = Collection.from_dict(collection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

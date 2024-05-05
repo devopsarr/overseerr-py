@@ -24,7 +24,7 @@ print(DiscordSettings.to_json())
 # convert the object into a dict
 discord_settings_dict = discord_settings_instance.to_dict()
 # create an instance of DiscordSettings from a dict
-discord_settings_form_dict = discord_settings.from_dict(discord_settings_dict)
+discord_settings_from_dict = DiscordSettings.from_dict(discord_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

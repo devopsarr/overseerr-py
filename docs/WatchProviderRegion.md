@@ -24,7 +24,7 @@ print(WatchProviderRegion.to_json())
 # convert the object into a dict
 watch_provider_region_dict = watch_provider_region_instance.to_dict()
 # create an instance of WatchProviderRegion from a dict
-watch_provider_region_form_dict = watch_provider_region.from_dict(watch_provider_region_dict)
+watch_provider_region_from_dict = WatchProviderRegion.from_dict(watch_provider_region_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -26,7 +26,7 @@ print(MovieDetailsReleasesResultsInnerReleaseDatesInner.to_json())
 # convert the object into a dict
 movie_details_releases_results_inner_release_dates_inner_dict = movie_details_releases_results_inner_release_dates_inner_instance.to_dict()
 # create an instance of MovieDetailsReleasesResultsInnerReleaseDatesInner from a dict
-movie_details_releases_results_inner_release_dates_inner_form_dict = movie_details_releases_results_inner_release_dates_inner.from_dict(movie_details_releases_results_inner_release_dates_inner_dict)
+movie_details_releases_results_inner_release_dates_inner_from_dict = MovieDetailsReleasesResultsInnerReleaseDatesInner.from_dict(movie_details_releases_results_inner_release_dates_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

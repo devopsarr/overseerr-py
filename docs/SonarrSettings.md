@@ -42,7 +42,7 @@ print(SonarrSettings.to_json())
 # convert the object into a dict
 sonarr_settings_dict = sonarr_settings_instance.to_dict()
 # create an instance of SonarrSettings from a dict
-sonarr_settings_form_dict = sonarr_settings.from_dict(sonarr_settings_dict)
+sonarr_settings_from_dict = SonarrSettings.from_dict(sonarr_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

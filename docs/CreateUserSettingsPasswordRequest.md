@@ -23,7 +23,7 @@ print(CreateUserSettingsPasswordRequest.to_json())
 # convert the object into a dict
 create_user_settings_password_request_dict = create_user_settings_password_request_instance.to_dict()
 # create an instance of CreateUserSettingsPasswordRequest from a dict
-create_user_settings_password_request_form_dict = create_user_settings_password_request.from_dict(create_user_settings_password_request_dict)
+create_user_settings_password_request_from_dict = CreateUserSettingsPasswordRequest.from_dict(create_user_settings_password_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,7 +34,7 @@ print(UserSettingsNotifications.to_json())
 # convert the object into a dict
 user_settings_notifications_dict = user_settings_notifications_instance.to_dict()
 # create an instance of UserSettingsNotifications from a dict
-user_settings_notifications_form_dict = user_settings_notifications.from_dict(user_settings_notifications_dict)
+user_settings_notifications_from_dict = UserSettingsNotifications.from_dict(user_settings_notifications_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

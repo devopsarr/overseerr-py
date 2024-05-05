@@ -22,7 +22,7 @@ print(CreateUserSettingsPermissionsRequest.to_json())
 # convert the object into a dict
 create_user_settings_permissions_request_dict = create_user_settings_permissions_request_instance.to_dict()
 # create an instance of CreateUserSettingsPermissionsRequest from a dict
-create_user_settings_permissions_request_form_dict = create_user_settings_permissions_request.from_dict(create_user_settings_permissions_request_dict)
+create_user_settings_permissions_request_from_dict = CreateUserSettingsPermissionsRequest.from_dict(create_user_settings_permissions_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,7 +28,7 @@ print(PlexConnection.to_json())
 # convert the object into a dict
 plex_connection_dict = plex_connection_instance.to_dict()
 # create an instance of PlexConnection from a dict
-plex_connection_form_dict = plex_connection.from_dict(plex_connection_dict)
+plex_connection_from_dict = PlexConnection.from_dict(plex_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

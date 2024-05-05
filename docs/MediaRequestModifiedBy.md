@@ -32,7 +32,7 @@ print(MediaRequestModifiedBy.to_json())
 # convert the object into a dict
 media_request_modified_by_dict = media_request_modified_by_instance.to_dict()
 # create an instance of MediaRequestModifiedBy from a dict
-media_request_modified_by_form_dict = media_request_modified_by.from_dict(media_request_modified_by_dict)
+media_request_modified_by_from_dict = MediaRequestModifiedBy.from_dict(media_request_modified_by_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

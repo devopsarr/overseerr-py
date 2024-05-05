@@ -26,7 +26,7 @@ print(TautulliSettings.to_json())
 # convert the object into a dict
 tautulli_settings_dict = tautulli_settings_instance.to_dict()
 # create an instance of TautulliSettings from a dict
-tautulli_settings_form_dict = tautulli_settings.from_dict(tautulli_settings_dict)
+tautulli_settings_from_dict = TautulliSettings.from_dict(tautulli_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

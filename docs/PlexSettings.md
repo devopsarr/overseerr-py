@@ -28,7 +28,7 @@ print(PlexSettings.to_json())
 # convert the object into a dict
 plex_settings_dict = plex_settings_instance.to_dict()
 # create an instance of PlexSettings from a dict
-plex_settings_form_dict = plex_settings.from_dict(plex_settings_dict)
+plex_settings_from_dict = PlexSettings.from_dict(plex_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
