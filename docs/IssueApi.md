@@ -493,8 +493,8 @@ with overseerr.ApiClient(configuration) as api_client:
     api_instance = overseerr.IssueApi(api_client)
     take = 20 # float |  (optional)
     skip = 0 # float |  (optional)
-    sort = 'added' # str |  (optional) (default to 'added')
-    filter = 'open' # str |  (optional) (default to 'open')
+    sort = added # str |  (optional) (default to added)
+    filter = open # str |  (optional) (default to open)
     requested_by = 1 # float |  (optional)
 
     try:
@@ -515,8 +515,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **take** | **float**|  | [optional] 
  **skip** | **float**|  | [optional] 
- **sort** | **str**|  | [optional] [default to &#39;added&#39;]
- **filter** | **str**|  | [optional] [default to &#39;open&#39;]
+ **sort** | **str**|  | [optional] [default to added]
+ **filter** | **str**|  | [optional] [default to open]
  **requested_by** | **float**|  | [optional] 
 
 ### Return type
