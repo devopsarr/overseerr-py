@@ -911,7 +911,7 @@ with overseerr.ApiClient(configuration) as api_client:
     api_instance = overseerr.UsersApi(api_client)
     take = 20 # float |  (optional)
     skip = 0 # float |  (optional)
-    sort = 'created' # str |  (optional) (default to 'created')
+    sort = created # str |  (optional) (default to created)
 
     try:
         # Get all users
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **take** | **float**|  | [optional] 
  **skip** | **float**|  | [optional] 
- **sort** | **str**|  | [optional] [default to &#39;created&#39;]
+ **sort** | **str**|  | [optional] [default to created]
 
 ### Return type
 
