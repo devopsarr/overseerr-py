@@ -406,7 +406,7 @@ with overseerr.ApiClient(configuration) as api_client:
     take = 20 # float |  (optional)
     skip = 0 # float |  (optional)
     filter = 'filter_example' # str |  (optional)
-    sort = 'added' # str |  (optional) (default to 'added')
+    sort = added # str |  (optional) (default to added)
     requested_by = 1 # float |  (optional)
 
     try:
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
  **take** | **float**|  | [optional] 
  **skip** | **float**|  | [optional] 
  **filter** | **str**|  | [optional] 
- **sort** | **str**|  | [optional] [default to &#39;added&#39;]
+ **sort** | **str**|  | [optional] [default to added]
  **requested_by** | **float**|  | [optional] 
 
 ### Return type
