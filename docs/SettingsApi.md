@@ -4057,7 +4057,7 @@ with overseerr.ApiClient(configuration) as api_client:
     api_instance = overseerr.SettingsApi(api_client)
     take = 25 # float |  (optional)
     skip = 0 # float |  (optional)
-    filter = 'debug' # str |  (optional) (default to 'debug')
+    filter = debug # str |  (optional) (default to debug)
     search = 'plex' # str |  (optional)
 
     try:
@@ -4078,7 +4078,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **take** | **float**|  | [optional] 
  **skip** | **float**|  | [optional] 
- **filter** | **str**|  | [optional] [default to &#39;debug&#39;]
+ **filter** | **str**|  | [optional] [default to debug]
  **search** | **str**|  | [optional] 
 
 ### Return type
