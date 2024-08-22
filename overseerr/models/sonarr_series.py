@@ -113,30 +113,30 @@ class SonarrSeries(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in images (list)
         _items = []
         if self.images:
-            for _item in self.images:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_images in self.images:
+                if _item_images:
+                    _items.append(_item_images.to_dict())
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in seasons (list)
         _items = []
         if self.seasons:
-            for _item in self.seasons:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_seasons in self.seasons:
+                if _item_seasons:
+                    _items.append(_item_seasons.to_dict())
             _dict['seasons'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ratings (list)
         _items = []
         if self.ratings:
-            for _item in self.ratings:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ratings in self.ratings:
+                if _item_ratings:
+                    _items.append(_item_ratings.to_dict())
             _dict['ratings'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in add_options (list)
         _items = []
         if self.add_options:
-            for _item in self.add_options:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_add_options in self.add_options:
+                if _item_add_options:
+                    _items.append(_item_add_options.to_dict())
             _dict['addOptions'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

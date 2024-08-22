@@ -82,9 +82,9 @@ class Season(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in episodes (list)
         _items = []
         if self.episodes:
-            for _item in self.episodes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_episodes in self.episodes:
+                if _item_episodes:
+                    _items.append(_item_episodes.to_dict())
             _dict['episodes'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

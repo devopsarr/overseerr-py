@@ -126,16 +126,16 @@ class TvDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in created_by (list)
         _items = []
         if self.created_by:
-            for _item in self.created_by:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_created_by in self.created_by:
+                if _item_created_by:
+                    _items.append(_item_created_by.to_dict())
             _dict['createdBy'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in genres (list)
         _items = []
         if self.genres:
-            for _item in self.genres:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_genres in self.genres:
+                if _item_genres:
+                    _items.append(_item_genres.to_dict())
             _dict['genres'] = _items
         # override the default output from pydantic by calling `to_dict()` of last_episode_to_air
         if self.last_episode_to_air:
@@ -146,37 +146,37 @@ class TvDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in networks (list)
         _items = []
         if self.networks:
-            for _item in self.networks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_networks in self.networks:
+                if _item_networks:
+                    _items.append(_item_networks.to_dict())
             _dict['networks'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in production_companies (list)
         _items = []
         if self.production_companies:
-            for _item in self.production_companies:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_production_companies in self.production_companies:
+                if _item_production_companies:
+                    _items.append(_item_production_companies.to_dict())
             _dict['productionCompanies'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in production_countries (list)
         _items = []
         if self.production_countries:
-            for _item in self.production_countries:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_production_countries in self.production_countries:
+                if _item_production_countries:
+                    _items.append(_item_production_countries.to_dict())
             _dict['productionCountries'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in spoken_languages (list)
         _items = []
         if self.spoken_languages:
-            for _item in self.spoken_languages:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_spoken_languages in self.spoken_languages:
+                if _item_spoken_languages:
+                    _items.append(_item_spoken_languages.to_dict())
             _dict['spokenLanguages'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in seasons (list)
         _items = []
         if self.seasons:
-            for _item in self.seasons:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_seasons in self.seasons:
+                if _item_seasons:
+                    _items.append(_item_seasons.to_dict())
             _dict['seasons'] = _items
         # override the default output from pydantic by calling `to_dict()` of credits
         if self.credits:
@@ -187,9 +187,9 @@ class TvDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in keywords (list)
         _items = []
         if self.keywords:
-            for _item in self.keywords:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_keywords in self.keywords:
+                if _item_keywords:
+                    _items.append(_item_keywords.to_dict())
             _dict['keywords'] = _items
         # override the default output from pydantic by calling `to_dict()` of media_info
         if self.media_info:
@@ -197,10 +197,10 @@ class TvDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in watch_providers (list of list)
         _items = []
         if self.watch_providers:
-            for _item in self.watch_providers:
-                if _item:
+            for _item_watch_providers in self.watch_providers:
+                if _item_watch_providers:
                     _items.append(
-                         [_inner_item.to_dict() for _inner_item in _item if _inner_item is not None]
+                         [_inner_item.to_dict() for _inner_item in _item_watch_providers if _inner_item is not None]
                     )
             _dict['watchProviders'] = _items
         # puts key-value pairs in additional_properties in the top level

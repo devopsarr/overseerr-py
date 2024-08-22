@@ -76,9 +76,9 @@ class GetUserWatchData2XXResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in recently_watched (list)
         _items = []
         if self.recently_watched:
-            for _item in self.recently_watched:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_recently_watched in self.recently_watched:
+                if _item_recently_watched:
+                    _items.append(_item_recently_watched.to_dict())
             _dict['recentlyWatched'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

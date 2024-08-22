@@ -78,16 +78,16 @@ class WatchProvidersInner(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in buy (list)
         _items = []
         if self.buy:
-            for _item in self.buy:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_buy in self.buy:
+                if _item_buy:
+                    _items.append(_item_buy.to_dict())
             _dict['buy'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in flatrate (list)
         _items = []
         if self.flatrate:
-            for _item in self.flatrate:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_flatrate in self.flatrate:
+                if _item_flatrate:
+                    _items.append(_item_flatrate.to_dict())
             _dict['flatrate'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

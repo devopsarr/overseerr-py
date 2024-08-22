@@ -79,9 +79,9 @@ class PersonResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in known_for (list)
         _items = []
         if self.known_for:
-            for _item in self.known_for:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_known_for in self.known_for:
+                if _item_known_for:
+                    _items.append(_item_known_for.to_dict())
             _dict['knownFor'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

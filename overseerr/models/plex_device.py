@@ -98,9 +98,9 @@ class PlexDevice(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in connection (list)
         _items = []
         if self.connection:
-            for _item in self.connection:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connection in self.connection:
+                if _item_connection:
+                    _items.append(_item_connection.to_dict())
             _dict['connection'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
