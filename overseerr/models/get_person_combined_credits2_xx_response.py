@@ -78,16 +78,16 @@ class GetPersonCombinedCredits2XXResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in cast (list)
         _items = []
         if self.cast:
-            for _item in self.cast:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_cast in self.cast:
+                if _item_cast:
+                    _items.append(_item_cast.to_dict())
             _dict['cast'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in crew (list)
         _items = []
         if self.crew:
-            for _item in self.crew:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_crew in self.crew:
+                if _item_crew:
+                    _items.append(_item_crew.to_dict())
             _dict['crew'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

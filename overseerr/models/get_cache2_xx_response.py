@@ -80,9 +80,9 @@ class GetCache2XXResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in api_caches (list)
         _items = []
         if self.api_caches:
-            for _item in self.api_caches:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_api_caches in self.api_caches:
+                if _item_api_caches:
+                    _items.append(_item_api_caches.to_dict())
             _dict['apiCaches'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

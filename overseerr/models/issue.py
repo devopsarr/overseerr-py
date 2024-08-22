@@ -91,9 +91,9 @@ class Issue(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in comments (list)
         _items = []
         if self.comments:
-            for _item in self.comments:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_comments in self.comments:
+                if _item_comments:
+                    _items.append(_item_comments.to_dict())
             _dict['comments'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
