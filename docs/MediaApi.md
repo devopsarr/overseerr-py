@@ -281,7 +281,10 @@ Name | Type | Description  | Notes
 
 Get watch data
 
-Returns play count, play duration, and users who have watched the media.  Requires the `ADMIN` permission. 
+Returns play count, play duration, and users who have watched the media.
+
+Requires the `ADMIN` permission.
+
 
 ### Example
 

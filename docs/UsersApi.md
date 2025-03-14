@@ -173,7 +173,8 @@ No authorization required
 
 Create new user
 
-Creates a new user. Requires the `MANAGE_USERS` permission. 
+Creates a new user. Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 
@@ -260,7 +261,10 @@ Name | Type | Description  | Notes
 
 Import all users from Plex
 
-Fetches and imports users from the Plex server. If a list of Plex IDs is provided in the request body, only the specified users will be imported. Otherwise, all users will be imported.  Requires the `MANAGE_USERS` permission. 
+Fetches and imports users from the Plex server. If a list of Plex IDs is provided in the request body, only the specified users will be imported. Otherwise, all users will be imported.
+
+Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 
@@ -959,7 +963,8 @@ Name | Type | Description  | Notes
 
 Get user by ID
 
-Retrieves user details in a JSON object. Requires the `MANAGE_USERS` permission. 
+Retrieves user details in a JSON object. Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 
@@ -1045,7 +1050,8 @@ Name | Type | Description  | Notes
 
 Get quotas for a specific user
 
-Returns quota details for a user in a JSON object. Requires `MANAGE_USERS` permission if viewing other users. 
+Returns quota details for a user in a JSON object. Requires `MANAGE_USERS` permission if viewing other users.
+
 
 ### Example
 
@@ -1131,7 +1137,8 @@ Name | Type | Description  | Notes
 
 Get requests for a specific user
 
-Retrieves a user's requests in a JSON object. 
+Retrieves a user's requests in a JSON object.
+
 
 ### Example
 
@@ -1565,7 +1572,10 @@ Name | Type | Description  | Notes
 
 Get watch data
 
-Returns play count, play duration, and recently watched media.  Requires the `ADMIN` permission to fetch results for other users. 
+Returns play count, play duration, and recently watched media.
+
+Requires the `ADMIN` permission to fetch results for other users.
+
 
 ### Example
 
@@ -1651,7 +1661,8 @@ Name | Type | Description  | Notes
 
 Get the Plex watchlist for a specific user
 
-Retrieves a user's Plex Watchlist in a JSON object. 
+Retrieves a user's Plex Watchlist in a JSON object.
+
 
 ### Example
 
@@ -1739,7 +1750,10 @@ Name | Type | Description  | Notes
 
 Update batch of users
 
-Update users with given IDs with provided values in request `body.settings`. You cannot update users' Plex tokens through this request.  Requires the `MANAGE_USERS` permission. 
+Update users with given IDs with provided values in request `body.settings`. You cannot update users' Plex tokens through this request.
+
+Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 
@@ -1826,7 +1840,10 @@ Name | Type | Description  | Notes
 
 Update a user by user ID
 
-Update a user with the provided values. You cannot update a user's Plex token through this request.  Requires the `MANAGE_USERS` permission. 
+Update a user with the provided values. You cannot update a user's Plex token through this request.
+
+Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 

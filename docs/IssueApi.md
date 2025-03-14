@@ -21,7 +21,8 @@ Method | HTTP request | Description
 
 Create new issue
 
-Creates a new issue 
+Creates a new issue
+
 
 ### Example
 
@@ -108,7 +109,10 @@ Name | Type | Description  | Notes
 
 Update an issue's status
 
-Updates an issue's status to approved or declined. Also returns the issue in a JSON object.  Requires the `MANAGE_ISSUES` permission or `ADMIN`. 
+Updates an issue's status to approved or declined. Also returns the issue in a JSON object.
+
+Requires the `MANAGE_ISSUES` permission or `ADMIN`.
+
 
 ### Example
 
@@ -196,7 +200,8 @@ Name | Type | Description  | Notes
 
 Create a comment
 
-Creates a comment and returns associated issue in JSON format. 
+Creates a comment and returns associated issue in JSON format.
+
 
 ### Example
 
@@ -368,7 +373,8 @@ void (empty response body)
 
 Delete issue comment
 
-Deletes an issue comment. Only users with `MANAGE_ISSUES` or the user who created the comment can perform this action. 
+Deletes an issue comment. Only users with `MANAGE_ISSUES` or the user who created the comment can perform this action.
+
 
 ### Example
 
@@ -451,7 +457,8 @@ void (empty response body)
 
 Get all issues
 
-Returns a list of issues in JSON format. 
+Returns a list of issues in JSON format.
+
 
 ### Example
 
@@ -545,7 +552,8 @@ Name | Type | Description  | Notes
 
 Get issue
 
-Returns a single issue in JSON format. 
+Returns a single issue in JSON format.
+
 
 ### Example
 
@@ -631,7 +639,8 @@ Name | Type | Description  | Notes
 
 Get issue comment
 
-Returns a single issue comment in JSON format. 
+Returns a single issue comment in JSON format.
+
 
 ### Example
 
@@ -717,7 +726,8 @@ Name | Type | Description  | Notes
 
 Gets issue counts
 
-Returns the number of open and closed issues, as well as the number of issues of each type. 
+Returns the number of open and closed issues, as well as the number of issues of each type.
+
 
 ### Example
 
@@ -799,7 +809,8 @@ This endpoint does not need any parameter.
 
 Update issue comment
 
-Updates and returns a single issue comment in JSON format. 
+Updates and returns a single issue comment in JSON format.
+
 
 ### Example
 

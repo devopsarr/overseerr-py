@@ -19,7 +19,10 @@ Method | HTTP request | Description
 
 Create new request
 
-Creates a new request with the provided media ID and type. The `REQUEST` permission is required.  If the user has the `ADMIN` or `AUTO_APPROVE` permissions, their request will be auomatically approved. 
+Creates a new request with the provided media ID and type. The `REQUEST` permission is required.
+
+If the user has the `ADMIN` or `AUTO_APPROVE` permissions, their request will be auomatically approved.
+
 
 ### Example
 
@@ -106,7 +109,10 @@ Name | Type | Description  | Notes
 
 Update a request's status
 
-Updates a request's status to approved or declined. Also returns the request in a JSON object.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`. 
+Updates a request's status to approved or declined. Also returns the request in a JSON object.
+
+Requires the `MANAGE_REQUESTS` permission or `ADMIN`.
+
 
 ### Example
 
@@ -194,7 +200,10 @@ Name | Type | Description  | Notes
 
 Retry failed request
 
-Retries a request by resending requests to Sonarr or Radarr.  Requires the `MANAGE_REQUESTS` permission or `ADMIN`. 
+Retries a request by resending requests to Sonarr or Radarr.
+
+Requires the `MANAGE_REQUESTS` permission or `ADMIN`.
+
 
 ### Example
 
@@ -363,7 +372,10 @@ void (empty response body)
 
 Get all requests
 
-Returns all requests if the user has the `ADMIN` or `MANAGE_REQUESTS` permissions. Otherwise, only the logged-in user's requests are returned.  If the `requestedBy` parameter is specified, only requests from that particular user ID will be returned. 
+Returns all requests if the user has the `ADMIN` or `MANAGE_REQUESTS` permissions. Otherwise, only the logged-in user's requests are returned.
+
+If the `requestedBy` parameter is specified, only requests from that particular user ID will be returned.
+
 
 ### Example
 
@@ -543,7 +555,8 @@ Name | Type | Description  | Notes
 
 Gets request counts
 
-Returns the number of pending and approved requests. 
+Returns the number of pending and approved requests.
+
 
 ### Example
 

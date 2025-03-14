@@ -163,7 +163,10 @@ void (empty response body)
 
 Batch update all sliders.
 
-Batch update all sliders at once. Should also be used for creation. Will only update sliders provided and will not delete any sliders not present in the request. If a slider is missing a required field, it will be ignored. Requires the `ADMIN` permission. 
+Batch update all sliders at once. Should also be used for creation. Will only update sliders provided
+and will not delete any sliders not present in the request. If a slider is missing a required field,
+it will be ignored. Requires the `ADMIN` permission.
+
 
 ### Example
 
@@ -249,7 +252,8 @@ Name | Type | Description  | Notes
 
 Add a new slider
 
-Add a single slider and return the newly created slider. Requires the `ADMIN` permission. 
+Add a single slider and return the newly created slider. Requires the `ADMIN` permission.
+
 
 ### Example
 
@@ -4277,7 +4281,10 @@ Name | Type | Description  | Notes
 
 Get Plex users
 
-Returns a list of Plex users in a JSON array.  Requires the `MANAGE_USERS` permission. 
+Returns a list of Plex users in a JSON array.
+
+Requires the `MANAGE_USERS` permission.
+
 
 ### Example
 
@@ -5623,7 +5630,8 @@ Name | Type | Description  | Notes
 
 Update a single slider
 
-Updates a single slider and return the newly updated slider. Requires the `ADMIN` permission. 
+Updates a single slider and return the newly updated slider. Requires the `ADMIN` permission.
+
 
 ### Example
 
