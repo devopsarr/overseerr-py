@@ -15,7 +15,8 @@ Method | HTTP request | Description
 
 Get keyword
 
-Returns a single keyword in JSON format. 
+Returns a single keyword in JSON format.
+
 
 ### Example
 
@@ -101,7 +102,8 @@ Name | Type | Description  | Notes
 
 Get watch provider movies
 
-Returns a list of all available watch providers for movies. 
+Returns a list of all available watch providers for movies.
+
 
 ### Example
 
@@ -187,7 +189,8 @@ Name | Type | Description  | Notes
 
 Get watch provider regions
 
-Returns a list of all available watch provider regions. 
+Returns a list of all available watch provider regions.
+
 
 ### Example
 
@@ -269,7 +272,8 @@ This endpoint does not need any parameter.
 
 Get watch provider series
 
-Returns a list of all available watch providers for series. 
+Returns a list of all available watch providers for series.
+
 
 ### Example
 
