@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/devopsarr/overseerr-py/compare/v1.0.1...v1.0.2) (2025-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.12.0 ([3fb412d](https://github.com/devopsarr/overseerr-py/commit/3fb412d66bd2a945feadc24d1a09a1a8717c702f))
+
 ## [1.0.1](https://github.com/devopsarr/overseerr-py/compare/v1.0.0...v1.0.1) (2025-01-20)
 
 
