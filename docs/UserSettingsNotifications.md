@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **pushbullet_access_token** | **str** |  | [optional] 
 **pushover_application_token** | **str** |  | [optional] 
 **pushover_user_key** | **str** |  | [optional] 
+**pushover_sound** | **str** |  | [optional] 
 **telegram_enabled** | **bool** |  | [optional] 
 **telegram_bot_username** | **str** |  | [optional] 
 **telegram_chat_id** | **str** |  | [optional] 

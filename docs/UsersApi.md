@@ -14,8 +14,11 @@ Method | HTTP request | Description
 [**create_user_settings_password**](UsersApi.md#create_user_settings_password) | **POST** /user/{userId}/settings/password | Update password for a user
 [**create_user_settings_permissions**](UsersApi.md#create_user_settings_permissions) | **POST** /user/{userId}/settings/permissions | Update permission settings for a user
 [**delete_user**](UsersApi.md#delete_user) | **DELETE** /user/{userId} | Delete user by ID
+[**delete_user_push_subscription**](UsersApi.md#delete_user_push_subscription) | **DELETE** /user/{userId}/pushSubscription/{key} | Delete user push subscription by key
 [**get_user**](UsersApi.md#get_user) | **GET** /user | Get all users
 [**get_user_by_user_id**](UsersApi.md#get_user_by_user_id) | **GET** /user/{userId} | Get user by ID
+[**get_user_push_subscription_by_key**](UsersApi.md#get_user_push_subscription_by_key) | **GET** /user/{userId}/pushSubscription/{key} | Get web push notification settings for a user
+[**get_user_push_subscriptions**](UsersApi.md#get_user_push_subscriptions) | **GET** /user/{userId}/pushSubscriptions | Get all web push notification settings for a user
 [**get_user_quota**](UsersApi.md#get_user_quota) | **GET** /user/{userId}/quota | Get quotas for a specific user
 [**get_user_requests**](UsersApi.md#get_user_requests) | **GET** /user/{userId}/requests | Get requests for a specific user
 [**get_user_settings_main**](UsersApi.md#get_user_settings_main) | **GET** /user/{userId}/settings/main | Get general settings for a user
@@ -868,6 +871,91 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_user_push_subscription**
+> delete_user_push_subscription(user_id, key)
+
+Delete user push subscription by key
+
+Deletes the user push subscription with the provided key.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (cookieAuth):
+
+```python
+import overseerr
+from overseerr.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:5055/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = overseerr.Configuration(
+    host = "http://localhost:5055/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: cookieAuth
+configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with overseerr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = overseerr.UsersApi(api_client)
+    user_id = 3.4 # float | 
+    key = 'key_example' # str | 
+
+    try:
+        # Delete user push subscription by key
+        api_instance.delete_user_push_subscription(user_id, key)
+    except Exception as e:
+        print("Exception when calling UsersApi->delete_user_push_subscription: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **float**|  | 
+ **key** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Successfully removed user push subscription |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_user**
 > GetUser2XXResponse get_user(take=take, skip=skip, sort=sort)
 
@@ -1042,6 +1130,182 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **2XX** | Users details in JSON |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_push_subscription_by_key**
+> GetUserPushSubscriptions2XXResponse get_user_push_subscription_by_key(user_id, key)
+
+Get web push notification settings for a user
+
+Returns web push notification settings for a user in a JSON object.
+
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (cookieAuth):
+
+```python
+import overseerr
+from overseerr.models.get_user_push_subscriptions2_xx_response import GetUserPushSubscriptions2XXResponse
+from overseerr.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:5055/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = overseerr.Configuration(
+    host = "http://localhost:5055/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: cookieAuth
+configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with overseerr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = overseerr.UsersApi(api_client)
+    user_id = 3.4 # float | 
+    key = 'key_example' # str | 
+
+    try:
+        # Get web push notification settings for a user
+        api_response = api_instance.get_user_push_subscription_by_key(user_id, key)
+        print("The response of UsersApi->get_user_push_subscription_by_key:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UsersApi->get_user_push_subscription_by_key: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **float**|  | 
+ **key** | **str**|  | 
+
+### Return type
+
+[**GetUserPushSubscriptions2XXResponse**](GetUserPushSubscriptions2XXResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**2XX** | User web push notification settings in JSON |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_push_subscriptions**
+> GetUserPushSubscriptions2XXResponse get_user_push_subscriptions(user_id)
+
+Get all web push notification settings for a user
+
+Returns all web push notification settings for a user in a JSON object.
+
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (cookieAuth):
+
+```python
+import overseerr
+from overseerr.models.get_user_push_subscriptions2_xx_response import GetUserPushSubscriptions2XXResponse
+from overseerr.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:5055/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = overseerr.Configuration(
+    host = "http://localhost:5055/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: cookieAuth
+configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with overseerr.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = overseerr.UsersApi(api_client)
+    user_id = 3.4 # float | 
+
+    try:
+        # Get all web push notification settings for a user
+        api_response = api_instance.get_user_push_subscriptions(user_id)
+        print("The response of UsersApi->get_user_push_subscriptions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UsersApi->get_user_push_subscriptions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **float**|  | 
+
+### Return type
+
+[**GetUserPushSubscriptions2XXResponse**](GetUserPushSubscriptions2XXResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**2XX** | User web push notification settings in JSON |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
