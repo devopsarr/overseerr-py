@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **page_info** | [**PageInfo**](PageInfo.md) |  | [optional] 
-**results** | [**User[User]**](User.md) |  | [optional] 
+**results** | [**List[User]**](User.md) |  | [optional] 
 
 ## Example
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **endpoint** | **str** |  | 
 **auth** | **str** |  | 
 **p256dh** | **str** |  | 
+**user_agent** | **str** |  | [optional] 
 
 ## Example
 
