@@ -16,192 +16,585 @@
 
 __version__ = "1.0.1" # x-release-please-version
 
-# import apis into sdk package
-from overseerr.api.auth_api import AuthApi
-from overseerr.api.collection_api import CollectionApi
-from overseerr.api.issue_api import IssueApi
-from overseerr.api.media_api import MediaApi
-from overseerr.api.movies_api import MoviesApi
-from overseerr.api.other_api import OtherApi
-from overseerr.api.person_api import PersonApi
-from overseerr.api.public_api import PublicApi
-from overseerr.api.request_api import RequestApi
-from overseerr.api.search_api import SearchApi
-from overseerr.api.service_api import ServiceApi
-from overseerr.api.settings_api import SettingsApi
-from overseerr.api.tmdb_api import TmdbApi
-from overseerr.api.tv_api import TvApi
-from overseerr.api.users_api import UsersApi
+# Define package exports
+__all__ = [
+    "AuthApi",
+    "CollectionApi",
+    "IssueApi",
+    "MediaApi",
+    "MoviesApi",
+    "OtherApi",
+    "PersonApi",
+    "PublicApi",
+    "RequestApi",
+    "SearchApi",
+    "ServiceApi",
+    "SettingsApi",
+    "TmdbApi",
+    "TvApi",
+    "UsersApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "Cast",
+    "Collection",
+    "Company",
+    "CreateAuthLocalRequest",
+    "CreateAuthLogout2XXResponse",
+    "CreateAuthPlexRequest",
+    "CreateAuthResetPasswordByGuidRequest",
+    "CreateAuthResetPasswordRequest",
+    "CreateDiscoverAddRequest",
+    "CreateIssueCommentRequest",
+    "CreateIssueRequest",
+    "CreateJobsScheduleRequest",
+    "CreateMediaByStatusRequest",
+    "CreatePlexSyncRequest",
+    "CreateRequestRequest",
+    "CreateRequestRequestSeasons",
+    "CreateUserImportFromPlexRequest",
+    "CreateUserRegisterPushSubscriptionRequest",
+    "CreateUserRequest",
+    "CreateUserSettingsMainRequest",
+    "CreateUserSettingsPasswordRequest",
+    "CreateUserSettingsPermissionsRequest",
+    "CreditCast",
+    "CreditCrew",
+    "Crew",
+    "DiscordSettings",
+    "DiscordSettingsOptions",
+    "DiscoverSlider",
+    "Episode",
+    "ExternalIds",
+    "Genre",
+    "GetAbout2XXResponse",
+    "GetCache2XXResponse",
+    "GetCache2XXResponseApiCachesInner",
+    "GetCache2XXResponseApiCachesInnerStats",
+    "GetCache2XXResponseImageCache",
+    "GetCache2XXResponseImageCacheTmdb",
+    "GetDiscoverMovies2XXResponse",
+    "GetDiscoverMoviesGenreByGenreId2XXResponse",
+    "GetDiscoverMoviesLanguageByLanguage2XXResponse",
+    "GetDiscoverMoviesStudioByStudioId2XXResponse",
+    "GetDiscoverTv2XXResponse",
+    "GetDiscoverTvGenreByGenreId2XXResponse",
+    "GetDiscoverTvLanguageByLanguage2XXResponse",
+    "GetDiscoverTvNetworkByNetworkId2XXResponse",
+    "GetIssue2XXResponse",
+    "GetIssueCount2XXResponse",
+    "GetMedia2XXResponse",
+    "GetMediaWatchData2XXResponse",
+    "GetMediaWatchData2XXResponseData",
+    "GetMovieRatings2XXResponse",
+    "GetMovieRatingscombined2XXResponse",
+    "GetMovieRatingscombined2XXResponseImdb",
+    "GetPersonCombinedCredits2XXResponse",
+    "GetPlexSync2XXResponse",
+    "GetRequestCount2XXResponse",
+    "GetSearch2XXResponse",
+    "GetSearch2XXResponseResultsInner",
+    "GetSearchCompany2XXResponse",
+    "GetSearchKeyword2XXResponse",
+    "GetServiceRadarrByRadarrId2XXResponse",
+    "GetServiceSonarrBySonarrId2XXResponse",
+    "GetStatus2XXResponse",
+    "GetStatusAppdata2XXResponse",
+    "GetTvRatings2XXResponse",
+    "GetUser2XXResponse",
+    "GetUserPushSubscriptions2XXResponse",
+    "GetUserQuota2XXResponse",
+    "GetUserQuota2XXResponseMovie",
+    "GetUserRequests2XXResponse",
+    "GetUserSettingsMain2XXResponse",
+    "GetUserSettingsPassword2XXResponse",
+    "GetUserSettingsPermissions2XXResponse",
+    "GetUserWatchData2XXResponse",
+    "GetUserWatchlist2XXResponse",
+    "GetUserWatchlist2XXResponseResultsInner",
+    "GotifySettings",
+    "GotifySettingsOptions",
+    "Issue",
+    "IssueComment",
+    "Job",
+    "Keyword",
+    "ListDiscoverGenresliderMovie2XXResponseInner",
+    "ListGenresMovie2XXResponseInner",
+    "ListGenresTv2XXResponseInner",
+    "ListLanguages2XXResponseInner",
+    "ListLogs2XXResponseInner",
+    "ListNotificationsPushoverSounds2XXResponseInner",
+    "ListPlexUsers2XXResponseInner",
+    "ListRegions2XXResponseInner",
+    "LunaSeaSettings",
+    "LunaSeaSettingsOptions",
+    "MainSettings",
+    "MediaInfo",
+    "MediaRequest",
+    "MediaRequestModifiedBy",
+    "MovieDetails",
+    "MovieDetailsCollection",
+    "MovieDetailsCredits",
+    "MovieDetailsProductionCountriesInner",
+    "MovieDetailsReleases",
+    "MovieDetailsReleasesResultsInner",
+    "MovieDetailsReleasesResultsInnerReleaseDatesInner",
+    "MovieResult",
+    "Network",
+    "NotificationAgentTypes",
+    "NotificationEmailSettings",
+    "NotificationEmailSettingsOptions",
+    "PageInfo",
+    "PersonDetails",
+    "PersonResult",
+    "PersonResultKnownForInner",
+    "PlexConnection",
+    "PlexDevice",
+    "PlexLibrary",
+    "PlexSettings",
+    "ProductionCompany",
+    "PublicSettings",
+    "PushbulletSettings",
+    "PushbulletSettingsOptions",
+    "PushoverSettings",
+    "PushoverSettingsOptions",
+    "PutUserRequest",
+    "RadarrSettings",
+    "RelatedVideo",
+    "Season",
+    "ServarrTag",
+    "ServiceProfile",
+    "SlackSettings",
+    "SlackSettingsOptions",
+    "SonarrSeries",
+    "SonarrSeriesAddOptionsInner",
+    "SonarrSeriesImagesInner",
+    "SonarrSeriesRatingsInner",
+    "SonarrSeriesSeasonsInner",
+    "SonarrSettings",
+    "SpokenLanguage",
+    "TautulliSettings",
+    "TelegramSettings",
+    "TelegramSettingsOptions",
+    "TestRadarr2XXResponse",
+    "TestRadarrRequest",
+    "TestSonarrRequest",
+    "TvDetails",
+    "TvDetailsContentRatings",
+    "TvDetailsContentRatingsResultsInner",
+    "TvDetailsCreatedByInner",
+    "TvResult",
+    "UpdateDiscoverRequest",
+    "UpdateIssueCommentRequest",
+    "UpdateRequestRequest",
+    "User",
+    "UserSettings",
+    "UserSettingsNotifications",
+    "WatchProviderDetails",
+    "WatchProviderRegion",
+    "WatchProvidersInner",
+    "WebPushSettings",
+    "WebhookSettings",
+    "WebhookSettingsOptions",
+]
+
+if __import__("typing").TYPE_CHECKING:
+    # import apis into sdk package
+    from overseerr.api.auth_api import AuthApi as AuthApi
+    from overseerr.api.collection_api import CollectionApi as CollectionApi
+    from overseerr.api.issue_api import IssueApi as IssueApi
+    from overseerr.api.media_api import MediaApi as MediaApi
+    from overseerr.api.movies_api import MoviesApi as MoviesApi
+    from overseerr.api.other_api import OtherApi as OtherApi
+    from overseerr.api.person_api import PersonApi as PersonApi
+    from overseerr.api.public_api import PublicApi as PublicApi
+    from overseerr.api.request_api import RequestApi as RequestApi
+    from overseerr.api.search_api import SearchApi as SearchApi
+    from overseerr.api.service_api import ServiceApi as ServiceApi
+    from overseerr.api.settings_api import SettingsApi as SettingsApi
+    from overseerr.api.tmdb_api import TmdbApi as TmdbApi
+    from overseerr.api.tv_api import TvApi as TvApi
+    from overseerr.api.users_api import UsersApi as UsersApi
+    
+    # import ApiClient
+    from overseerr.api_response import ApiResponse as ApiResponse
+    from overseerr.api_client import ApiClient as ApiClient
+    from overseerr.configuration import Configuration as Configuration
+    from overseerr.exceptions import OpenApiException as OpenApiException
+    from overseerr.exceptions import ApiTypeError as ApiTypeError
+    from overseerr.exceptions import ApiValueError as ApiValueError
+    from overseerr.exceptions import ApiKeyError as ApiKeyError
+    from overseerr.exceptions import ApiAttributeError as ApiAttributeError
+    from overseerr.exceptions import ApiException as ApiException
+    
+    # import models into sdk package
+    from overseerr.models.cast import Cast as Cast
+    from overseerr.models.collection import Collection as Collection
+    from overseerr.models.company import Company as Company
+    from overseerr.models.create_auth_local_request import CreateAuthLocalRequest as CreateAuthLocalRequest
+    from overseerr.models.create_auth_logout2_xx_response import CreateAuthLogout2XXResponse as CreateAuthLogout2XXResponse
+    from overseerr.models.create_auth_plex_request import CreateAuthPlexRequest as CreateAuthPlexRequest
+    from overseerr.models.create_auth_reset_password_by_guid_request import CreateAuthResetPasswordByGuidRequest as CreateAuthResetPasswordByGuidRequest
+    from overseerr.models.create_auth_reset_password_request import CreateAuthResetPasswordRequest as CreateAuthResetPasswordRequest
+    from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest as CreateDiscoverAddRequest
+    from overseerr.models.create_issue_comment_request import CreateIssueCommentRequest as CreateIssueCommentRequest
+    from overseerr.models.create_issue_request import CreateIssueRequest as CreateIssueRequest
+    from overseerr.models.create_jobs_schedule_request import CreateJobsScheduleRequest as CreateJobsScheduleRequest
+    from overseerr.models.create_media_by_status_request import CreateMediaByStatusRequest as CreateMediaByStatusRequest
+    from overseerr.models.create_plex_sync_request import CreatePlexSyncRequest as CreatePlexSyncRequest
+    from overseerr.models.create_request_request import CreateRequestRequest as CreateRequestRequest
+    from overseerr.models.create_request_request_seasons import CreateRequestRequestSeasons as CreateRequestRequestSeasons
+    from overseerr.models.create_user_import_from_plex_request import CreateUserImportFromPlexRequest as CreateUserImportFromPlexRequest
+    from overseerr.models.create_user_register_push_subscription_request import CreateUserRegisterPushSubscriptionRequest as CreateUserRegisterPushSubscriptionRequest
+    from overseerr.models.create_user_request import CreateUserRequest as CreateUserRequest
+    from overseerr.models.create_user_settings_main_request import CreateUserSettingsMainRequest as CreateUserSettingsMainRequest
+    from overseerr.models.create_user_settings_password_request import CreateUserSettingsPasswordRequest as CreateUserSettingsPasswordRequest
+    from overseerr.models.create_user_settings_permissions_request import CreateUserSettingsPermissionsRequest as CreateUserSettingsPermissionsRequest
+    from overseerr.models.credit_cast import CreditCast as CreditCast
+    from overseerr.models.credit_crew import CreditCrew as CreditCrew
+    from overseerr.models.crew import Crew as Crew
+    from overseerr.models.discord_settings import DiscordSettings as DiscordSettings
+    from overseerr.models.discord_settings_options import DiscordSettingsOptions as DiscordSettingsOptions
+    from overseerr.models.discover_slider import DiscoverSlider as DiscoverSlider
+    from overseerr.models.episode import Episode as Episode
+    from overseerr.models.external_ids import ExternalIds as ExternalIds
+    from overseerr.models.genre import Genre as Genre
+    from overseerr.models.get_about2_xx_response import GetAbout2XXResponse as GetAbout2XXResponse
+    from overseerr.models.get_cache2_xx_response import GetCache2XXResponse as GetCache2XXResponse
+    from overseerr.models.get_cache2_xx_response_api_caches_inner import GetCache2XXResponseApiCachesInner as GetCache2XXResponseApiCachesInner
+    from overseerr.models.get_cache2_xx_response_api_caches_inner_stats import GetCache2XXResponseApiCachesInnerStats as GetCache2XXResponseApiCachesInnerStats
+    from overseerr.models.get_cache2_xx_response_image_cache import GetCache2XXResponseImageCache as GetCache2XXResponseImageCache
+    from overseerr.models.get_cache2_xx_response_image_cache_tmdb import GetCache2XXResponseImageCacheTmdb as GetCache2XXResponseImageCacheTmdb
+    from overseerr.models.get_discover_movies2_xx_response import GetDiscoverMovies2XXResponse as GetDiscoverMovies2XXResponse
+    from overseerr.models.get_discover_movies_genre_by_genre_id2_xx_response import GetDiscoverMoviesGenreByGenreId2XXResponse as GetDiscoverMoviesGenreByGenreId2XXResponse
+    from overseerr.models.get_discover_movies_language_by_language2_xx_response import GetDiscoverMoviesLanguageByLanguage2XXResponse as GetDiscoverMoviesLanguageByLanguage2XXResponse
+    from overseerr.models.get_discover_movies_studio_by_studio_id2_xx_response import GetDiscoverMoviesStudioByStudioId2XXResponse as GetDiscoverMoviesStudioByStudioId2XXResponse
+    from overseerr.models.get_discover_tv2_xx_response import GetDiscoverTv2XXResponse as GetDiscoverTv2XXResponse
+    from overseerr.models.get_discover_tv_genre_by_genre_id2_xx_response import GetDiscoverTvGenreByGenreId2XXResponse as GetDiscoverTvGenreByGenreId2XXResponse
+    from overseerr.models.get_discover_tv_language_by_language2_xx_response import GetDiscoverTvLanguageByLanguage2XXResponse as GetDiscoverTvLanguageByLanguage2XXResponse
+    from overseerr.models.get_discover_tv_network_by_network_id2_xx_response import GetDiscoverTvNetworkByNetworkId2XXResponse as GetDiscoverTvNetworkByNetworkId2XXResponse
+    from overseerr.models.get_issue2_xx_response import GetIssue2XXResponse as GetIssue2XXResponse
+    from overseerr.models.get_issue_count2_xx_response import GetIssueCount2XXResponse as GetIssueCount2XXResponse
+    from overseerr.models.get_media2_xx_response import GetMedia2XXResponse as GetMedia2XXResponse
+    from overseerr.models.get_media_watch_data2_xx_response import GetMediaWatchData2XXResponse as GetMediaWatchData2XXResponse
+    from overseerr.models.get_media_watch_data2_xx_response_data import GetMediaWatchData2XXResponseData as GetMediaWatchData2XXResponseData
+    from overseerr.models.get_movie_ratings2_xx_response import GetMovieRatings2XXResponse as GetMovieRatings2XXResponse
+    from overseerr.models.get_movie_ratingscombined2_xx_response import GetMovieRatingscombined2XXResponse as GetMovieRatingscombined2XXResponse
+    from overseerr.models.get_movie_ratingscombined2_xx_response_imdb import GetMovieRatingscombined2XXResponseImdb as GetMovieRatingscombined2XXResponseImdb
+    from overseerr.models.get_person_combined_credits2_xx_response import GetPersonCombinedCredits2XXResponse as GetPersonCombinedCredits2XXResponse
+    from overseerr.models.get_plex_sync2_xx_response import GetPlexSync2XXResponse as GetPlexSync2XXResponse
+    from overseerr.models.get_request_count2_xx_response import GetRequestCount2XXResponse as GetRequestCount2XXResponse
+    from overseerr.models.get_search2_xx_response import GetSearch2XXResponse as GetSearch2XXResponse
+    from overseerr.models.get_search2_xx_response_results_inner import GetSearch2XXResponseResultsInner as GetSearch2XXResponseResultsInner
+    from overseerr.models.get_search_company2_xx_response import GetSearchCompany2XXResponse as GetSearchCompany2XXResponse
+    from overseerr.models.get_search_keyword2_xx_response import GetSearchKeyword2XXResponse as GetSearchKeyword2XXResponse
+    from overseerr.models.get_service_radarr_by_radarr_id2_xx_response import GetServiceRadarrByRadarrId2XXResponse as GetServiceRadarrByRadarrId2XXResponse
+    from overseerr.models.get_service_sonarr_by_sonarr_id2_xx_response import GetServiceSonarrBySonarrId2XXResponse as GetServiceSonarrBySonarrId2XXResponse
+    from overseerr.models.get_status2_xx_response import GetStatus2XXResponse as GetStatus2XXResponse
+    from overseerr.models.get_status_appdata2_xx_response import GetStatusAppdata2XXResponse as GetStatusAppdata2XXResponse
+    from overseerr.models.get_tv_ratings2_xx_response import GetTvRatings2XXResponse as GetTvRatings2XXResponse
+    from overseerr.models.get_user2_xx_response import GetUser2XXResponse as GetUser2XXResponse
+    from overseerr.models.get_user_push_subscriptions2_xx_response import GetUserPushSubscriptions2XXResponse as GetUserPushSubscriptions2XXResponse
+    from overseerr.models.get_user_quota2_xx_response import GetUserQuota2XXResponse as GetUserQuota2XXResponse
+    from overseerr.models.get_user_quota2_xx_response_movie import GetUserQuota2XXResponseMovie as GetUserQuota2XXResponseMovie
+    from overseerr.models.get_user_requests2_xx_response import GetUserRequests2XXResponse as GetUserRequests2XXResponse
+    from overseerr.models.get_user_settings_main2_xx_response import GetUserSettingsMain2XXResponse as GetUserSettingsMain2XXResponse
+    from overseerr.models.get_user_settings_password2_xx_response import GetUserSettingsPassword2XXResponse as GetUserSettingsPassword2XXResponse
+    from overseerr.models.get_user_settings_permissions2_xx_response import GetUserSettingsPermissions2XXResponse as GetUserSettingsPermissions2XXResponse
+    from overseerr.models.get_user_watch_data2_xx_response import GetUserWatchData2XXResponse as GetUserWatchData2XXResponse
+    from overseerr.models.get_user_watchlist2_xx_response import GetUserWatchlist2XXResponse as GetUserWatchlist2XXResponse
+    from overseerr.models.get_user_watchlist2_xx_response_results_inner import GetUserWatchlist2XXResponseResultsInner as GetUserWatchlist2XXResponseResultsInner
+    from overseerr.models.gotify_settings import GotifySettings as GotifySettings
+    from overseerr.models.gotify_settings_options import GotifySettingsOptions as GotifySettingsOptions
+    from overseerr.models.issue import Issue as Issue
+    from overseerr.models.issue_comment import IssueComment as IssueComment
+    from overseerr.models.job import Job as Job
+    from overseerr.models.keyword import Keyword as Keyword
+    from overseerr.models.list_discover_genreslider_movie2_xx_response_inner import ListDiscoverGenresliderMovie2XXResponseInner as ListDiscoverGenresliderMovie2XXResponseInner
+    from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner as ListGenresMovie2XXResponseInner
+    from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner as ListGenresTv2XXResponseInner
+    from overseerr.models.list_languages2_xx_response_inner import ListLanguages2XXResponseInner as ListLanguages2XXResponseInner
+    from overseerr.models.list_logs2_xx_response_inner import ListLogs2XXResponseInner as ListLogs2XXResponseInner
+    from overseerr.models.list_notifications_pushover_sounds2_xx_response_inner import ListNotificationsPushoverSounds2XXResponseInner as ListNotificationsPushoverSounds2XXResponseInner
+    from overseerr.models.list_plex_users2_xx_response_inner import ListPlexUsers2XXResponseInner as ListPlexUsers2XXResponseInner
+    from overseerr.models.list_regions2_xx_response_inner import ListRegions2XXResponseInner as ListRegions2XXResponseInner
+    from overseerr.models.luna_sea_settings import LunaSeaSettings as LunaSeaSettings
+    from overseerr.models.luna_sea_settings_options import LunaSeaSettingsOptions as LunaSeaSettingsOptions
+    from overseerr.models.main_settings import MainSettings as MainSettings
+    from overseerr.models.media_info import MediaInfo as MediaInfo
+    from overseerr.models.media_request import MediaRequest as MediaRequest
+    from overseerr.models.media_request_modified_by import MediaRequestModifiedBy as MediaRequestModifiedBy
+    from overseerr.models.movie_details import MovieDetails as MovieDetails
+    from overseerr.models.movie_details_collection import MovieDetailsCollection as MovieDetailsCollection
+    from overseerr.models.movie_details_credits import MovieDetailsCredits as MovieDetailsCredits
+    from overseerr.models.movie_details_production_countries_inner import MovieDetailsProductionCountriesInner as MovieDetailsProductionCountriesInner
+    from overseerr.models.movie_details_releases import MovieDetailsReleases as MovieDetailsReleases
+    from overseerr.models.movie_details_releases_results_inner import MovieDetailsReleasesResultsInner as MovieDetailsReleasesResultsInner
+    from overseerr.models.movie_details_releases_results_inner_release_dates_inner import MovieDetailsReleasesResultsInnerReleaseDatesInner as MovieDetailsReleasesResultsInnerReleaseDatesInner
+    from overseerr.models.movie_result import MovieResult as MovieResult
+    from overseerr.models.network import Network as Network
+    from overseerr.models.notification_agent_types import NotificationAgentTypes as NotificationAgentTypes
+    from overseerr.models.notification_email_settings import NotificationEmailSettings as NotificationEmailSettings
+    from overseerr.models.notification_email_settings_options import NotificationEmailSettingsOptions as NotificationEmailSettingsOptions
+    from overseerr.models.page_info import PageInfo as PageInfo
+    from overseerr.models.person_details import PersonDetails as PersonDetails
+    from overseerr.models.person_result import PersonResult as PersonResult
+    from overseerr.models.person_result_known_for_inner import PersonResultKnownForInner as PersonResultKnownForInner
+    from overseerr.models.plex_connection import PlexConnection as PlexConnection
+    from overseerr.models.plex_device import PlexDevice as PlexDevice
+    from overseerr.models.plex_library import PlexLibrary as PlexLibrary
+    from overseerr.models.plex_settings import PlexSettings as PlexSettings
+    from overseerr.models.production_company import ProductionCompany as ProductionCompany
+    from overseerr.models.public_settings import PublicSettings as PublicSettings
+    from overseerr.models.pushbullet_settings import PushbulletSettings as PushbulletSettings
+    from overseerr.models.pushbullet_settings_options import PushbulletSettingsOptions as PushbulletSettingsOptions
+    from overseerr.models.pushover_settings import PushoverSettings as PushoverSettings
+    from overseerr.models.pushover_settings_options import PushoverSettingsOptions as PushoverSettingsOptions
+    from overseerr.models.put_user_request import PutUserRequest as PutUserRequest
+    from overseerr.models.radarr_settings import RadarrSettings as RadarrSettings
+    from overseerr.models.related_video import RelatedVideo as RelatedVideo
+    from overseerr.models.season import Season as Season
+    from overseerr.models.servarr_tag import ServarrTag as ServarrTag
+    from overseerr.models.service_profile import ServiceProfile as ServiceProfile
+    from overseerr.models.slack_settings import SlackSettings as SlackSettings
+    from overseerr.models.slack_settings_options import SlackSettingsOptions as SlackSettingsOptions
+    from overseerr.models.sonarr_series import SonarrSeries as SonarrSeries
+    from overseerr.models.sonarr_series_add_options_inner import SonarrSeriesAddOptionsInner as SonarrSeriesAddOptionsInner
+    from overseerr.models.sonarr_series_images_inner import SonarrSeriesImagesInner as SonarrSeriesImagesInner
+    from overseerr.models.sonarr_series_ratings_inner import SonarrSeriesRatingsInner as SonarrSeriesRatingsInner
+    from overseerr.models.sonarr_series_seasons_inner import SonarrSeriesSeasonsInner as SonarrSeriesSeasonsInner
+    from overseerr.models.sonarr_settings import SonarrSettings as SonarrSettings
+    from overseerr.models.spoken_language import SpokenLanguage as SpokenLanguage
+    from overseerr.models.tautulli_settings import TautulliSettings as TautulliSettings
+    from overseerr.models.telegram_settings import TelegramSettings as TelegramSettings
+    from overseerr.models.telegram_settings_options import TelegramSettingsOptions as TelegramSettingsOptions
+    from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse as TestRadarr2XXResponse
+    from overseerr.models.test_radarr_request import TestRadarrRequest as TestRadarrRequest
+    from overseerr.models.test_sonarr_request import TestSonarrRequest as TestSonarrRequest
+    from overseerr.models.tv_details import TvDetails as TvDetails
+    from overseerr.models.tv_details_content_ratings import TvDetailsContentRatings as TvDetailsContentRatings
+    from overseerr.models.tv_details_content_ratings_results_inner import TvDetailsContentRatingsResultsInner as TvDetailsContentRatingsResultsInner
+    from overseerr.models.tv_details_created_by_inner import TvDetailsCreatedByInner as TvDetailsCreatedByInner
+    from overseerr.models.tv_result import TvResult as TvResult
+    from overseerr.models.update_discover_request import UpdateDiscoverRequest as UpdateDiscoverRequest
+    from overseerr.models.update_issue_comment_request import UpdateIssueCommentRequest as UpdateIssueCommentRequest
+    from overseerr.models.update_request_request import UpdateRequestRequest as UpdateRequestRequest
+    from overseerr.models.user import User as User
+    from overseerr.models.user_settings import UserSettings as UserSettings
+    from overseerr.models.user_settings_notifications import UserSettingsNotifications as UserSettingsNotifications
+    from overseerr.models.watch_provider_details import WatchProviderDetails as WatchProviderDetails
+    from overseerr.models.watch_provider_region import WatchProviderRegion as WatchProviderRegion
+    from overseerr.models.watch_providers_inner import WatchProvidersInner as WatchProvidersInner
+    from overseerr.models.web_push_settings import WebPushSettings as WebPushSettings
+    from overseerr.models.webhook_settings import WebhookSettings as WebhookSettings
+    from overseerr.models.webhook_settings_options import WebhookSettingsOptions as WebhookSettingsOptions
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            ("__version__", __version__),
+            ("__all__", __all__),
+            """# import apis into sdk package
+from overseerr.api.auth_api import AuthApi as AuthApi
+from overseerr.api.collection_api import CollectionApi as CollectionApi
+from overseerr.api.issue_api import IssueApi as IssueApi
+from overseerr.api.media_api import MediaApi as MediaApi
+from overseerr.api.movies_api import MoviesApi as MoviesApi
+from overseerr.api.other_api import OtherApi as OtherApi
+from overseerr.api.person_api import PersonApi as PersonApi
+from overseerr.api.public_api import PublicApi as PublicApi
+from overseerr.api.request_api import RequestApi as RequestApi
+from overseerr.api.search_api import SearchApi as SearchApi
+from overseerr.api.service_api import ServiceApi as ServiceApi
+from overseerr.api.settings_api import SettingsApi as SettingsApi
+from overseerr.api.tmdb_api import TmdbApi as TmdbApi
+from overseerr.api.tv_api import TvApi as TvApi
+from overseerr.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
-from overseerr.api_response import ApiResponse
-from overseerr.api_client import ApiClient
-from overseerr.configuration import Configuration
-from overseerr.exceptions import OpenApiException
-from overseerr.exceptions import ApiTypeError
-from overseerr.exceptions import ApiValueError
-from overseerr.exceptions import ApiKeyError
-from overseerr.exceptions import ApiAttributeError
-from overseerr.exceptions import ApiException
+from overseerr.api_response import ApiResponse as ApiResponse
+from overseerr.api_client import ApiClient as ApiClient
+from overseerr.configuration import Configuration as Configuration
+from overseerr.exceptions import OpenApiException as OpenApiException
+from overseerr.exceptions import ApiTypeError as ApiTypeError
+from overseerr.exceptions import ApiValueError as ApiValueError
+from overseerr.exceptions import ApiKeyError as ApiKeyError
+from overseerr.exceptions import ApiAttributeError as ApiAttributeError
+from overseerr.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from overseerr.models.cast import Cast
-from overseerr.models.collection import Collection
-from overseerr.models.company import Company
-from overseerr.models.create_auth_local_request import CreateAuthLocalRequest
-from overseerr.models.create_auth_logout2_xx_response import CreateAuthLogout2XXResponse
-from overseerr.models.create_auth_plex_request import CreateAuthPlexRequest
-from overseerr.models.create_auth_reset_password_by_guid_request import CreateAuthResetPasswordByGuidRequest
-from overseerr.models.create_auth_reset_password_request import CreateAuthResetPasswordRequest
-from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest
-from overseerr.models.create_issue_comment_request import CreateIssueCommentRequest
-from overseerr.models.create_issue_request import CreateIssueRequest
-from overseerr.models.create_jobs_schedule_request import CreateJobsScheduleRequest
-from overseerr.models.create_media_by_status_request import CreateMediaByStatusRequest
-from overseerr.models.create_plex_sync_request import CreatePlexSyncRequest
-from overseerr.models.create_request_request import CreateRequestRequest
-from overseerr.models.create_request_request_seasons import CreateRequestRequestSeasons
-from overseerr.models.create_user_import_from_plex_request import CreateUserImportFromPlexRequest
-from overseerr.models.create_user_register_push_subscription_request import CreateUserRegisterPushSubscriptionRequest
-from overseerr.models.create_user_request import CreateUserRequest
-from overseerr.models.create_user_settings_main_request import CreateUserSettingsMainRequest
-from overseerr.models.create_user_settings_password_request import CreateUserSettingsPasswordRequest
-from overseerr.models.create_user_settings_permissions_request import CreateUserSettingsPermissionsRequest
-from overseerr.models.credit_cast import CreditCast
-from overseerr.models.credit_crew import CreditCrew
-from overseerr.models.crew import Crew
-from overseerr.models.discord_settings import DiscordSettings
-from overseerr.models.discord_settings_options import DiscordSettingsOptions
-from overseerr.models.discover_slider import DiscoverSlider
-from overseerr.models.episode import Episode
-from overseerr.models.external_ids import ExternalIds
-from overseerr.models.genre import Genre
-from overseerr.models.get_about2_xx_response import GetAbout2XXResponse
-from overseerr.models.get_cache2_xx_response import GetCache2XXResponse
-from overseerr.models.get_cache2_xx_response_api_caches_inner import GetCache2XXResponseApiCachesInner
-from overseerr.models.get_cache2_xx_response_api_caches_inner_stats import GetCache2XXResponseApiCachesInnerStats
-from overseerr.models.get_cache2_xx_response_image_cache import GetCache2XXResponseImageCache
-from overseerr.models.get_cache2_xx_response_image_cache_tmdb import GetCache2XXResponseImageCacheTmdb
-from overseerr.models.get_discover_movies2_xx_response import GetDiscoverMovies2XXResponse
-from overseerr.models.get_discover_movies_genre_by_genre_id2_xx_response import GetDiscoverMoviesGenreByGenreId2XXResponse
-from overseerr.models.get_discover_movies_language_by_language2_xx_response import GetDiscoverMoviesLanguageByLanguage2XXResponse
-from overseerr.models.get_discover_movies_studio_by_studio_id2_xx_response import GetDiscoverMoviesStudioByStudioId2XXResponse
-from overseerr.models.get_discover_tv2_xx_response import GetDiscoverTv2XXResponse
-from overseerr.models.get_discover_tv_genre_by_genre_id2_xx_response import GetDiscoverTvGenreByGenreId2XXResponse
-from overseerr.models.get_discover_tv_language_by_language2_xx_response import GetDiscoverTvLanguageByLanguage2XXResponse
-from overseerr.models.get_discover_tv_network_by_network_id2_xx_response import GetDiscoverTvNetworkByNetworkId2XXResponse
-from overseerr.models.get_issue2_xx_response import GetIssue2XXResponse
-from overseerr.models.get_issue_count2_xx_response import GetIssueCount2XXResponse
-from overseerr.models.get_media2_xx_response import GetMedia2XXResponse
-from overseerr.models.get_media_watch_data2_xx_response import GetMediaWatchData2XXResponse
-from overseerr.models.get_media_watch_data2_xx_response_data import GetMediaWatchData2XXResponseData
-from overseerr.models.get_movie_ratings2_xx_response import GetMovieRatings2XXResponse
-from overseerr.models.get_movie_ratingscombined2_xx_response import GetMovieRatingscombined2XXResponse
-from overseerr.models.get_movie_ratingscombined2_xx_response_imdb import GetMovieRatingscombined2XXResponseImdb
-from overseerr.models.get_person_combined_credits2_xx_response import GetPersonCombinedCredits2XXResponse
-from overseerr.models.get_plex_sync2_xx_response import GetPlexSync2XXResponse
-from overseerr.models.get_request_count2_xx_response import GetRequestCount2XXResponse
-from overseerr.models.get_search2_xx_response import GetSearch2XXResponse
-from overseerr.models.get_search2_xx_response_results_inner import GetSearch2XXResponseResultsInner
-from overseerr.models.get_search_company2_xx_response import GetSearchCompany2XXResponse
-from overseerr.models.get_search_keyword2_xx_response import GetSearchKeyword2XXResponse
-from overseerr.models.get_service_radarr_by_radarr_id2_xx_response import GetServiceRadarrByRadarrId2XXResponse
-from overseerr.models.get_service_sonarr_by_sonarr_id2_xx_response import GetServiceSonarrBySonarrId2XXResponse
-from overseerr.models.get_status2_xx_response import GetStatus2XXResponse
-from overseerr.models.get_status_appdata2_xx_response import GetStatusAppdata2XXResponse
-from overseerr.models.get_tv_ratings2_xx_response import GetTvRatings2XXResponse
-from overseerr.models.get_user2_xx_response import GetUser2XXResponse
-from overseerr.models.get_user_push_subscriptions2_xx_response import GetUserPushSubscriptions2XXResponse
-from overseerr.models.get_user_quota2_xx_response import GetUserQuota2XXResponse
-from overseerr.models.get_user_quota2_xx_response_movie import GetUserQuota2XXResponseMovie
-from overseerr.models.get_user_requests2_xx_response import GetUserRequests2XXResponse
-from overseerr.models.get_user_settings_main2_xx_response import GetUserSettingsMain2XXResponse
-from overseerr.models.get_user_settings_password2_xx_response import GetUserSettingsPassword2XXResponse
-from overseerr.models.get_user_settings_permissions2_xx_response import GetUserSettingsPermissions2XXResponse
-from overseerr.models.get_user_watch_data2_xx_response import GetUserWatchData2XXResponse
-from overseerr.models.get_user_watchlist2_xx_response import GetUserWatchlist2XXResponse
-from overseerr.models.get_user_watchlist2_xx_response_results_inner import GetUserWatchlist2XXResponseResultsInner
-from overseerr.models.gotify_settings import GotifySettings
-from overseerr.models.gotify_settings_options import GotifySettingsOptions
-from overseerr.models.issue import Issue
-from overseerr.models.issue_comment import IssueComment
-from overseerr.models.job import Job
-from overseerr.models.keyword import Keyword
-from overseerr.models.list_discover_genreslider_movie2_xx_response_inner import ListDiscoverGenresliderMovie2XXResponseInner
-from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner
-from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner
-from overseerr.models.list_languages2_xx_response_inner import ListLanguages2XXResponseInner
-from overseerr.models.list_logs2_xx_response_inner import ListLogs2XXResponseInner
-from overseerr.models.list_notifications_pushover_sounds2_xx_response_inner import ListNotificationsPushoverSounds2XXResponseInner
-from overseerr.models.list_plex_users2_xx_response_inner import ListPlexUsers2XXResponseInner
-from overseerr.models.list_regions2_xx_response_inner import ListRegions2XXResponseInner
-from overseerr.models.luna_sea_settings import LunaSeaSettings
-from overseerr.models.luna_sea_settings_options import LunaSeaSettingsOptions
-from overseerr.models.main_settings import MainSettings
-from overseerr.models.media_info import MediaInfo
-from overseerr.models.media_request import MediaRequest
-from overseerr.models.media_request_modified_by import MediaRequestModifiedBy
-from overseerr.models.movie_details import MovieDetails
-from overseerr.models.movie_details_collection import MovieDetailsCollection
-from overseerr.models.movie_details_credits import MovieDetailsCredits
-from overseerr.models.movie_details_production_countries_inner import MovieDetailsProductionCountriesInner
-from overseerr.models.movie_details_releases import MovieDetailsReleases
-from overseerr.models.movie_details_releases_results_inner import MovieDetailsReleasesResultsInner
-from overseerr.models.movie_details_releases_results_inner_release_dates_inner import MovieDetailsReleasesResultsInnerReleaseDatesInner
-from overseerr.models.movie_result import MovieResult
-from overseerr.models.network import Network
-from overseerr.models.notification_agent_types import NotificationAgentTypes
-from overseerr.models.notification_email_settings import NotificationEmailSettings
-from overseerr.models.notification_email_settings_options import NotificationEmailSettingsOptions
-from overseerr.models.page_info import PageInfo
-from overseerr.models.person_details import PersonDetails
-from overseerr.models.person_result import PersonResult
-from overseerr.models.person_result_known_for_inner import PersonResultKnownForInner
-from overseerr.models.plex_connection import PlexConnection
-from overseerr.models.plex_device import PlexDevice
-from overseerr.models.plex_library import PlexLibrary
-from overseerr.models.plex_settings import PlexSettings
-from overseerr.models.production_company import ProductionCompany
-from overseerr.models.public_settings import PublicSettings
-from overseerr.models.pushbullet_settings import PushbulletSettings
-from overseerr.models.pushbullet_settings_options import PushbulletSettingsOptions
-from overseerr.models.pushover_settings import PushoverSettings
-from overseerr.models.pushover_settings_options import PushoverSettingsOptions
-from overseerr.models.put_user_request import PutUserRequest
-from overseerr.models.radarr_settings import RadarrSettings
-from overseerr.models.related_video import RelatedVideo
-from overseerr.models.season import Season
-from overseerr.models.servarr_tag import ServarrTag
-from overseerr.models.service_profile import ServiceProfile
-from overseerr.models.slack_settings import SlackSettings
-from overseerr.models.slack_settings_options import SlackSettingsOptions
-from overseerr.models.sonarr_series import SonarrSeries
-from overseerr.models.sonarr_series_add_options_inner import SonarrSeriesAddOptionsInner
-from overseerr.models.sonarr_series_images_inner import SonarrSeriesImagesInner
-from overseerr.models.sonarr_series_ratings_inner import SonarrSeriesRatingsInner
-from overseerr.models.sonarr_series_seasons_inner import SonarrSeriesSeasonsInner
-from overseerr.models.sonarr_settings import SonarrSettings
-from overseerr.models.spoken_language import SpokenLanguage
-from overseerr.models.tautulli_settings import TautulliSettings
-from overseerr.models.telegram_settings import TelegramSettings
-from overseerr.models.telegram_settings_options import TelegramSettingsOptions
-from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse
-from overseerr.models.test_radarr_request import TestRadarrRequest
-from overseerr.models.test_sonarr_request import TestSonarrRequest
-from overseerr.models.tv_details import TvDetails
-from overseerr.models.tv_details_content_ratings import TvDetailsContentRatings
-from overseerr.models.tv_details_content_ratings_results_inner import TvDetailsContentRatingsResultsInner
-from overseerr.models.tv_details_created_by_inner import TvDetailsCreatedByInner
-from overseerr.models.tv_result import TvResult
-from overseerr.models.update_discover_request import UpdateDiscoverRequest
-from overseerr.models.update_issue_comment_request import UpdateIssueCommentRequest
-from overseerr.models.update_request_request import UpdateRequestRequest
-from overseerr.models.user import User
-from overseerr.models.user_settings import UserSettings
-from overseerr.models.user_settings_notifications import UserSettingsNotifications
-from overseerr.models.watch_provider_details import WatchProviderDetails
-from overseerr.models.watch_provider_region import WatchProviderRegion
-from overseerr.models.watch_providers_inner import WatchProvidersInner
-from overseerr.models.web_push_settings import WebPushSettings
-from overseerr.models.webhook_settings import WebhookSettings
-from overseerr.models.webhook_settings_options import WebhookSettingsOptions
+from overseerr.models.cast import Cast as Cast
+from overseerr.models.collection import Collection as Collection
+from overseerr.models.company import Company as Company
+from overseerr.models.create_auth_local_request import CreateAuthLocalRequest as CreateAuthLocalRequest
+from overseerr.models.create_auth_logout2_xx_response import CreateAuthLogout2XXResponse as CreateAuthLogout2XXResponse
+from overseerr.models.create_auth_plex_request import CreateAuthPlexRequest as CreateAuthPlexRequest
+from overseerr.models.create_auth_reset_password_by_guid_request import CreateAuthResetPasswordByGuidRequest as CreateAuthResetPasswordByGuidRequest
+from overseerr.models.create_auth_reset_password_request import CreateAuthResetPasswordRequest as CreateAuthResetPasswordRequest
+from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest as CreateDiscoverAddRequest
+from overseerr.models.create_issue_comment_request import CreateIssueCommentRequest as CreateIssueCommentRequest
+from overseerr.models.create_issue_request import CreateIssueRequest as CreateIssueRequest
+from overseerr.models.create_jobs_schedule_request import CreateJobsScheduleRequest as CreateJobsScheduleRequest
+from overseerr.models.create_media_by_status_request import CreateMediaByStatusRequest as CreateMediaByStatusRequest
+from overseerr.models.create_plex_sync_request import CreatePlexSyncRequest as CreatePlexSyncRequest
+from overseerr.models.create_request_request import CreateRequestRequest as CreateRequestRequest
+from overseerr.models.create_request_request_seasons import CreateRequestRequestSeasons as CreateRequestRequestSeasons
+from overseerr.models.create_user_import_from_plex_request import CreateUserImportFromPlexRequest as CreateUserImportFromPlexRequest
+from overseerr.models.create_user_register_push_subscription_request import CreateUserRegisterPushSubscriptionRequest as CreateUserRegisterPushSubscriptionRequest
+from overseerr.models.create_user_request import CreateUserRequest as CreateUserRequest
+from overseerr.models.create_user_settings_main_request import CreateUserSettingsMainRequest as CreateUserSettingsMainRequest
+from overseerr.models.create_user_settings_password_request import CreateUserSettingsPasswordRequest as CreateUserSettingsPasswordRequest
+from overseerr.models.create_user_settings_permissions_request import CreateUserSettingsPermissionsRequest as CreateUserSettingsPermissionsRequest
+from overseerr.models.credit_cast import CreditCast as CreditCast
+from overseerr.models.credit_crew import CreditCrew as CreditCrew
+from overseerr.models.crew import Crew as Crew
+from overseerr.models.discord_settings import DiscordSettings as DiscordSettings
+from overseerr.models.discord_settings_options import DiscordSettingsOptions as DiscordSettingsOptions
+from overseerr.models.discover_slider import DiscoverSlider as DiscoverSlider
+from overseerr.models.episode import Episode as Episode
+from overseerr.models.external_ids import ExternalIds as ExternalIds
+from overseerr.models.genre import Genre as Genre
+from overseerr.models.get_about2_xx_response import GetAbout2XXResponse as GetAbout2XXResponse
+from overseerr.models.get_cache2_xx_response import GetCache2XXResponse as GetCache2XXResponse
+from overseerr.models.get_cache2_xx_response_api_caches_inner import GetCache2XXResponseApiCachesInner as GetCache2XXResponseApiCachesInner
+from overseerr.models.get_cache2_xx_response_api_caches_inner_stats import GetCache2XXResponseApiCachesInnerStats as GetCache2XXResponseApiCachesInnerStats
+from overseerr.models.get_cache2_xx_response_image_cache import GetCache2XXResponseImageCache as GetCache2XXResponseImageCache
+from overseerr.models.get_cache2_xx_response_image_cache_tmdb import GetCache2XXResponseImageCacheTmdb as GetCache2XXResponseImageCacheTmdb
+from overseerr.models.get_discover_movies2_xx_response import GetDiscoverMovies2XXResponse as GetDiscoverMovies2XXResponse
+from overseerr.models.get_discover_movies_genre_by_genre_id2_xx_response import GetDiscoverMoviesGenreByGenreId2XXResponse as GetDiscoverMoviesGenreByGenreId2XXResponse
+from overseerr.models.get_discover_movies_language_by_language2_xx_response import GetDiscoverMoviesLanguageByLanguage2XXResponse as GetDiscoverMoviesLanguageByLanguage2XXResponse
+from overseerr.models.get_discover_movies_studio_by_studio_id2_xx_response import GetDiscoverMoviesStudioByStudioId2XXResponse as GetDiscoverMoviesStudioByStudioId2XXResponse
+from overseerr.models.get_discover_tv2_xx_response import GetDiscoverTv2XXResponse as GetDiscoverTv2XXResponse
+from overseerr.models.get_discover_tv_genre_by_genre_id2_xx_response import GetDiscoverTvGenreByGenreId2XXResponse as GetDiscoverTvGenreByGenreId2XXResponse
+from overseerr.models.get_discover_tv_language_by_language2_xx_response import GetDiscoverTvLanguageByLanguage2XXResponse as GetDiscoverTvLanguageByLanguage2XXResponse
+from overseerr.models.get_discover_tv_network_by_network_id2_xx_response import GetDiscoverTvNetworkByNetworkId2XXResponse as GetDiscoverTvNetworkByNetworkId2XXResponse
+from overseerr.models.get_issue2_xx_response import GetIssue2XXResponse as GetIssue2XXResponse
+from overseerr.models.get_issue_count2_xx_response import GetIssueCount2XXResponse as GetIssueCount2XXResponse
+from overseerr.models.get_media2_xx_response import GetMedia2XXResponse as GetMedia2XXResponse
+from overseerr.models.get_media_watch_data2_xx_response import GetMediaWatchData2XXResponse as GetMediaWatchData2XXResponse
+from overseerr.models.get_media_watch_data2_xx_response_data import GetMediaWatchData2XXResponseData as GetMediaWatchData2XXResponseData
+from overseerr.models.get_movie_ratings2_xx_response import GetMovieRatings2XXResponse as GetMovieRatings2XXResponse
+from overseerr.models.get_movie_ratingscombined2_xx_response import GetMovieRatingscombined2XXResponse as GetMovieRatingscombined2XXResponse
+from overseerr.models.get_movie_ratingscombined2_xx_response_imdb import GetMovieRatingscombined2XXResponseImdb as GetMovieRatingscombined2XXResponseImdb
+from overseerr.models.get_person_combined_credits2_xx_response import GetPersonCombinedCredits2XXResponse as GetPersonCombinedCredits2XXResponse
+from overseerr.models.get_plex_sync2_xx_response import GetPlexSync2XXResponse as GetPlexSync2XXResponse
+from overseerr.models.get_request_count2_xx_response import GetRequestCount2XXResponse as GetRequestCount2XXResponse
+from overseerr.models.get_search2_xx_response import GetSearch2XXResponse as GetSearch2XXResponse
+from overseerr.models.get_search2_xx_response_results_inner import GetSearch2XXResponseResultsInner as GetSearch2XXResponseResultsInner
+from overseerr.models.get_search_company2_xx_response import GetSearchCompany2XXResponse as GetSearchCompany2XXResponse
+from overseerr.models.get_search_keyword2_xx_response import GetSearchKeyword2XXResponse as GetSearchKeyword2XXResponse
+from overseerr.models.get_service_radarr_by_radarr_id2_xx_response import GetServiceRadarrByRadarrId2XXResponse as GetServiceRadarrByRadarrId2XXResponse
+from overseerr.models.get_service_sonarr_by_sonarr_id2_xx_response import GetServiceSonarrBySonarrId2XXResponse as GetServiceSonarrBySonarrId2XXResponse
+from overseerr.models.get_status2_xx_response import GetStatus2XXResponse as GetStatus2XXResponse
+from overseerr.models.get_status_appdata2_xx_response import GetStatusAppdata2XXResponse as GetStatusAppdata2XXResponse
+from overseerr.models.get_tv_ratings2_xx_response import GetTvRatings2XXResponse as GetTvRatings2XXResponse
+from overseerr.models.get_user2_xx_response import GetUser2XXResponse as GetUser2XXResponse
+from overseerr.models.get_user_push_subscriptions2_xx_response import GetUserPushSubscriptions2XXResponse as GetUserPushSubscriptions2XXResponse
+from overseerr.models.get_user_quota2_xx_response import GetUserQuota2XXResponse as GetUserQuota2XXResponse
+from overseerr.models.get_user_quota2_xx_response_movie import GetUserQuota2XXResponseMovie as GetUserQuota2XXResponseMovie
+from overseerr.models.get_user_requests2_xx_response import GetUserRequests2XXResponse as GetUserRequests2XXResponse
+from overseerr.models.get_user_settings_main2_xx_response import GetUserSettingsMain2XXResponse as GetUserSettingsMain2XXResponse
+from overseerr.models.get_user_settings_password2_xx_response import GetUserSettingsPassword2XXResponse as GetUserSettingsPassword2XXResponse
+from overseerr.models.get_user_settings_permissions2_xx_response import GetUserSettingsPermissions2XXResponse as GetUserSettingsPermissions2XXResponse
+from overseerr.models.get_user_watch_data2_xx_response import GetUserWatchData2XXResponse as GetUserWatchData2XXResponse
+from overseerr.models.get_user_watchlist2_xx_response import GetUserWatchlist2XXResponse as GetUserWatchlist2XXResponse
+from overseerr.models.get_user_watchlist2_xx_response_results_inner import GetUserWatchlist2XXResponseResultsInner as GetUserWatchlist2XXResponseResultsInner
+from overseerr.models.gotify_settings import GotifySettings as GotifySettings
+from overseerr.models.gotify_settings_options import GotifySettingsOptions as GotifySettingsOptions
+from overseerr.models.issue import Issue as Issue
+from overseerr.models.issue_comment import IssueComment as IssueComment
+from overseerr.models.job import Job as Job
+from overseerr.models.keyword import Keyword as Keyword
+from overseerr.models.list_discover_genreslider_movie2_xx_response_inner import ListDiscoverGenresliderMovie2XXResponseInner as ListDiscoverGenresliderMovie2XXResponseInner
+from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner as ListGenresMovie2XXResponseInner
+from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner as ListGenresTv2XXResponseInner
+from overseerr.models.list_languages2_xx_response_inner import ListLanguages2XXResponseInner as ListLanguages2XXResponseInner
+from overseerr.models.list_logs2_xx_response_inner import ListLogs2XXResponseInner as ListLogs2XXResponseInner
+from overseerr.models.list_notifications_pushover_sounds2_xx_response_inner import ListNotificationsPushoverSounds2XXResponseInner as ListNotificationsPushoverSounds2XXResponseInner
+from overseerr.models.list_plex_users2_xx_response_inner import ListPlexUsers2XXResponseInner as ListPlexUsers2XXResponseInner
+from overseerr.models.list_regions2_xx_response_inner import ListRegions2XXResponseInner as ListRegions2XXResponseInner
+from overseerr.models.luna_sea_settings import LunaSeaSettings as LunaSeaSettings
+from overseerr.models.luna_sea_settings_options import LunaSeaSettingsOptions as LunaSeaSettingsOptions
+from overseerr.models.main_settings import MainSettings as MainSettings
+from overseerr.models.media_info import MediaInfo as MediaInfo
+from overseerr.models.media_request import MediaRequest as MediaRequest
+from overseerr.models.media_request_modified_by import MediaRequestModifiedBy as MediaRequestModifiedBy
+from overseerr.models.movie_details import MovieDetails as MovieDetails
+from overseerr.models.movie_details_collection import MovieDetailsCollection as MovieDetailsCollection
+from overseerr.models.movie_details_credits import MovieDetailsCredits as MovieDetailsCredits
+from overseerr.models.movie_details_production_countries_inner import MovieDetailsProductionCountriesInner as MovieDetailsProductionCountriesInner
+from overseerr.models.movie_details_releases import MovieDetailsReleases as MovieDetailsReleases
+from overseerr.models.movie_details_releases_results_inner import MovieDetailsReleasesResultsInner as MovieDetailsReleasesResultsInner
+from overseerr.models.movie_details_releases_results_inner_release_dates_inner import MovieDetailsReleasesResultsInnerReleaseDatesInner as MovieDetailsReleasesResultsInnerReleaseDatesInner
+from overseerr.models.movie_result import MovieResult as MovieResult
+from overseerr.models.network import Network as Network
+from overseerr.models.notification_agent_types import NotificationAgentTypes as NotificationAgentTypes
+from overseerr.models.notification_email_settings import NotificationEmailSettings as NotificationEmailSettings
+from overseerr.models.notification_email_settings_options import NotificationEmailSettingsOptions as NotificationEmailSettingsOptions
+from overseerr.models.page_info import PageInfo as PageInfo
+from overseerr.models.person_details import PersonDetails as PersonDetails
+from overseerr.models.person_result import PersonResult as PersonResult
+from overseerr.models.person_result_known_for_inner import PersonResultKnownForInner as PersonResultKnownForInner
+from overseerr.models.plex_connection import PlexConnection as PlexConnection
+from overseerr.models.plex_device import PlexDevice as PlexDevice
+from overseerr.models.plex_library import PlexLibrary as PlexLibrary
+from overseerr.models.plex_settings import PlexSettings as PlexSettings
+from overseerr.models.production_company import ProductionCompany as ProductionCompany
+from overseerr.models.public_settings import PublicSettings as PublicSettings
+from overseerr.models.pushbullet_settings import PushbulletSettings as PushbulletSettings
+from overseerr.models.pushbullet_settings_options import PushbulletSettingsOptions as PushbulletSettingsOptions
+from overseerr.models.pushover_settings import PushoverSettings as PushoverSettings
+from overseerr.models.pushover_settings_options import PushoverSettingsOptions as PushoverSettingsOptions
+from overseerr.models.put_user_request import PutUserRequest as PutUserRequest
+from overseerr.models.radarr_settings import RadarrSettings as RadarrSettings
+from overseerr.models.related_video import RelatedVideo as RelatedVideo
+from overseerr.models.season import Season as Season
+from overseerr.models.servarr_tag import ServarrTag as ServarrTag
+from overseerr.models.service_profile import ServiceProfile as ServiceProfile
+from overseerr.models.slack_settings import SlackSettings as SlackSettings
+from overseerr.models.slack_settings_options import SlackSettingsOptions as SlackSettingsOptions
+from overseerr.models.sonarr_series import SonarrSeries as SonarrSeries
+from overseerr.models.sonarr_series_add_options_inner import SonarrSeriesAddOptionsInner as SonarrSeriesAddOptionsInner
+from overseerr.models.sonarr_series_images_inner import SonarrSeriesImagesInner as SonarrSeriesImagesInner
+from overseerr.models.sonarr_series_ratings_inner import SonarrSeriesRatingsInner as SonarrSeriesRatingsInner
+from overseerr.models.sonarr_series_seasons_inner import SonarrSeriesSeasonsInner as SonarrSeriesSeasonsInner
+from overseerr.models.sonarr_settings import SonarrSettings as SonarrSettings
+from overseerr.models.spoken_language import SpokenLanguage as SpokenLanguage
+from overseerr.models.tautulli_settings import TautulliSettings as TautulliSettings
+from overseerr.models.telegram_settings import TelegramSettings as TelegramSettings
+from overseerr.models.telegram_settings_options import TelegramSettingsOptions as TelegramSettingsOptions
+from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse as TestRadarr2XXResponse
+from overseerr.models.test_radarr_request import TestRadarrRequest as TestRadarrRequest
+from overseerr.models.test_sonarr_request import TestSonarrRequest as TestSonarrRequest
+from overseerr.models.tv_details import TvDetails as TvDetails
+from overseerr.models.tv_details_content_ratings import TvDetailsContentRatings as TvDetailsContentRatings
+from overseerr.models.tv_details_content_ratings_results_inner import TvDetailsContentRatingsResultsInner as TvDetailsContentRatingsResultsInner
+from overseerr.models.tv_details_created_by_inner import TvDetailsCreatedByInner as TvDetailsCreatedByInner
+from overseerr.models.tv_result import TvResult as TvResult
+from overseerr.models.update_discover_request import UpdateDiscoverRequest as UpdateDiscoverRequest
+from overseerr.models.update_issue_comment_request import UpdateIssueCommentRequest as UpdateIssueCommentRequest
+from overseerr.models.update_request_request import UpdateRequestRequest as UpdateRequestRequest
+from overseerr.models.user import User as User
+from overseerr.models.user_settings import UserSettings as UserSettings
+from overseerr.models.user_settings_notifications import UserSettingsNotifications as UserSettingsNotifications
+from overseerr.models.watch_provider_details import WatchProviderDetails as WatchProviderDetails
+from overseerr.models.watch_provider_region import WatchProviderRegion as WatchProviderRegion
+from overseerr.models.watch_providers_inner import WatchProvidersInner as WatchProvidersInner
+from overseerr.models.web_push_settings import WebPushSettings as WebPushSettings
+from overseerr.models.webhook_settings import WebhookSettings as WebhookSettings
+from overseerr.models.webhook_settings_options import WebhookSettingsOptions as WebhookSettingsOptions
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )
