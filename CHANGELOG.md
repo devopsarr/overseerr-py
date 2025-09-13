@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/devopsarr/overseerr-py/compare/v1.0.1...v1.0.2) (2025-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sct/overseerr to v1.34.0 ([112f9d3](https://github.com/devopsarr/overseerr-py/commit/112f9d32d6d10388cae1822f06baa7f5cdbbed45))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.12.0 ([3fb412d](https://github.com/devopsarr/overseerr-py/commit/3fb412d66bd2a945feadc24d1a09a1a8717c702f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.15.0 ([af4c36d](https://github.com/devopsarr/overseerr-py/commit/af4c36d93974092a3666b9286a5e25d3587478c5))
+
 ## [1.0.1](https://github.com/devopsarr/overseerr-py/compare/v1.0.0...v1.0.1) (2025-01-20)
 
 
