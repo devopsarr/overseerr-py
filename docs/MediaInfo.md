@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **float** |  | [optional] [readonly] 
 **tmdb_id** | **float** |  | [optional] [readonly] 
 **tvdb_id** | **float** |  | [optional] [readonly] 
-**status** | **float** | Availability of the media. 1 &#x3D; &#x60;UNKNOWN&#x60;, 2 &#x3D; &#x60;PENDING&#x60;, 3 &#x3D; &#x60;PROCESSING&#x60;, 4 &#x3D; &#x60;PARTIALLY_AVAILABLE&#x60;, 5 &#x3D; &#x60;AVAILABLE&#x60; | [optional] 
+**status** | **float** | Availability of the media. 1 &#x3D; &#x60;UNKNOWN&#x60;, 2 &#x3D; &#x60;PENDING&#x60;, 3 &#x3D; &#x60;PROCESSING&#x60;, 4 &#x3D; &#x60;PARTIALLY_AVAILABLE&#x60;, 5 &#x3D; &#x60;AVAILABLE&#x60;, 6 &#x3D; &#x60;DELETED&#x60; | [optional] 
 **requests** | [**List[MediaRequest]**](MediaRequest.md) |  | [optional] [readonly] 
 **created_at** | **str** |  | [optional] [readonly] 
 **updated_at** | **str** |  | [optional] [readonly] 
