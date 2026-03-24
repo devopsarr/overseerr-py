@@ -25,6 +25,7 @@ from overseerr.models.sonarr_series_ratings_inner import SonarrSeriesRatingsInne
 from overseerr.models.sonarr_series_seasons_inner import SonarrSeriesSeasonsInner
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class SonarrSeries(BaseModel):
     """
@@ -70,7 +71,8 @@ class SonarrSeries(BaseModel):
     __properties: ClassVar[List[str]] = ["title", "sortTitle", "seasonCount", "status", "overview", "network", "airTime", "images", "remotePoster", "seasons", "year", "path", "profileId", "languageProfileId", "seasonFolder", "monitored", "useSceneNumbering", "runtime", "tvdbId", "tvRageId", "tvMazeId", "firstAired", "lastInfoSync", "seriesType", "cleanTitle", "imdbId", "titleSlug", "certification", "genres", "tags", "added", "ratings", "qualityProfileId", "id", "rootFolderPath", "addOptions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -82,8 +84,7 @@ class SonarrSeries(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

@@ -32,6 +32,7 @@ from overseerr.models.spoken_language import SpokenLanguage
 from overseerr.models.watch_providers_inner import WatchProvidersInner
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class MovieDetails(BaseModel):
     """
@@ -72,7 +73,8 @@ class MovieDetails(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "imdbId", "adult", "backdropPath", "posterPath", "budget", "genres", "homepage", "relatedVideos", "originalLanguage", "originalTitle", "overview", "popularity", "productionCompanies", "productionCountries", "releaseDate", "releases", "revenue", "runtime", "spokenLanguages", "status", "tagline", "title", "video", "voteAverage", "voteCount", "credits", "collection", "externalIds", "mediaInfo", "watchProviders"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -84,8 +86,7 @@ class MovieDetails(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
