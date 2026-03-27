@@ -34,6 +34,7 @@ from overseerr.models.tv_details_created_by_inner import TvDetailsCreatedByInner
 from overseerr.models.watch_providers_inner import WatchProvidersInner
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class TvDetails(BaseModel):
     """
@@ -80,7 +81,8 @@ class TvDetails(BaseModel):
     __properties: ClassVar[List[str]] = ["id", "backdropPath", "posterPath", "contentRatings", "createdBy", "episodeRunTime", "firstAirDate", "genres", "homepage", "inProduction", "languages", "lastAirDate", "lastEpisodeToAir", "name", "nextEpisodeToAir", "networks", "numberOfEpisodes", "numberOfSeason", "originCountry", "originalLanguage", "originalName", "overview", "popularity", "productionCompanies", "productionCountries", "spokenLanguages", "seasons", "status", "tagline", "type", "voteAverage", "voteCount", "credits", "externalIds", "keywords", "mediaInfo", "watchProviders"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -92,8 +94,7 @@ class TvDetails(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
