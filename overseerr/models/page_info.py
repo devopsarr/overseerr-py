@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class PageInfo(BaseModel):
     """
     PageInfo
     """ # noqa: E501
-    page: Optional[Union[StrictFloat, StrictInt]] = None
-    pages: Optional[Union[StrictFloat, StrictInt]] = None
-    results: Optional[Union[StrictFloat, StrictInt]] = None
+    page: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [10]})
+    results: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [100]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["page", "pages", "results"]
 

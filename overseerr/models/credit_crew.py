@@ -28,7 +28,7 @@ class CreditCrew(BaseModel):
     """
     CreditCrew
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
     original_language: Optional[StrictStr] = Field(default=None, alias="originalLanguage")
     episode_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="episodeCount")
     overview: Optional[StrictStr] = None

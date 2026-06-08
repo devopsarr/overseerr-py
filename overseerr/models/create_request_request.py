@@ -28,11 +28,11 @@ class CreateRequestRequest(BaseModel):
     """
     CreateRequestRequest
     """ # noqa: E501
-    media_type: StrictStr = Field(alias="mediaType")
-    media_id: Union[StrictFloat, StrictInt] = Field(alias="mediaId")
-    tvdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvdbId")
+    media_type: StrictStr = Field(alias="mediaType", json_schema_extra={"examples": ["movie"]})
+    media_id: Union[StrictFloat, StrictInt] = Field(alias="mediaId", json_schema_extra={"examples": [123]})
+    tvdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvdbId", json_schema_extra={"examples": [123]})
     seasons: Optional[CreateRequestRequestSeasons] = None
-    is4k: Optional[StrictBool] = None
+    is4k: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     server_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="serverId")
     profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="profileId")
     root_folder: Optional[StrictStr] = Field(default=None, alias="rootFolder")

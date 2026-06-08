@@ -28,9 +28,9 @@ class Collection(BaseModel):
     """
     Collection
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    name: Optional[StrictStr] = None
-    overview: Optional[StrictStr] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["A Movie Collection"]})
+    overview: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Overview of collection"]})
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     parts: Optional[List[MovieResult]] = None

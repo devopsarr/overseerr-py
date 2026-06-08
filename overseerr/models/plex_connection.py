@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,13 +27,13 @@ class PlexConnection(BaseModel):
     """
     PlexConnection
     """ # noqa: E501
-    protocol: StrictStr
-    address: StrictStr
-    port: Union[StrictFloat, StrictInt]
-    uri: StrictStr
-    local: StrictBool
-    status: Optional[Union[StrictFloat, StrictInt]] = None
-    message: Optional[StrictStr] = None
+    protocol: StrictStr = Field(json_schema_extra={"examples": ["https"]})
+    address: StrictStr = Field(json_schema_extra={"examples": ["127.0.0.1"]})
+    port: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [32400]})
+    uri: StrictStr = Field(json_schema_extra={"examples": ["https://127-0-0-1.2ab6ce1a093d465e910def96cf4e4799.plex.direct:32400"]})
+    local: StrictBool = Field(json_schema_extra={"examples": [True]})
+    status: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [200]})
+    message: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["OK"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["protocol", "address", "port", "uri", "local", "status", "message"]
 

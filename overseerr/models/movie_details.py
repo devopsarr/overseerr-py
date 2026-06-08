@@ -38,12 +38,12 @@ class MovieDetails(BaseModel):
     """
     MovieDetails
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    imdb_id: Optional[StrictStr] = Field(default=None, alias="imdbId")
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123]})
+    imdb_id: Optional[StrictStr] = Field(default=None, alias="imdbId", json_schema_extra={"examples": ["tt123"]})
     adult: Optional[StrictBool] = None
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
-    budget: Optional[Union[StrictFloat, StrictInt]] = None
+    budget: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1000000]})
     genres: Optional[List[Genre]] = None
     homepage: Optional[StrictStr] = None
     related_videos: Optional[List[RelatedVideo]] = Field(default=None, alias="relatedVideos")

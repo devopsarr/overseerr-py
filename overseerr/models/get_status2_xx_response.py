@@ -27,7 +27,7 @@ class GetStatus2XXResponse(BaseModel):
     """
     GetStatus2XXResponse
     """ # noqa: E501
-    version: Optional[StrictStr] = None
+    version: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["1.0.0"]})
     commit_tag: Optional[StrictStr] = Field(default=None, alias="commitTag")
     update_available: Optional[StrictBool] = Field(default=None, alias="updateAvailable")
     commits_behind: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="commitsBehind")

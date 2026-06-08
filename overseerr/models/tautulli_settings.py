@@ -27,8 +27,8 @@ class TautulliSettings(BaseModel):
     """
     TautulliSettings
     """ # noqa: E501
-    hostname: Optional[StrictStr] = None
-    port: Optional[Union[StrictFloat, StrictInt]] = None
+    hostname: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["tautulli.example.com"]})
+    port: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [8181]})
     use_ssl: Optional[StrictBool] = Field(default=None, alias="useSsl")
     api_key: Optional[StrictStr] = Field(default=None, alias="apiKey")
     external_url: Optional[StrictStr] = Field(default=None, alias="externalUrl")

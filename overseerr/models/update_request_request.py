@@ -30,7 +30,7 @@ class UpdateRequestRequest(BaseModel):
     """ # noqa: E501
     media_type: StrictStr = Field(alias="mediaType")
     seasons: Optional[List[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]]] = None
-    is4k: Optional[StrictBool] = None
+    is4k: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     server_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="serverId")
     profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="profileId")
     root_folder: Optional[StrictStr] = Field(default=None, alias="rootFolder")

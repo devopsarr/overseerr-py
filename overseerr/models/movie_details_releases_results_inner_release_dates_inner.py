@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,11 @@ class MovieDetailsReleasesResultsInnerReleaseDatesInner(BaseModel):
     """
     MovieDetailsReleasesResultsInnerReleaseDatesInner
     """ # noqa: E501
-    certification: Optional[StrictStr] = None
+    certification: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["PG-13"]})
     iso_639_1: Optional[StrictStr] = None
-    note: Optional[StrictStr] = None
-    release_date: Optional[StrictStr] = None
-    type: Optional[Union[StrictFloat, StrictInt]] = None
+    note: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Blu ray"]})
+    release_date: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["2017-07-12T00:00:00.000Z"]})
+    type: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["certification", "iso_639_1", "note", "release_date", "type"]
 

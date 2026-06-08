@@ -28,21 +28,21 @@ class MovieResult(BaseModel):
     """
     MovieResult
     """ # noqa: E501
-    id: Union[StrictFloat, StrictInt]
+    id: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [1234]})
     media_type: StrictStr = Field(alias="mediaType")
-    popularity: Optional[Union[StrictFloat, StrictInt]] = None
+    popularity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [10]})
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     vote_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="voteCount")
     vote_average: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="voteAverage")
     genre_ids: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, alias="genreIds")
-    overview: Optional[StrictStr] = None
-    original_language: Optional[StrictStr] = Field(default=None, alias="originalLanguage")
-    title: StrictStr
-    original_title: Optional[StrictStr] = Field(default=None, alias="originalTitle")
+    overview: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Overview of the movie"]})
+    original_language: Optional[StrictStr] = Field(default=None, alias="originalLanguage", json_schema_extra={"examples": ["en"]})
+    title: StrictStr = Field(json_schema_extra={"examples": ["Movie Title"]})
+    original_title: Optional[StrictStr] = Field(default=None, alias="originalTitle", json_schema_extra={"examples": ["Original Movie Title"]})
     release_date: Optional[StrictStr] = Field(default=None, alias="releaseDate")
-    adult: Optional[StrictBool] = None
-    video: Optional[StrictBool] = None
+    adult: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
+    video: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     media_info: Optional[MediaInfo] = Field(default=None, alias="mediaInfo")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "mediaType", "popularity", "posterPath", "backdropPath", "voteCount", "voteAverage", "genreIds", "overview", "originalLanguage", "title", "originalTitle", "releaseDate", "adult", "video", "mediaInfo"]

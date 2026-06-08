@@ -28,13 +28,13 @@ class PlexSettings(BaseModel):
     """
     PlexSettings
     """ # noqa: E501
-    name: StrictStr
-    machine_id: StrictStr = Field(alias="machineId")
-    ip: StrictStr
-    port: Union[StrictFloat, StrictInt]
+    name: StrictStr = Field(json_schema_extra={"examples": ["Main Server"]})
+    machine_id: StrictStr = Field(alias="machineId", json_schema_extra={"examples": ["1234123412341234"]})
+    ip: StrictStr = Field(json_schema_extra={"examples": ["127.0.0.1"]})
+    port: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [32400]})
     use_ssl: Optional[StrictBool] = Field(default=None, alias="useSsl")
     libraries: Optional[List[PlexLibrary]] = None
-    web_app_url: Optional[StrictStr] = Field(default=None, alias="webAppUrl")
+    web_app_url: Optional[StrictStr] = Field(default=None, alias="webAppUrl", json_schema_extra={"examples": ["https://app.plex.tv/desktop"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["name", "machineId", "ip", "port", "useSsl", "libraries", "webAppUrl"]
 

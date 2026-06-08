@@ -27,7 +27,7 @@ class GetUserWatchlist2XXResponseResultsInner(BaseModel):
     """
     GetUserWatchlist2XXResponseResultsInner
     """ # noqa: E501
-    tmdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tmdbId")
+    tmdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tmdbId", json_schema_extra={"examples": [1]})
     rating_key: Optional[StrictStr] = Field(default=None, alias="ratingKey")
     type: Optional[StrictStr] = None
     title: Optional[StrictStr] = None

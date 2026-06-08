@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from overseerr.models.user import User
 from typing import Optional, Set
@@ -28,9 +28,9 @@ class IssueComment(BaseModel):
     """
     IssueComment
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
     user: Optional[User] = None
-    message: Optional[StrictStr] = None
+    message: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["A comment"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "user", "message"]
 

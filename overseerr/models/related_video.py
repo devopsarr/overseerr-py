@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,11 @@ class RelatedVideo(BaseModel):
     """
     RelatedVideo
     """ # noqa: E501
-    url: Optional[StrictStr] = None
-    key: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    size: Optional[Union[StrictFloat, StrictInt]] = None
-    type: Optional[StrictStr] = None
+    url: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["https://www.youtube.com/watch?v=9qhL2_UxXM0/"]})
+    key: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["9qhL2_UxXM0"]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Trailer for some movie (1978)"]})
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1080]})
+    type: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Trailer"]})
     site: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["url", "key", "name", "size", "type", "site"]

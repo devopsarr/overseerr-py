@@ -27,17 +27,17 @@ class User(BaseModel):
     """
     User
     """ # noqa: E501
-    id: StrictInt
-    email: StrictStr
+    id: StrictInt = Field(json_schema_extra={"examples": [1]})
+    email: StrictStr = Field(json_schema_extra={"examples": ["hey@itsme.com"]})
     username: Optional[StrictStr] = None
     plex_token: Optional[StrictStr] = Field(default=None, alias="plexToken")
     plex_username: Optional[StrictStr] = Field(default=None, alias="plexUsername")
-    user_type: Optional[StrictInt] = Field(default=None, alias="userType")
-    permissions: Optional[Union[StrictFloat, StrictInt]] = None
+    user_type: Optional[StrictInt] = Field(default=None, alias="userType", json_schema_extra={"examples": [1]})
+    permissions: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [0]})
     avatar: Optional[StrictStr] = None
-    created_at: StrictStr = Field(alias="createdAt")
-    updated_at: StrictStr = Field(alias="updatedAt")
-    request_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="requestCount")
+    created_at: StrictStr = Field(alias="createdAt", json_schema_extra={"examples": ["2020-09-02T05:02:23.000Z"]})
+    updated_at: StrictStr = Field(alias="updatedAt", json_schema_extra={"examples": ["2020-09-02T05:02:23.000Z"]})
+    request_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="requestCount", json_schema_extra={"examples": [5]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "email", "username", "plexToken", "plexUsername", "userType", "permissions", "avatar", "createdAt", "updatedAt", "requestCount"]
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class ListLanguages2XXResponseInner(BaseModel):
     """
     ListLanguages2XXResponseInner
     """ # noqa: E501
-    iso_639_1: Optional[StrictStr] = None
-    english_name: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
+    iso_639_1: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["en"]})
+    english_name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["English"]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["English"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["iso_639_1", "english_name", "name"]
 

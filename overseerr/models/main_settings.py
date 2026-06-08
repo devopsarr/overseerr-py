@@ -28,16 +28,16 @@ class MainSettings(BaseModel):
     MainSettings
     """ # noqa: E501
     api_key: Optional[StrictStr] = Field(default=None, alias="apiKey")
-    app_language: Optional[StrictStr] = Field(default=None, alias="appLanguage")
-    application_title: Optional[StrictStr] = Field(default=None, alias="applicationTitle")
-    application_url: Optional[StrictStr] = Field(default=None, alias="applicationUrl")
-    trust_proxy: Optional[StrictBool] = Field(default=None, alias="trustProxy")
-    csrf_protection: Optional[StrictBool] = Field(default=None, alias="csrfProtection")
-    hide_available: Optional[StrictBool] = Field(default=None, alias="hideAvailable")
-    partial_requests_enabled: Optional[StrictBool] = Field(default=None, alias="partialRequestsEnabled")
-    local_login: Optional[StrictBool] = Field(default=None, alias="localLogin")
-    new_plex_login: Optional[StrictBool] = Field(default=None, alias="newPlexLogin")
-    default_permissions: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="defaultPermissions")
+    app_language: Optional[StrictStr] = Field(default=None, alias="appLanguage", json_schema_extra={"examples": ["en"]})
+    application_title: Optional[StrictStr] = Field(default=None, alias="applicationTitle", json_schema_extra={"examples": ["Overseerr"]})
+    application_url: Optional[StrictStr] = Field(default=None, alias="applicationUrl", json_schema_extra={"examples": ["https://os.example.com"]})
+    trust_proxy: Optional[StrictBool] = Field(default=None, alias="trustProxy", json_schema_extra={"examples": [True]})
+    csrf_protection: Optional[StrictBool] = Field(default=None, alias="csrfProtection", json_schema_extra={"examples": [False]})
+    hide_available: Optional[StrictBool] = Field(default=None, alias="hideAvailable", json_schema_extra={"examples": [False]})
+    partial_requests_enabled: Optional[StrictBool] = Field(default=None, alias="partialRequestsEnabled", json_schema_extra={"examples": [False]})
+    local_login: Optional[StrictBool] = Field(default=None, alias="localLogin", json_schema_extra={"examples": [True]})
+    new_plex_login: Optional[StrictBool] = Field(default=None, alias="newPlexLogin", json_schema_extra={"examples": [True]})
+    default_permissions: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="defaultPermissions", json_schema_extra={"examples": [32]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["apiKey", "appLanguage", "applicationTitle", "applicationUrl", "trustProxy", "csrfProtection", "hideAvailable", "partialRequestsEnabled", "localLogin", "newPlexLogin", "defaultPermissions"]
 

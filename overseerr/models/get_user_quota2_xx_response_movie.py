@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,11 @@ class GetUserQuota2XXResponseMovie(BaseModel):
     """
     GetUserQuota2XXResponseMovie
     """ # noqa: E501
-    days: Optional[Union[StrictFloat, StrictInt]] = None
-    limit: Optional[Union[StrictFloat, StrictInt]] = None
-    used: Optional[Union[StrictFloat, StrictInt]] = None
-    remaining: Optional[Union[StrictFloat, StrictInt]] = None
-    restricted: Optional[StrictBool] = None
+    days: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [7]})
+    limit: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [10]})
+    used: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [6]})
+    remaining: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [4]})
+    restricted: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["days", "limit", "used", "remaining", "restricted"]
 

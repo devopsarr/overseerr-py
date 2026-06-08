@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class PlexLibrary(BaseModel):
     PlexLibrary
     """ # noqa: E501
     id: StrictStr
-    name: StrictStr
-    enabled: StrictBool
+    name: StrictStr = Field(json_schema_extra={"examples": ["Movies"]})
+    enabled: StrictBool = Field(json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "name", "enabled"]
 

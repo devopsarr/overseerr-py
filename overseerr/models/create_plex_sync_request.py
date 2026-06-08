@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class CreatePlexSyncRequest(BaseModel):
     """
     CreatePlexSyncRequest
     """ # noqa: E501
-    cancel: Optional[StrictBool] = None
-    start: Optional[StrictBool] = None
+    cancel: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
+    start: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["cancel", "start"]
 

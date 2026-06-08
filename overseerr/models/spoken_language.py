@@ -27,9 +27,9 @@ class SpokenLanguage(BaseModel):
     """
     SpokenLanguage
     """ # noqa: E501
-    english_name: Optional[StrictStr] = Field(default=None, alias="englishName")
-    iso_639_1: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
+    english_name: Optional[StrictStr] = Field(default=None, alias="englishName", json_schema_extra={"examples": ["English"]})
+    iso_639_1: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["en"]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["English"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["englishName", "iso_639_1", "name"]
 

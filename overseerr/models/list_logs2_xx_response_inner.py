@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,10 @@ class ListLogs2XXResponseInner(BaseModel):
     """
     ListLogs2XXResponseInner
     """ # noqa: E501
-    label: Optional[StrictStr] = None
-    level: Optional[StrictStr] = None
-    message: Optional[StrictStr] = None
-    timestamp: Optional[StrictStr] = None
+    label: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["server"]})
+    level: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["info"]})
+    message: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Server ready on port 5055"]})
+    timestamp: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["2020-12-15T16:20:00.069Z"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["label", "level", "message", "timestamp"]
 

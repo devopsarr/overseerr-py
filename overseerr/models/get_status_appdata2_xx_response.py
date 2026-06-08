@@ -27,8 +27,8 @@ class GetStatusAppdata2XXResponse(BaseModel):
     """
     GetStatusAppdata2XXResponse
     """ # noqa: E501
-    app_data: Optional[StrictBool] = Field(default=None, alias="appData")
-    app_data_path: Optional[StrictStr] = Field(default=None, alias="appDataPath")
+    app_data: Optional[StrictBool] = Field(default=None, alias="appData", json_schema_extra={"examples": [True]})
+    app_data_path: Optional[StrictStr] = Field(default=None, alias="appDataPath", json_schema_extra={"examples": ["/app/config"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["appData", "appDataPath"]
 

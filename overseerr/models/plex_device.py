@@ -28,29 +28,29 @@ class PlexDevice(BaseModel):
     """
     PlexDevice
     """ # noqa: E501
-    name: StrictStr
-    product: StrictStr
-    product_version: StrictStr = Field(alias="productVersion")
-    platform: StrictStr
-    platform_version: Optional[StrictStr] = Field(default=None, alias="platformVersion")
-    device: StrictStr
-    client_identifier: StrictStr = Field(alias="clientIdentifier")
-    created_at: StrictStr = Field(alias="createdAt")
-    last_seen_at: StrictStr = Field(alias="lastSeenAt")
+    name: StrictStr = Field(json_schema_extra={"examples": ["My Plex Server"]})
+    product: StrictStr = Field(json_schema_extra={"examples": ["Plex Media Server"]})
+    product_version: StrictStr = Field(alias="productVersion", json_schema_extra={"examples": ["1.21"]})
+    platform: StrictStr = Field(json_schema_extra={"examples": ["Linux"]})
+    platform_version: Optional[StrictStr] = Field(default=None, alias="platformVersion", json_schema_extra={"examples": ["default/linux/amd64/17.1/systemd"]})
+    device: StrictStr = Field(json_schema_extra={"examples": ["PC"]})
+    client_identifier: StrictStr = Field(alias="clientIdentifier", json_schema_extra={"examples": ["85a943ce-a0cc-4d2a-a4ec-f74f06e40feb"]})
+    created_at: StrictStr = Field(alias="createdAt", json_schema_extra={"examples": ["2021-01-01T00:00:00.000Z"]})
+    last_seen_at: StrictStr = Field(alias="lastSeenAt", json_schema_extra={"examples": ["2021-01-01T00:00:00.000Z"]})
     provides: List[StrictStr]
-    owned: StrictBool
-    owner_id: Optional[StrictStr] = Field(default=None, alias="ownerID")
-    home: Optional[StrictBool] = None
-    source_title: Optional[StrictStr] = Field(default=None, alias="sourceTitle")
-    access_token: Optional[StrictStr] = Field(default=None, alias="accessToken")
-    public_address: Optional[StrictStr] = Field(default=None, alias="publicAddress")
-    https_required: Optional[StrictBool] = Field(default=None, alias="httpsRequired")
-    synced: Optional[StrictBool] = None
-    relay: Optional[StrictBool] = None
-    dns_rebinding_protection: Optional[StrictBool] = Field(default=None, alias="dnsRebindingProtection")
-    nat_loopback_supported: Optional[StrictBool] = Field(default=None, alias="natLoopbackSupported")
-    public_address_matches: Optional[StrictBool] = Field(default=None, alias="publicAddressMatches")
-    presence: Optional[StrictBool] = None
+    owned: StrictBool = Field(json_schema_extra={"examples": [True]})
+    owner_id: Optional[StrictStr] = Field(default=None, alias="ownerID", json_schema_extra={"examples": ["12345"]})
+    home: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [True]})
+    source_title: Optional[StrictStr] = Field(default=None, alias="sourceTitle", json_schema_extra={"examples": ["xyzabc"]})
+    access_token: Optional[StrictStr] = Field(default=None, alias="accessToken", json_schema_extra={"examples": ["supersecretaccesstoken"]})
+    public_address: Optional[StrictStr] = Field(default=None, alias="publicAddress", json_schema_extra={"examples": ["127.0.0.1"]})
+    https_required: Optional[StrictBool] = Field(default=None, alias="httpsRequired", json_schema_extra={"examples": [True]})
+    synced: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [True]})
+    relay: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [True]})
+    dns_rebinding_protection: Optional[StrictBool] = Field(default=None, alias="dnsRebindingProtection", json_schema_extra={"examples": [False]})
+    nat_loopback_supported: Optional[StrictBool] = Field(default=None, alias="natLoopbackSupported", json_schema_extra={"examples": [False]})
+    public_address_matches: Optional[StrictBool] = Field(default=None, alias="publicAddressMatches", json_schema_extra={"examples": [False]})
+    presence: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [True]})
     connection: List[PlexConnection]
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["name", "product", "productVersion", "platform", "platformVersion", "device", "clientIdentifier", "createdAt", "lastSeenAt", "provides", "owned", "ownerID", "home", "sourceTitle", "accessToken", "publicAddress", "httpsRequired", "synced", "relay", "dnsRebindingProtection", "natLoopbackSupported", "publicAddressMatches", "presence", "connection"]

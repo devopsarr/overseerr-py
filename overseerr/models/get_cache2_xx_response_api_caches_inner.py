@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from overseerr.models.get_cache2_xx_response_api_caches_inner_stats import GetCache2XXResponseApiCachesInnerStats
 from typing import Optional, Set
@@ -28,8 +28,8 @@ class GetCache2XXResponseApiCachesInner(BaseModel):
     """
     GetCache2XXResponseApiCachesInner
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
+    id: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["cache-id"]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["cache name"]})
     stats: Optional[GetCache2XXResponseApiCachesInnerStats] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "name", "stats"]

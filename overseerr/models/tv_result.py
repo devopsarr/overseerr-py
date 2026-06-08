@@ -28,18 +28,18 @@ class TvResult(BaseModel):
     """
     TvResult
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1234]})
     media_type: Optional[StrictStr] = Field(default=None, alias="mediaType")
-    popularity: Optional[Union[StrictFloat, StrictInt]] = None
+    popularity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [10]})
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     vote_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="voteCount")
     vote_average: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="voteAverage")
     genre_ids: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, alias="genreIds")
-    overview: Optional[StrictStr] = None
-    original_language: Optional[StrictStr] = Field(default=None, alias="originalLanguage")
-    name: Optional[StrictStr] = None
-    original_name: Optional[StrictStr] = Field(default=None, alias="originalName")
+    overview: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Overview of the movie"]})
+    original_language: Optional[StrictStr] = Field(default=None, alias="originalLanguage", json_schema_extra={"examples": ["en"]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["TV Show Name"]})
+    original_name: Optional[StrictStr] = Field(default=None, alias="originalName", json_schema_extra={"examples": ["Original TV Show Name"]})
     origin_country: Optional[List[StrictStr]] = Field(default=None, alias="originCountry")
     first_air_date: Optional[StrictStr] = Field(default=None, alias="firstAirDate")
     media_info: Optional[MediaInfo] = Field(default=None, alias="mediaInfo")
