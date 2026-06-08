@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.3](https://github.com/devopsarr/overseerr-py/compare/v1.0.2...v1.0.3) (2026-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sct/overseerr to v1.35.0 ([45f6ed1](https://github.com/devopsarr/overseerr-py/commit/45f6ed11ed5935d3895d6f06001721e143ea129e))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([16b03e9](https://github.com/devopsarr/overseerr-py/commit/16b03e96049be3196feb54ab1a854ab577580475))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([7c62db7](https://github.com/devopsarr/overseerr-py/commit/7c62db7382dfd9c3530cc85cdb2c5fce5a663277))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([50d620a](https://github.com/devopsarr/overseerr-py/commit/50d620a392f00e7da51eaebe162c04d4b3d0a869))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([ac90f8a](https://github.com/devopsarr/overseerr-py/commit/ac90f8a867d29f9cea3b6b8cdd5ea725b8dadb5a))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([9cfca95](https://github.com/devopsarr/overseerr-py/commit/9cfca95c69750452808345f50f20c753bfaec317))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([8bfef6c](https://github.com/devopsarr/overseerr-py/commit/8bfef6c21ea896c9960fc2820ac77539ac88657f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([16dbfc9](https://github.com/devopsarr/overseerr-py/commit/16dbfc95fd9d9ca9d02cbee4efdef92eba3b7645))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([bb728c8](https://github.com/devopsarr/overseerr-py/commit/bb728c807cc4890c20360bb2791c68904ab4d900))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([02aaf94](https://github.com/devopsarr/overseerr-py/commit/02aaf94fa7cb822534ce1d628d998a7eca08b186))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.21.0 ([a22addc](https://github.com/devopsarr/overseerr-py/commit/a22addcc759e021ea835fdef44bf2b55d7464613))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.21.0 ([3542976](https://github.com/devopsarr/overseerr-py/commit/3542976a2da28edca4dd587c11de5c2c6c9bfdf0))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([2d65dfa](https://github.com/devopsarr/overseerr-py/commit/2d65dfaf7eff811bf2201fa5142450a580d133a5))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([b4e11bb](https://github.com/devopsarr/overseerr-py/commit/b4e11bbda3aa36ca507630536add0d5310630458))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.23.0 ([b8efc2d](https://github.com/devopsarr/overseerr-py/commit/b8efc2d73273978a729cdf0bbe373d34652a080f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.23.0 ([8261eff](https://github.com/devopsarr/overseerr-py/commit/8261effc9a15e985648f64d2ab661a43b81de3aa))
+
 ## [1.0.2](https://github.com/devopsarr/overseerr-py/compare/v1.0.1...v1.0.2) (2025-09-02)
 
 
