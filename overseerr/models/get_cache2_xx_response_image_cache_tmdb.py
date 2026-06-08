@@ -27,8 +27,8 @@ class GetCache2XXResponseImageCacheTmdb(BaseModel):
     """
     GetCache2XXResponseImageCacheTmdb
     """ # noqa: E501
-    size: Optional[Union[StrictFloat, StrictInt]] = None
-    image_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="imageCount")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123456]})
+    image_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="imageCount", json_schema_extra={"examples": [123]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["size", "imageCount"]
 

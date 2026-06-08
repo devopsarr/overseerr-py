@@ -27,8 +27,8 @@ class SonarrSeriesSeasonsInner(BaseModel):
     """
     SonarrSeriesSeasonsInner
     """ # noqa: E501
-    season_number: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="seasonNumber")
-    monitored: Optional[StrictBool] = None
+    season_number: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="seasonNumber", json_schema_extra={"examples": [1]})
+    monitored: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [True]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["seasonNumber", "monitored"]
 

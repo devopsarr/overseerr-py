@@ -27,8 +27,8 @@ class SonarrSeriesImagesInner(BaseModel):
     """
     SonarrSeriesImagesInner
     """ # noqa: E501
-    cover_type: Optional[StrictStr] = Field(default=None, alias="coverType")
-    url: Optional[StrictStr] = None
+    cover_type: Optional[StrictStr] = Field(default=None, alias="coverType", json_schema_extra={"examples": ["banner"]})
+    url: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["/sonarr/MediaCoverProxy/6467f05d9872726ad08cbf920e5fee4bf69198682260acab8eab5d3c2c958e92/5c8f116c6aa5c.jpg"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["coverType", "url"]
 

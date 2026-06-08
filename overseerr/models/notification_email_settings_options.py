@@ -27,16 +27,16 @@ class NotificationEmailSettingsOptions(BaseModel):
     """
     NotificationEmailSettingsOptions
     """ # noqa: E501
-    email_from: Optional[StrictStr] = Field(default=None, alias="emailFrom")
-    sender_name: Optional[StrictStr] = Field(default=None, alias="senderName")
-    smtp_host: Optional[StrictStr] = Field(default=None, alias="smtpHost")
-    smtp_port: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="smtpPort")
-    secure: Optional[StrictBool] = None
-    ignore_tls: Optional[StrictBool] = Field(default=None, alias="ignoreTls")
-    require_tls: Optional[StrictBool] = Field(default=None, alias="requireTls")
+    email_from: Optional[StrictStr] = Field(default=None, alias="emailFrom", json_schema_extra={"examples": ["no-reply@example.com"]})
+    sender_name: Optional[StrictStr] = Field(default=None, alias="senderName", json_schema_extra={"examples": ["Overseerr"]})
+    smtp_host: Optional[StrictStr] = Field(default=None, alias="smtpHost", json_schema_extra={"examples": ["127.0.0.1"]})
+    smtp_port: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="smtpPort", json_schema_extra={"examples": [465]})
+    secure: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
+    ignore_tls: Optional[StrictBool] = Field(default=None, alias="ignoreTls", json_schema_extra={"examples": [False]})
+    require_tls: Optional[StrictBool] = Field(default=None, alias="requireTls", json_schema_extra={"examples": [False]})
     auth_user: Optional[StrictStr] = Field(default=None, alias="authUser")
     auth_pass: Optional[StrictStr] = Field(default=None, alias="authPass")
-    allow_self_signed: Optional[StrictBool] = Field(default=None, alias="allowSelfSigned")
+    allow_self_signed: Optional[StrictBool] = Field(default=None, alias="allowSelfSigned", json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["emailFrom", "senderName", "smtpHost", "smtpPort", "secure", "ignoreTls", "requireTls", "authUser", "authPass", "allowSelfSigned"]
 

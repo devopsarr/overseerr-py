@@ -27,12 +27,12 @@ class Job(BaseModel):
     """
     Job
     """ # noqa: E501
-    id: Optional[StrictStr] = None
+    id: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["job-name"]})
     type: Optional[StrictStr] = None
     interval: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    next_execution_time: Optional[StrictStr] = Field(default=None, alias="nextExecutionTime")
-    running: Optional[StrictBool] = None
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["A Job Name"]})
+    next_execution_time: Optional[StrictStr] = Field(default=None, alias="nextExecutionTime", json_schema_extra={"examples": ["2020-09-02T05:02:23.000Z"]})
+    running: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "type", "interval", "name", "nextExecutionTime", "running"]
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class CreateJobsScheduleRequest(BaseModel):
     """
     CreateJobsScheduleRequest
     """ # noqa: E501
-    schedule: Optional[StrictStr] = None
+    schedule: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["0 */5 * * * *"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["schedule"]
 

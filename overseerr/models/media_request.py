@@ -29,14 +29,14 @@ class MediaRequest(BaseModel):
     """
     MediaRequest
     """ # noqa: E501
-    id: Union[StrictFloat, StrictInt]
-    status: Union[StrictFloat, StrictInt] = Field(description="Status of the request. 1 = PENDING APPROVAL, 2 = APPROVED, 3 = DECLINED")
+    id: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [123]})
+    status: Union[StrictFloat, StrictInt] = Field(description="Status of the request. 1 = PENDING APPROVAL, 2 = APPROVED, 3 = DECLINED", json_schema_extra={"examples": [0]})
     media: Optional[MediaInfo] = None
-    created_at: Optional[StrictStr] = Field(default=None, alias="createdAt")
-    updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
+    created_at: Optional[StrictStr] = Field(default=None, alias="createdAt", json_schema_extra={"examples": ["2020-09-12T10:00:27.000Z"]})
+    updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt", json_schema_extra={"examples": ["2020-09-12T10:00:27.000Z"]})
     requested_by: Optional[User] = Field(default=None, alias="requestedBy")
     modified_by: Optional[MediaRequestModifiedBy] = Field(default=None, alias="modifiedBy")
-    is4k: Optional[StrictBool] = None
+    is4k: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     server_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="serverId")
     profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="profileId")
     root_folder: Optional[StrictStr] = Field(default=None, alias="rootFolder")

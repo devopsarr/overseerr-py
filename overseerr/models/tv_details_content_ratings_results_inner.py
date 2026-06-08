@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class TvDetailsContentRatingsResultsInner(BaseModel):
     """
     TvDetailsContentRatingsResultsInner
     """ # noqa: E501
-    iso_3166_1: Optional[StrictStr] = None
-    rating: Optional[StrictStr] = None
+    iso_3166_1: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["US"]})
+    rating: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["TV-14"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["iso_3166_1", "rating"]
 

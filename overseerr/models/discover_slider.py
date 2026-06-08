@@ -27,12 +27,12 @@ class DiscoverSlider(BaseModel):
     """
     DiscoverSlider
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    type: Union[StrictFloat, StrictInt]
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    type: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [1]})
     title: Optional[StrictStr]
     is_built_in: Optional[StrictBool] = Field(default=None, alias="isBuiltIn")
     enabled: StrictBool
-    data: Optional[StrictStr]
+    data: Optional[StrictStr] = Field(json_schema_extra={"examples": ["1234"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "type", "title", "isBuiltIn", "enabled", "data"]
 

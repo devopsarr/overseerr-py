@@ -27,7 +27,7 @@ class GetUserSettingsPassword2XXResponse(BaseModel):
     """
     GetUserSettingsPassword2XXResponse
     """ # noqa: E501
-    has_password: Optional[StrictBool] = Field(default=None, alias="hasPassword")
+    has_password: Optional[StrictBool] = Field(default=None, alias="hasPassword", json_schema_extra={"examples": [True]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["hasPassword"]
 

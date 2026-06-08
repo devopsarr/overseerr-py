@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from overseerr.models.telegram_settings_options import TelegramSettingsOptions
 from typing import Optional, Set
@@ -28,8 +28,8 @@ class TelegramSettings(BaseModel):
     """
     TelegramSettings
     """ # noqa: E501
-    enabled: Optional[StrictBool] = None
-    types: Optional[Union[StrictFloat, StrictInt]] = None
+    enabled: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
+    types: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [2]})
     options: Optional[TelegramSettingsOptions] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["enabled", "types", "options"]

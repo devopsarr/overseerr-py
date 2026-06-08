@@ -27,10 +27,10 @@ class Crew(BaseModel):
     """
     Crew
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123]})
     credit_id: Optional[StrictStr] = Field(default=None, alias="creditId")
     gender: Optional[Union[StrictFloat, StrictInt]] = None
-    name: Optional[StrictStr] = None
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Some Persons Name"]})
     job: Optional[StrictStr] = None
     department: Optional[StrictStr] = None
     profile_path: Optional[StrictStr] = Field(default=None, alias="profilePath")

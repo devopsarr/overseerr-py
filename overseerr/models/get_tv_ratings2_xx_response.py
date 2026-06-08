@@ -27,10 +27,10 @@ class GetTvRatings2XXResponse(BaseModel):
     """
     GetTvRatings2XXResponse
     """ # noqa: E501
-    title: Optional[StrictStr] = None
-    year: Optional[Union[StrictFloat, StrictInt]] = None
-    url: Optional[StrictStr] = None
-    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore")
+    title: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["The Boys"]})
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [2019]})
+    url: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["http://www.rottentomatoes.com/m/mulan_2020/"]})
+    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore", json_schema_extra={"examples": [85]})
     critics_rating: Optional[StrictStr] = Field(default=None, alias="criticsRating")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["title", "year", "url", "criticsScore", "criticsRating"]

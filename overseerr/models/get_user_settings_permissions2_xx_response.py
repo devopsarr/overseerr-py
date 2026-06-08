@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class GetUserSettingsPermissions2XXResponse(BaseModel):
     """
     GetUserSettingsPermissions2XXResponse
     """ # noqa: E501
-    permissions: Optional[Union[StrictFloat, StrictInt]] = None
+    permissions: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [2]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["permissions"]
 

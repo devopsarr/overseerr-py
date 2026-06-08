@@ -31,17 +31,17 @@ class SonarrSeries(BaseModel):
     """
     SonarrSeries
     """ # noqa: E501
-    title: Optional[StrictStr] = None
-    sort_title: Optional[StrictStr] = Field(default=None, alias="sortTitle")
-    season_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="seasonCount")
-    status: Optional[StrictStr] = None
-    overview: Optional[StrictStr] = None
-    network: Optional[StrictStr] = None
-    air_time: Optional[StrictStr] = Field(default=None, alias="airTime")
+    title: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["COVID-25"]})
+    sort_title: Optional[StrictStr] = Field(default=None, alias="sortTitle", json_schema_extra={"examples": ["covid 25"]})
+    season_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="seasonCount", json_schema_extra={"examples": [1]})
+    status: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["upcoming"]})
+    overview: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["The thread is picked up again by Marianne Schmidt which ..."]})
+    network: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["CBS"]})
+    air_time: Optional[StrictStr] = Field(default=None, alias="airTime", json_schema_extra={"examples": ["02:15"]})
     images: Optional[List[SonarrSeriesImagesInner]] = None
-    remote_poster: Optional[StrictStr] = Field(default=None, alias="remotePoster")
+    remote_poster: Optional[StrictStr] = Field(default=None, alias="remotePoster", json_schema_extra={"examples": ["https://artworks.thetvdb.com/banners/posters/5c8f116129983.jpg"]})
     seasons: Optional[List[SonarrSeriesSeasonsInner]] = None
-    year: Optional[Union[StrictFloat, StrictInt]] = None
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [2015]})
     path: Optional[StrictStr] = None
     profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="profileId")
     language_profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="languageProfileId")
@@ -49,7 +49,7 @@ class SonarrSeries(BaseModel):
     monitored: Optional[StrictBool] = None
     use_scene_numbering: Optional[StrictBool] = Field(default=None, alias="useSceneNumbering")
     runtime: Optional[Union[StrictFloat, StrictInt]] = None
-    tvdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvdbId")
+    tvdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvdbId", json_schema_extra={"examples": [12345]})
     tv_rage_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvRageId")
     tv_maze_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvMazeId")
     first_aired: Optional[StrictStr] = Field(default=None, alias="firstAired")

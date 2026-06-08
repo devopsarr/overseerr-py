@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_discover_add**
-> DiscoverSlider create_discover_add(create_discover_add_request)
+> DiscoverSlider create_discover_add(update_discover_request)
 
 Add a new slider
 
@@ -263,8 +263,8 @@ Add a single slider and return the newly created slider. Requires the `ADMIN` pe
 
 ```python
 import overseerr
-from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest
 from overseerr.models.discover_slider import DiscoverSlider
+from overseerr.models.update_discover_request import UpdateDiscoverRequest
 from overseerr.rest import ApiException
 from pprint import pprint
 
@@ -295,11 +295,11 @@ configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
 with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.SettingsApi(api_client)
-    create_discover_add_request = overseerr.CreateDiscoverAddRequest() # CreateDiscoverAddRequest | 
+    update_discover_request = overseerr.UpdateDiscoverRequest() # UpdateDiscoverRequest | 
 
     try:
         # Add a new slider
-        api_response = api_instance.create_discover_add(create_discover_add_request)
+        api_response = api_instance.create_discover_add(update_discover_request)
         print("The response of SettingsApi->create_discover_add:\n")
         pprint(api_response)
     except Exception as e:
@@ -313,7 +313,7 @@ with overseerr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_discover_add_request** | [**CreateDiscoverAddRequest**](CreateDiscoverAddRequest.md)|  | 
+ **update_discover_request** | [**UpdateDiscoverRequest**](UpdateDiscoverRequest.md)|  | 
 
 ### Return type
 
@@ -5626,7 +5626,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_sonarr**
-> TestRadarr2XXResponse test_sonarr(test_sonarr_request)
+> TestRadarr2XXResponse test_sonarr(test_radarr_request)
 
 Test Sonarr configuration
 
@@ -5640,7 +5640,7 @@ Tests if the Sonarr configuration is valid. Returns profiles and root folders on
 ```python
 import overseerr
 from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse
-from overseerr.models.test_sonarr_request import TestSonarrRequest
+from overseerr.models.test_radarr_request import TestRadarrRequest
 from overseerr.rest import ApiException
 from pprint import pprint
 
@@ -5671,11 +5671,11 @@ configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
 with overseerr.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = overseerr.SettingsApi(api_client)
-    test_sonarr_request = overseerr.TestSonarrRequest() # TestSonarrRequest | 
+    test_radarr_request = overseerr.TestRadarrRequest() # TestRadarrRequest | 
 
     try:
         # Test Sonarr configuration
-        api_response = api_instance.test_sonarr(test_sonarr_request)
+        api_response = api_instance.test_sonarr(test_radarr_request)
         print("The response of SettingsApi->test_sonarr:\n")
         pprint(api_response)
     except Exception as e:
@@ -5689,7 +5689,7 @@ with overseerr.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **test_sonarr_request** | [**TestSonarrRequest**](TestSonarrRequest.md)|  | 
+ **test_radarr_request** | [**TestRadarrRequest**](TestRadarrRequest.md)|  | 
 
 ### Return type
 

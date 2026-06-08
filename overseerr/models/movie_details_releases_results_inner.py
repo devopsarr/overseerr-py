@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from overseerr.models.movie_details_releases_results_inner_release_dates_inner import MovieDetailsReleasesResultsInnerReleaseDatesInner
 from typing import Optional, Set
@@ -28,7 +28,7 @@ class MovieDetailsReleasesResultsInner(BaseModel):
     """
     MovieDetailsReleasesResultsInner
     """ # noqa: E501
-    iso_3166_1: Optional[StrictStr] = None
+    iso_3166_1: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["US"]})
     rating: Optional[StrictStr] = None
     release_dates: Optional[List[MovieDetailsReleasesResultsInnerReleaseDatesInner]] = None
     additional_properties: Dict[str, Any] = {}

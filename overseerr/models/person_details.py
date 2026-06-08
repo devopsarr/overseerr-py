@@ -27,7 +27,7 @@ class PersonDetails(BaseModel):
     """
     PersonDetails
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
     name: Optional[StrictStr] = None
     deathday: Optional[StrictStr] = None
     known_for_department: Optional[StrictStr] = Field(default=None, alias="knownForDepartment")

@@ -50,7 +50,6 @@ __all__ = [
     "CreateAuthPlexRequest",
     "CreateAuthResetPasswordByGuidRequest",
     "CreateAuthResetPasswordRequest",
-    "CreateDiscoverAddRequest",
     "CreateIssueCommentRequest",
     "CreateIssueRequest",
     "CreateJobsScheduleRequest",
@@ -126,7 +125,6 @@ __all__ = [
     "Keyword",
     "ListDiscoverGenresliderMovie2XXResponseInner",
     "ListGenresMovie2XXResponseInner",
-    "ListGenresTv2XXResponseInner",
     "ListLanguages2XXResponseInner",
     "ListLogs2XXResponseInner",
     "ListNotificationsPushoverSounds2XXResponseInner",
@@ -184,7 +182,6 @@ __all__ = [
     "TelegramSettingsOptions",
     "TestRadarr2XXResponse",
     "TestRadarrRequest",
-    "TestSonarrRequest",
     "TvDetails",
     "TvDetailsContentRatings",
     "TvDetailsContentRatingsResultsInner",
@@ -241,7 +238,6 @@ from overseerr.models.create_auth_logout2_xx_response import CreateAuthLogout2XX
 from overseerr.models.create_auth_plex_request import CreateAuthPlexRequest as CreateAuthPlexRequest
 from overseerr.models.create_auth_reset_password_by_guid_request import CreateAuthResetPasswordByGuidRequest as CreateAuthResetPasswordByGuidRequest
 from overseerr.models.create_auth_reset_password_request import CreateAuthResetPasswordRequest as CreateAuthResetPasswordRequest
-from overseerr.models.create_discover_add_request import CreateDiscoverAddRequest as CreateDiscoverAddRequest
 from overseerr.models.create_issue_comment_request import CreateIssueCommentRequest as CreateIssueCommentRequest
 from overseerr.models.create_issue_request import CreateIssueRequest as CreateIssueRequest
 from overseerr.models.create_jobs_schedule_request import CreateJobsScheduleRequest as CreateJobsScheduleRequest
@@ -317,7 +313,6 @@ from overseerr.models.job import Job as Job
 from overseerr.models.keyword import Keyword as Keyword
 from overseerr.models.list_discover_genreslider_movie2_xx_response_inner import ListDiscoverGenresliderMovie2XXResponseInner as ListDiscoverGenresliderMovie2XXResponseInner
 from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner as ListGenresMovie2XXResponseInner
-from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner as ListGenresTv2XXResponseInner
 from overseerr.models.list_languages2_xx_response_inner import ListLanguages2XXResponseInner as ListLanguages2XXResponseInner
 from overseerr.models.list_logs2_xx_response_inner import ListLogs2XXResponseInner as ListLogs2XXResponseInner
 from overseerr.models.list_notifications_pushover_sounds2_xx_response_inner import ListNotificationsPushoverSounds2XXResponseInner as ListNotificationsPushoverSounds2XXResponseInner
@@ -375,7 +370,6 @@ from overseerr.models.telegram_settings import TelegramSettings as TelegramSetti
 from overseerr.models.telegram_settings_options import TelegramSettingsOptions as TelegramSettingsOptions
 from overseerr.models.test_radarr2_xx_response import TestRadarr2XXResponse as TestRadarr2XXResponse
 from overseerr.models.test_radarr_request import TestRadarrRequest as TestRadarrRequest
-from overseerr.models.test_sonarr_request import TestSonarrRequest as TestSonarrRequest
 from overseerr.models.tv_details import TvDetails as TvDetails
 from overseerr.models.tv_details_content_ratings import TvDetailsContentRatings as TvDetailsContentRatings
 from overseerr.models.tv_details_content_ratings_results_inner import TvDetailsContentRatingsResultsInner as TvDetailsContentRatingsResultsInner

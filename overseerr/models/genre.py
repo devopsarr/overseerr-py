@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class Genre(BaseModel):
     """
     Genre
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    name: Optional[StrictStr] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Adventure"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "name"]
 

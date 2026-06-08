@@ -29,9 +29,9 @@ class GetDiscoverTvGenreByGenreId2XXResponse(BaseModel):
     """
     GetDiscoverTvGenreByGenreId2XXResponse
     """ # noqa: E501
-    page: Optional[Union[StrictFloat, StrictInt]] = None
-    total_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalPages")
-    total_results: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalResults")
+    page: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    total_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalPages", json_schema_extra={"examples": [20]})
+    total_results: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalResults", json_schema_extra={"examples": [200]})
     genre: Optional[Genre] = None
     results: Optional[List[TvResult]] = None
     additional_properties: Dict[str, Any] = {}

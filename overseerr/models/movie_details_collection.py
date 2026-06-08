@@ -27,8 +27,8 @@ class MovieDetailsCollection(BaseModel):
     """
     MovieDetailsCollection
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    name: Optional[StrictStr] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["A collection"]})
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     additional_properties: Dict[str, Any] = {}

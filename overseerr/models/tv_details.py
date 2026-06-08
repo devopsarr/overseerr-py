@@ -40,7 +40,7 @@ class TvDetails(BaseModel):
     """
     TvDetails
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123]})
     backdrop_path: Optional[StrictStr] = Field(default=None, alias="backdropPath")
     poster_path: Optional[StrictStr] = Field(default=None, alias="posterPath")
     content_ratings: Optional[TvDetailsContentRatings] = Field(default=None, alias="contentRatings")

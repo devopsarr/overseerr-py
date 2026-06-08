@@ -28,9 +28,9 @@ class PersonResult(BaseModel):
     """
     PersonResult
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [12345]})
     profile_path: Optional[StrictStr] = Field(default=None, alias="profilePath")
-    adult: Optional[StrictBool] = None
+    adult: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
     media_type: Optional[StrictStr] = Field(default='person', alias="mediaType")
     known_for: Optional[List[PersonResultKnownForInner]] = Field(default=None, alias="knownFor")
     additional_properties: Dict[str, Any] = {}

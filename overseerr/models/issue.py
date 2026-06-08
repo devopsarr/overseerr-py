@@ -30,8 +30,8 @@ class Issue(BaseModel):
     """
     Issue
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    issue_type: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="issueType")
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
+    issue_type: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="issueType", json_schema_extra={"examples": [1]})
     media: Optional[MediaInfo] = None
     created_by: Optional[User] = Field(default=None, alias="createdBy")
     modified_by: Optional[User] = Field(default=None, alias="modifiedBy")

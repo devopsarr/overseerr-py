@@ -27,12 +27,12 @@ class Cast(BaseModel):
     """
     Cast
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    cast_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="castId")
-    character: Optional[StrictStr] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [123]})
+    cast_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="castId", json_schema_extra={"examples": [1]})
+    character: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Some Character Name"]})
     credit_id: Optional[StrictStr] = Field(default=None, alias="creditId")
     gender: Optional[Union[StrictFloat, StrictInt]] = None
-    name: Optional[StrictStr] = None
+    name: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Some Persons Name"]})
     order: Optional[Union[StrictFloat, StrictInt]] = None
     profile_path: Optional[StrictStr] = Field(default=None, alias="profilePath")
     additional_properties: Dict[str, Any] = {}

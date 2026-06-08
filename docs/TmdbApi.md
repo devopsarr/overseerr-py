@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_genres_tv**
-> List[ListGenresTv2XXResponseInner] list_genres_tv(language=language)
+> List[ListGenresMovie2XXResponseInner] list_genres_tv(language=language)
 
 Get list of official TMDB movie genres
 
@@ -348,7 +348,7 @@ Returns a list of genres in a JSON array.
 
 ```python
 import overseerr
-from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner
+from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner
 from overseerr.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[ListGenresTv2XXResponseInner]**](ListGenresTv2XXResponseInner.md)
+[**List[ListGenresMovie2XXResponseInner]**](ListGenresMovie2XXResponseInner.md)
 
 ### Authorization
 

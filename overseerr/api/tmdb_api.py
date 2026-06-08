@@ -18,7 +18,6 @@ from typing_extensions import Annotated
 from pydantic import StrictFloat, StrictInt, StrictStr
 from typing import List, Optional, Union
 from overseerr.models.list_genres_movie2_xx_response_inner import ListGenresMovie2XXResponseInner
-from overseerr.models.list_genres_tv2_xx_response_inner import ListGenresTv2XXResponseInner
 from overseerr.models.list_languages2_xx_response_inner import ListLanguages2XXResponseInner
 from overseerr.models.list_regions2_xx_response_inner import ListRegions2XXResponseInner
 from overseerr.models.production_company import ProductionCompany
@@ -1090,7 +1089,7 @@ class TmdbApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ListGenresTv2XXResponseInner]:
+    ) -> List[ListGenresMovie2XXResponseInner]:
         """Get list of official TMDB movie genres
 
         Returns a list of genres in a JSON array.
@@ -1128,7 +1127,7 @@ class TmdbApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "List[ListGenresTv2XXResponseInner]",
+            '2XX': "List[ListGenresMovie2XXResponseInner]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1157,7 +1156,7 @@ class TmdbApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ListGenresTv2XXResponseInner]]:
+    ) -> ApiResponse[List[ListGenresMovie2XXResponseInner]]:
         """Get list of official TMDB movie genres
 
         Returns a list of genres in a JSON array.
@@ -1195,7 +1194,7 @@ class TmdbApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "List[ListGenresTv2XXResponseInner]",
+            '2XX': "List[ListGenresMovie2XXResponseInner]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1262,7 +1261,7 @@ class TmdbApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "List[ListGenresTv2XXResponseInner]",
+            '2XX': "List[ListGenresMovie2XXResponseInner]",
         }
         response_data = self.api_client.call_api(
             *_param,

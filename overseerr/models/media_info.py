@@ -30,10 +30,10 @@ class MediaInfo(BaseModel):
     id: Optional[Union[StrictFloat, StrictInt]] = None
     tmdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tmdbId")
     tvdb_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tvdbId")
-    status: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Availability of the media. 1 = `UNKNOWN`, 2 = `PENDING`, 3 = `PROCESSING`, 4 = `PARTIALLY_AVAILABLE`, 5 = `AVAILABLE`, 6 = `DELETED`")
+    status: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Availability of the media. 1 = `UNKNOWN`, 2 = `PENDING`, 3 = `PROCESSING`, 4 = `PARTIALLY_AVAILABLE`, 5 = `AVAILABLE`, 6 = `DELETED`", json_schema_extra={"examples": [0]})
     requests: Optional[List[MediaRequest]] = None
-    created_at: Optional[StrictStr] = Field(default=None, alias="createdAt")
-    updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
+    created_at: Optional[StrictStr] = Field(default=None, alias="createdAt", json_schema_extra={"examples": ["2020-09-12T10:00:27.000Z"]})
+    updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt", json_schema_extra={"examples": ["2020-09-12T10:00:27.000Z"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "tmdbId", "tvdbId", "status", "requests", "createdAt", "updatedAt"]
 

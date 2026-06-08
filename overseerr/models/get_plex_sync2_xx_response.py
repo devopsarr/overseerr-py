@@ -28,9 +28,9 @@ class GetPlexSync2XXResponse(BaseModel):
     """
     GetPlexSync2XXResponse
     """ # noqa: E501
-    running: Optional[StrictBool] = None
-    progress: Optional[Union[StrictFloat, StrictInt]] = None
-    total: Optional[Union[StrictFloat, StrictInt]] = None
+    running: Optional[StrictBool] = Field(default=None, json_schema_extra={"examples": [False]})
+    progress: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [0]})
+    total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [100]})
     current_library: Optional[PlexLibrary] = Field(default=None, alias="currentLibrary")
     libraries: Optional[List[PlexLibrary]] = None
     additional_properties: Dict[str, Any] = {}

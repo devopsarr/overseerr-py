@@ -27,9 +27,9 @@ class GetMovieRatingscombined2XXResponseImdb(BaseModel):
     """
     GetMovieRatingscombined2XXResponseImdb
     """ # noqa: E501
-    title: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore")
+    title: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["I am Legend"]})
+    url: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["https://www.imdb.com/title/tt0480249"]})
+    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore", json_schema_extra={"examples": [6.5]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["title", "url", "criticsScore"]
 

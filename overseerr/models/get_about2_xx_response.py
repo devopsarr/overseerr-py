@@ -27,11 +27,11 @@ class GetAbout2XXResponse(BaseModel):
     """
     GetAbout2XXResponse
     """ # noqa: E501
-    version: Optional[StrictStr] = None
-    total_requests: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalRequests")
-    total_media_items: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalMediaItems")
-    tz: Optional[StrictStr] = None
-    app_data_path: Optional[StrictStr] = Field(default=None, alias="appDataPath")
+    version: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["1.0.0"]})
+    total_requests: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalRequests", json_schema_extra={"examples": [100]})
+    total_media_items: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalMediaItems", json_schema_extra={"examples": [100]})
+    tz: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Asia/Tokyo"]})
+    app_data_path: Optional[StrictStr] = Field(default=None, alias="appDataPath", json_schema_extra={"examples": ["/app/config"]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["version", "totalRequests", "totalMediaItems", "tz", "appDataPath"]
 

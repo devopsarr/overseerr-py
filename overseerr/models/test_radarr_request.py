@@ -27,10 +27,10 @@ class TestRadarrRequest(BaseModel):
     """
     TestRadarrRequest
     """ # noqa: E501
-    hostname: StrictStr
-    port: Union[StrictFloat, StrictInt]
-    api_key: StrictStr = Field(alias="apiKey")
-    use_ssl: StrictBool = Field(alias="useSsl")
+    hostname: StrictStr = Field(json_schema_extra={"examples": ["127.0.0.1"]})
+    port: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [7878]})
+    api_key: StrictStr = Field(alias="apiKey", json_schema_extra={"examples": ["yourapikey"]})
+    use_ssl: StrictBool = Field(alias="useSsl", json_schema_extra={"examples": [False]})
     base_url: Optional[StrictStr] = Field(default=None, alias="baseUrl")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["hostname", "port", "apiKey", "useSsl", "baseUrl"]

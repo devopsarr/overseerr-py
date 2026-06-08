@@ -27,12 +27,12 @@ class GetMovieRatings2XXResponse(BaseModel):
     """
     GetMovieRatings2XXResponse
     """ # noqa: E501
-    title: Optional[StrictStr] = None
-    year: Optional[Union[StrictFloat, StrictInt]] = None
-    url: Optional[StrictStr] = None
-    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore")
+    title: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Mulan"]})
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [2020]})
+    url: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["http://www.rottentomatoes.com/m/mulan_2020/"]})
+    critics_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="criticsScore", json_schema_extra={"examples": [85]})
     critics_rating: Optional[StrictStr] = Field(default=None, alias="criticsRating")
-    audience_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="audienceScore")
+    audience_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="audienceScore", json_schema_extra={"examples": [65]})
     audience_rating: Optional[StrictStr] = Field(default=None, alias="audienceRating")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["title", "year", "url", "criticsScore", "criticsRating", "audienceScore", "audienceRating"]

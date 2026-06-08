@@ -27,7 +27,7 @@ class ProductionCompany(BaseModel):
     """
     ProductionCompany
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [1]})
     logo_path: Optional[StrictStr] = Field(default=None, alias="logoPath")
     origin_country: Optional[StrictStr] = Field(default=None, alias="originCountry")
     name: Optional[StrictStr] = None

@@ -27,27 +27,27 @@ class SonarrSettings(BaseModel):
     """
     SonarrSettings
     """ # noqa: E501
-    id: Optional[Union[StrictFloat, StrictInt]] = None
-    name: StrictStr
-    hostname: StrictStr
-    port: Union[StrictFloat, StrictInt]
-    api_key: StrictStr = Field(alias="apiKey")
-    use_ssl: StrictBool = Field(alias="useSsl")
+    id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, json_schema_extra={"examples": [0]})
+    name: StrictStr = Field(json_schema_extra={"examples": ["Sonarr Main"]})
+    hostname: StrictStr = Field(json_schema_extra={"examples": ["127.0.0.1"]})
+    port: Union[StrictFloat, StrictInt] = Field(json_schema_extra={"examples": [8989]})
+    api_key: StrictStr = Field(alias="apiKey", json_schema_extra={"examples": ["exampleapikey"]})
+    use_ssl: StrictBool = Field(alias="useSsl", json_schema_extra={"examples": [False]})
     base_url: Optional[StrictStr] = Field(default=None, alias="baseUrl")
-    active_profile_id: Union[StrictFloat, StrictInt] = Field(alias="activeProfileId")
-    active_profile_name: StrictStr = Field(alias="activeProfileName")
-    active_directory: StrictStr = Field(alias="activeDirectory")
-    active_language_profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="activeLanguageProfileId")
+    active_profile_id: Union[StrictFloat, StrictInt] = Field(alias="activeProfileId", json_schema_extra={"examples": [1]})
+    active_profile_name: StrictStr = Field(alias="activeProfileName", json_schema_extra={"examples": ["720p/1080p"]})
+    active_directory: StrictStr = Field(alias="activeDirectory", json_schema_extra={"examples": ["/tv/"]})
+    active_language_profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="activeLanguageProfileId", json_schema_extra={"examples": [1]})
     active_anime_profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="activeAnimeProfileId")
     active_anime_language_profile_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="activeAnimeLanguageProfileId")
-    active_anime_profile_name: Optional[StrictStr] = Field(default=None, alias="activeAnimeProfileName")
+    active_anime_profile_name: Optional[StrictStr] = Field(default=None, alias="activeAnimeProfileName", json_schema_extra={"examples": ["720p/1080p"]})
     active_anime_directory: Optional[StrictStr] = Field(default=None, alias="activeAnimeDirectory")
-    is4k: StrictBool
-    enable_season_folders: StrictBool = Field(alias="enableSeasonFolders")
-    is_default: StrictBool = Field(alias="isDefault")
-    external_url: Optional[StrictStr] = Field(default=None, alias="externalUrl")
-    sync_enabled: Optional[StrictBool] = Field(default=None, alias="syncEnabled")
-    prevent_search: Optional[StrictBool] = Field(default=None, alias="preventSearch")
+    is4k: StrictBool = Field(json_schema_extra={"examples": [False]})
+    enable_season_folders: StrictBool = Field(alias="enableSeasonFolders", json_schema_extra={"examples": [False]})
+    is_default: StrictBool = Field(alias="isDefault", json_schema_extra={"examples": [False]})
+    external_url: Optional[StrictStr] = Field(default=None, alias="externalUrl", json_schema_extra={"examples": ["http://radarr.example.com"]})
+    sync_enabled: Optional[StrictBool] = Field(default=None, alias="syncEnabled", json_schema_extra={"examples": [False]})
+    prevent_search: Optional[StrictBool] = Field(default=None, alias="preventSearch", json_schema_extra={"examples": [False]})
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "name", "hostname", "port", "apiKey", "useSsl", "baseUrl", "activeProfileId", "activeProfileName", "activeDirectory", "activeLanguageProfileId", "activeAnimeProfileId", "activeAnimeLanguageProfileId", "activeAnimeProfileName", "activeAnimeDirectory", "is4k", "enableSeasonFolders", "isDefault", "externalUrl", "syncEnabled", "preventSearch"]
 
